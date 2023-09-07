@@ -1,0 +1,27 @@
+.article {
+	padding: 0 15px;
+
+	.post_container {
+		display: flex;
+		flex-direction: row;
+
+		.post_avatar {
+			flex-basis: 38px;
+		}
+
+		.post_body {
+			display: flex;
+			flex-direction: column;
+			flex-basis: 0px;
+
+			.post_username {
+			}
+
+			.post_content {
+			}
+
+			.post_button {
+			}
+		}
+	}
+}

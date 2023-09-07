@@ -1,0 +1,33 @@
+.header {
+	backdrop-filter: saturate(180%) blur(5px);
+	position: sticky;
+	top: 0;
+	padding: 0 24px;
+	width: 100%;
+	height: 64px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 1px solid white;
+
+	.navbar {
+		max-width: 1400px;
+		display: flex;
+		align-items: center;
+		position: relative;
+		flex: 1 1;
+
+		.navbar_link {
+			display: flex;
+			align-items: center;
+			gap: 24px;
+		}
+
+		.navbar_button {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+	}
+}

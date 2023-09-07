@@ -1,0 +1,29 @@
+.footer {
+	border-top: 1px solid white;
+	position: relative;
+
+	.footer_column_grid {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.footer_site {
+			h4 {
+				margin: 0 0 16px;
+				line-height: 20px;
+				font-weight: 500;
+				font-size: 14px;
+			}
+
+			a {
+				margin-top: 0;
+				line-height: 20px;
+				font-size: 14px;
+				display: block;
+				border-radius: 2px;
+			}
+		}
+	}
+}
