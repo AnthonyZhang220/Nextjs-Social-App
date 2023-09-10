@@ -1,0 +1,32 @@
+.draft {
+	padding: 0 15px;
+	border-top: 1px solid rgb(47, 51, 54);
+
+	.draft_container {
+		display: flex;
+		flex-direction: row;
+
+		.draft_avatar {
+			flex-basis: 38px;
+		}
+
+		.draft_body {
+			display: flex;
+			flex-direction: column;
+
+			.draft_username {
+			}
+
+			.draft_content {
+				font-size: 14px;
+			}
+
+			.draft_image {
+			}
+		}
+	}
+}
+
+.draft * {
+	padding: 2px;
+}

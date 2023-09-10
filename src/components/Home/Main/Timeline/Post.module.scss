@@ -1,5 +1,6 @@
-.article {
+.post {
 	padding: 0 15px;
+	border-top: 1px solid rgb(47, 51, 54);
 
 	.post_container {
 		display: flex;
@@ -12,16 +13,21 @@
 		.post_body {
 			display: flex;
 			flex-direction: column;
-			flex-basis: 0px;
 
 			.post_username {
 			}
 
 			.post_content {
+				font-size: 14px;
 			}
 
-			.post_button {
+			.post_image {
 			}
+
 		}
 	}
+}
+
+.post * {
+	padding: 2px;
 }

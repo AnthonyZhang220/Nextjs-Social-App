@@ -1,0 +1,14 @@
+.timeline {
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	border-left: 1px solid rgb(47, 51, 54);
+	border-right: 1px solid rgb(47, 51, 54);
+
+	.timeline_tabgroup {
+		padding: 0 14px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+	}
+}

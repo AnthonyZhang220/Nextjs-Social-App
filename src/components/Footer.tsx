@@ -23,9 +23,12 @@ export default function Footer() {
 		<footer className={styles.footer}>
 			<div className={styles.footer_column_grid}>
 				<div className={styles.footer_logo}>Social App</div>
-				{footerData.map((column) => (
-					<div className={styles.footer_site}>
-						<h4>{column.category}</h4>({})
+				{footerData.map(({ category, list }, index) => (
+					<div className={styles.footer_site} key={index}>
+						<h4>{category}</h4>
+						{list.map(({ label, link }) => (
+							<a href={link}>{label}</a>
+						))}
 					</div>
 				))}
 				<div className={styles.footer_newsletter}>

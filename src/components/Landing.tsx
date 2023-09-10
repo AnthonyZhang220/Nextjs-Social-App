@@ -2,7 +2,9 @@ import styles from "./Landing.module.scss"
 
 function Landing() {
   return (
-    <section className={styles.landing}>Landing Page</section>
+    <section className={styles.landing}>
+      
+    </section>
   )
 }
 
