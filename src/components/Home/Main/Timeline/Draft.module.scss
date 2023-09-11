@@ -11,17 +11,23 @@
 		}
 
 		.draft_body {
-			display: flex;
-			flex-direction: column;
+			
+			.draft_form {
+				display: flex;
+				flex-direction: column;
 
-			.draft_username {
-			}
+				.draft_username {
+				}
 
-			.draft_content {
-				font-size: 14px;
-			}
+				.draft_content {
+					font-size: 14px;
+				}
 
-			.draft_image {
+				.draft_action {
+					display: flex;
+					justify-content: space-between;
+					align-items: flex-end;
+				}
 			}
 		}
 	}

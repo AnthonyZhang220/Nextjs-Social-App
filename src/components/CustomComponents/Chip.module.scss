@@ -1,5 +1,20 @@
-.chip_container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.chip {
+	border-radius: 16px;
+
+	:hover {
+		border-radius: 12px;
+		background-color: lighten(#121314, 10%);
+		transition: 0.2s;
+	}
+
+	.chip_container {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		padding: 11px;
+
+		.chip_content {
+			margin: 0 15px;
+		}
+	}
 }

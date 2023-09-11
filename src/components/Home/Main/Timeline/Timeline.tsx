@@ -10,11 +10,32 @@ export default function Timeline() {
 				<div>Main Timeline</div>
 			</section>
 			<Draft />
-			<div className={styles.timeline_tabgroup}>
-				<Tab content="posts" fontSize={12} p={4} borderRadius={0} />
-				<Tab content="replies" fontSize={12} p={4} borderRadius={0} />
-				<Tab content="likes" fontSize={12} p={4} borderRadius={0} />
-			</div>
+			<select className={styles.timeline_tabgroup}>
+				<Tab
+					value="posts"
+					label="posts"
+					fontSize={16}
+					pX={8}
+					pY={4}
+					borderRadius={0}
+				/>
+				<Tab
+					value="replies"
+					label="replies"
+					fontSize={16}
+					pX={8}
+					pY={4}
+					borderRadius={0}
+				/>
+				<Tab
+					value="likes"
+					label="likes"
+					fontSize={16}
+					pX={8}
+					pY={4}
+					borderRadius={0}
+				/>
+			</select>
 			<section>
 				{posts.map((data, index) => (
 					<Post {...data} key={index} />

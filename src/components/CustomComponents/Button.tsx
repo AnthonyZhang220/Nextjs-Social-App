@@ -1,20 +1,23 @@
 interface ButtonProp {
 	text: string;
 	bgColor: string;
-	color: string;
+	radius: number;
+	color?: string;
+	paddingY?: number;
+	paddingX?: number;
 }
 
 function Button(props: ButtonProp) {
 	return (
-		<button
+		<div
 			style={{
-				borderRadius: "8px",
+				borderRadius: `${props.radius}px`,
 				backgroundColor: props.bgColor,
-				padding: "0 12px",
+				padding: `${props.paddingY}px ${props.paddingX}px`,
 			}}
 		>
 			<span>{props.text}</span>
-		</button>
+		</div>
 	);
 }
 

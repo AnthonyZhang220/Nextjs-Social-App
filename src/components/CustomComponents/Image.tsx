@@ -13,7 +13,7 @@ export default function Image(props: ImageProp) {
 			height={props.height}
 			src={props.src}
 			alt={props.alt}
-			style={{ borderRadius: props.borderRadius }}
+			style={{ borderRadius: props.borderRadius, flex: "0 0 100px" }}
 		/>
 	);
 }

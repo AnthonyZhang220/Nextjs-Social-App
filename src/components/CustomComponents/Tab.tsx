@@ -1,20 +1,26 @@
+import styles from "./Tab.module.scss";
+
 interface TabProps {
-	content: string;
+	label: string;
 	fontSize?: number;
-	p: number;
+	pX: number;
+	pY: number;
 	borderRadius: number;
+	value?: string;
 }
 
 export default function Tab(props: TabProps) {
 	return (
-		<div
+		<option
+			className={styles.tab}
 			style={{
 				fontSize: props.fontSize,
-				padding: props.p,
+				padding: `${props.pY} ${props.pY}`,
 				borderRadius: props.borderRadius,
 			}}
+			value={props.value}
 		>
-			<span>{props.content.toUpperCase()}</span>
-		</div>
+			{props.label.toUpperCase()}
+		</option>
 	);
 }

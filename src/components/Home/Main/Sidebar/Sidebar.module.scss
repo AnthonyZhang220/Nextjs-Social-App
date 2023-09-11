@@ -1,9 +1,15 @@
 .sidebar {
 	min-width: 368px;
+	z-index: 0;
 
 	.sidebar_container {
 		position: sticky;
-		padding: 14px;
-		top: 60px;
+		top: 64px;
+	}
+}
+
+@media screen and (max-width: 1020px) {
+	.sidebar {
+		display: none;
 	}
 }

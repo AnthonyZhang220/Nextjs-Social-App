@@ -4,18 +4,18 @@ import Link from "next/link";
 
 interface ChipProps {
 	link: string;
-	content: string;
+	label: string;
 	Icon: JSX.Element;
 	height?: number | 50;
 }
 
-const Chip: React.FC<ChipProps> = ({ height, link, content, Icon }) => {
+const Chip: React.FC<ChipProps> = ({ height, link, label, Icon }) => {
 	return (
-		<Link href={link}>
-			<div className={styles.chip_container} style={{ height: `${height}px` }}>
+		<Link href={link} className={styles.chip}>
+			<div className={styles.chip_container}>
 				<div>{Icon}</div>
-				<div>
-					<span>{content.toUpperCase()}</span>
+				<div className={styles.chip_content}>
+					<span>{label.toUpperCase()}</span>
 				</div>
 			</div>
 		</Link>

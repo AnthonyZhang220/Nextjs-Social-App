@@ -18,19 +18,19 @@ function LeftNav() {
 	return (
 		<nav className={styles.left_nav}>
 			<div className={styles.left_nav_container}>
-				<Chip link={"./home"} content="home" Icon={<HomeRoundedIcon />}  />
+				<Chip link={"./home"} label="home" Icon={<HomeRoundedIcon />}  />
 				<Chip
 					link={"./discover"}
-					content="discover"
+					label="discover"
 					Icon={<ExploreRoundedIcon />}
 				/>
 				<Chip
 					link={"./notification"}
-					content="notification"
+					label="notification"
 					Icon={<NotificationsRoundedIcon />}
 				/>
-				<Chip link={"./chat"} content="chat" Icon={<ChatRoundedIcon />} />
-				<Chip link={"./me"} content="me" Icon={<PersonRoundedIcon />} />
+				<Chip link={"./chat"} label="chat" Icon={<ChatRoundedIcon />} />
+				<Chip link={"./me"} label="me" Icon={<PersonRoundedIcon />} />
 			</div>
 		</nav>
 	);
