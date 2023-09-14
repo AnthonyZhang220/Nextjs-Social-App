@@ -1,0 +1,12 @@
+.image_container {
+	max-width: 100%; /* Ensure the container doesn't exceed its parent's width */
+	// max-height: auto; /* Allow the container to adjust its height proportionally */
+	overflow: hidden;
+	border-radius: 16px;
+}
+
+.image_container img {
+    width: 100%; /* Make the image take up the full width of the container */
+	height: auto; /* Preserve the image's aspect ratio */
+	display: block;
+}

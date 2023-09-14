@@ -1,0 +1,20 @@
+.chat_tab {
+	&:hover {
+	}
+	.chat_tab_container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 5px;
+
+		.chat_tab_avatar {
+			flex-basis: 15px;
+		}
+
+		.chat_tab_detail {
+			display: flex;
+			flex-direction: column;
+			flex-basis: auto;
+		}
+	}
+}

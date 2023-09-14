@@ -1,0 +1,25 @@
+.searchbar {
+	width: 100%;
+
+	.searchbar_group {
+		position: relative;
+
+		.searchbar_icon svg {
+			display: block;
+		}
+		.searchbar_icon {
+			position: absolute;
+			right: 8px;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		.searchbar_input {
+			width: 100%;
+			padding: 10px 30px 10px 10px;
+			background-color: rgb(32, 35, 39);
+			border: none;
+			outline: none;
+		}
+	}
+}
