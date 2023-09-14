@@ -1,5 +1,7 @@
+import styles from "./Button.module.scss";
+
 interface ButtonProp {
-	text: string;
+	label: string;
 	bgColor: string;
 	radius: number;
 	color?: string;
@@ -10,13 +12,16 @@ interface ButtonProp {
 function Button(props: ButtonProp) {
 	return (
 		<div
+			className={styles.button}
 			style={{
 				borderRadius: `${props.radius}px`,
 				backgroundColor: props.bgColor,
 				padding: `${props.paddingY}px ${props.paddingX}px`,
+				color: props.color,
+				cursor: "pointer",
 			}}
 		>
-			<span>{props.text}</span>
+			<span className={styles.label}>{props.label}</span>
 		</div>
 	);
 }

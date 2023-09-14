@@ -6,11 +6,8 @@ import styles from "./Timeline.module.scss";
 export default function Timeline() {
 	return (
 		<section className={styles.timeline}>
-			<section className={styles.timeline_top}>
-				<div>Main Timeline</div>
-			</section>
 			<Draft />
-			<select className={styles.timeline_tabgroup}>
+			{/* <div className={styles.timeline_tabgroup}>
 				<Tab
 					value="posts"
 					label="posts"
@@ -35,12 +32,10 @@ export default function Timeline() {
 					pY={4}
 					borderRadius={0}
 				/>
-			</select>
-			<section>
-				{posts.map((data, index) => (
-					<Post {...data} key={index} />
-				))}
-			</section>
+			</div> */}
+			{posts.map((data, index) => (
+				<Post {...data} key={index} />
+			))}
 		</section>
 	);
 }

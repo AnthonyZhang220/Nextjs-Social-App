@@ -1,4 +1,7 @@
 import PostActionButton from "./PostActionButton";
+import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 import styles from "./PostAction.module.scss";
 
@@ -31,18 +34,21 @@ export default function PostAction() {
 		<div className={styles.post_action_container}>
 			<PostActionButton
 				increment={increment}
-				content="views"
+				content="like"
 				count={postData.replys.count}
+				Icon={<FavoriteBorderOutlinedIcon />}
 			/>
 			<PostActionButton
 				increment={increment}
-				content="views"
+				content="reply"
 				count={postData.likes.count}
+				Icon={<ChatBubbleOutlineOutlinedIcon />}
 			/>
 			<PostActionButton
 				increment={increment}
-				content="views"
+				content="view"
 				count={postData.views.count}
+				Icon={<VisibilityOutlinedIcon />}
 			/>
 		</div>
 	);

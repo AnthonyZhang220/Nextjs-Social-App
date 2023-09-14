@@ -11,16 +11,15 @@ interface TabProps {
 
 export default function Tab(props: TabProps) {
 	return (
-		<option
+		<div
 			className={styles.tab}
 			style={{
 				fontSize: props.fontSize,
 				padding: `${props.pY} ${props.pY}`,
 				borderRadius: props.borderRadius,
 			}}
-			value={props.value}
 		>
 			{props.label.toUpperCase()}
-		</option>
+		</div>
 	);
 }

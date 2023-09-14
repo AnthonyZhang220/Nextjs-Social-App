@@ -11,12 +11,34 @@
 		}
 
 		.draft_body {
-			
+			display: flex;
+			flex-direction: column;
+			flex-grow: 1;
 			.draft_form {
-				display: flex;
-				flex-direction: column;
+				padding: 5px;
 
-				.draft_username {
+				.draft_userinput {
+					line-height: 30px;
+					display: inline-block;
+					width: 100%;
+					padding: 11px;
+					border: none;
+					background-color: inherit;
+					font-size: 20px;
+					outline: none;
+
+					&:focus + .draft_visible {
+						display: block;
+					}
+				}
+
+				.draft_visible {
+					padding: 11px;
+					display: none;
+					border-top: none;
+					border-left: none;
+					border-right: none;
+					border-bottom: 1px solid rgb(47, 51, 54);
 				}
 
 				.draft_content {
@@ -27,6 +49,13 @@
 					display: flex;
 					justify-content: space-between;
 					align-items: flex-end;
+
+					.draft_attachment {
+						display: flex;
+						flex-direction: row;
+					}
+					.draft_post {
+					}
 				}
 			}
 		}

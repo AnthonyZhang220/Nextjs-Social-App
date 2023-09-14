@@ -24,12 +24,12 @@ function Post(props: PostData) {
 					<Avatar avatar_src={avatar} size={45} />
 				</div>
 				<div className={styles.post_body}>
-					<div className={styles.post_username}>
+					<div className={styles.post_user}>
 						<Link href={profile_url || ""}>
-							<span>{displayName}</span>
+							<span className={styles.post_displayname}>{displayName}</span>
 						</Link>
 						<Link href={profile_url || ""}>
-							<span>@{username}</span>
+							<span className={styles.post_username}>@{username}</span>
 						</Link>
 					</div>
 					<div className={styles.post_content}>
@@ -38,10 +38,7 @@ function Post(props: PostData) {
 					<div className={styles.post_image}>
 						<Image
 							src={image}
-							width={500}
-							height={300}
 							alt={username}
-							borderRadius={12}
 						/>
 					</div>
 					<PostAction />

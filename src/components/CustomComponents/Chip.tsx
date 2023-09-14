@@ -6,10 +6,10 @@ interface ChipProps {
 	link: string;
 	label: string;
 	Icon: JSX.Element;
-	height?: number | 50;
+	fontSize?: number | 100;
 }
 
-const Chip: React.FC<ChipProps> = ({ height, link, label, Icon }) => {
+const Chip: React.FC<ChipProps> = ({ fontSize, link, label, Icon }) => {
 	return (
 		<Link href={link} className={styles.chip}>
 			<div className={styles.chip_container}>

@@ -14,11 +14,10 @@ export default function Card(props: CardProps) {
 				</div>
 				<div className={styles.card_content}>
 					<div>
-						<p></p>
+						<p>123</p>
 					</div>
 				</div>
 				<div className={styles.card_action}>
-					<button></button>
 				</div>
 			</section>
 		</div>

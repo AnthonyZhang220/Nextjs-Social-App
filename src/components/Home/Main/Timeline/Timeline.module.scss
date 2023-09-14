@@ -11,6 +11,9 @@
 		justify-content: space-around;
 		align-items: center;
 		cursor: pointer;
-
 	}
+}
+
+.timeline > div {
+	flex: 0 1 auto;
 }

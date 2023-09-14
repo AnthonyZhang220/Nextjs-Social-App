@@ -4,6 +4,7 @@ import Icon from "@/components/CustomComponents/Icon";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlined";
 
 import Link from "next/link";
 import styles from "./Draft.module.scss";
@@ -20,24 +21,37 @@ export default function Draft() {
 				</div>
 				<div className={styles.draft_body}>
 					<form action="/" className={styles.draft_form}>
-						<div>
-							<label htmlFor=""></label>
-							<input type="text" name="content" />
+						<input
+							className={styles.draft_userinput}
+							type="text"
+							name="content"
+							placeholder="What's happening?"
+						/>
+						<div className={styles.draft_visible}>
+							<select name="visibility">
+								<option value="everyone">Everyone</option>
+								<option value="friends">Friends Only</option>
+								<option value="me">Me Only</option>
+							</select>
 						</div>
 						<div className={styles.draft_action}>
-							<Icon component={<ImageOutlinedIcon />} />
-							<Icon component={<EmojiEmotionsOutlinedIcon />} />
-							<Icon component={<LocationOnOutlinedIcon />} />
-							<Icon src={""} height={10} width={10} />
-							<Link href="/" style={{ display: "block" }}>
-								<Button
-									text="Post"
-									radius={14}
-									bgColor="#1d9bf0"
-									paddingX={15}
-									paddingY={5}
-								/>
-							</Link>
+							<div className={styles.draft_attachment}>
+								<Icon component={<ImageOutlinedIcon />} />
+								<Icon component={<EmojiEmotionsOutlinedIcon />} />
+								<Icon component={<LocationOnOutlinedIcon />} />
+								<Icon component={<AlternateEmailOutlinedIcon />} />
+							</div>
+							<div className={styles.draft_post}>
+								<Link href="/" style={{ display: "block" }}>
+									<Button
+										label="Post"
+										radius={14}
+										bgColor="#1d9bf0"
+										paddingX={15}
+										paddingY={5}
+									/>
+								</Link>
+							</div>
 						</div>
 					</form>
 				</div>
