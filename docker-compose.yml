@@ -1,0 +1,14 @@
+version: '24.0.5'
+services:
+  postgres:
+    image: "postgres:${POSTGRESQL_VERSION}"
+    restart: always
+    environment:
+      - "POSTGRES_USER=${DB_USER}"
+      - "POSTGRES_PASSWORD=${DB_PASSWORD}"
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+volumes:
+  postgres:

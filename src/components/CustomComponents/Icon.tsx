@@ -7,7 +7,7 @@ interface IconProps {
 
 const Icon = (props: IconProps) => {
 	return (
-		<>
+		<div>
 			{props.component ? (
 				<div>{props.component}</div>
 			) : (
@@ -20,7 +20,7 @@ const Icon = (props: IconProps) => {
 					/>
 				</div>
 			)}
-		</>
+		</div>
 	);
 };
 

@@ -16,24 +16,33 @@
 			display: flex;
 			flex-direction: column;
 
-			.post_displayname {
-				margin-right: 4px;
-			}
-			.post_username {
-				font-size: 14px;
+			.post_user {
+				margin-bottom: 2px;
+
+				.post_displayname {
+					margin-right: 4px;
+				}
+				.post_username {
+					font-size: 14px;
+				}
 			}
 
 			.post_content {
-				margin: 11px 0;
 				font-size: 14px;
 			}
 
-			.post_image {
-				width: 100%;
+			.post_media {
+				.post_image {
+					width: 100%;
+				}
 			}
-		}
-		.post_body > div {
-			margin-bottom: 2px;
+			.post_media > div {
+				margin-top: 11px;
+			}
+
+			.post_action {
+				margin-top: 11px;
+			}
 		}
 	}
 }

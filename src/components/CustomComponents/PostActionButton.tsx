@@ -5,13 +5,14 @@ interface PostActionButtonProps {
 	content: string;
 	Icon?: JSX.Element;
 	count: number;
+	fontSize?: number;
 }
 
 export default function PostActionButton(props: PostActionButtonProps) {
 	return (
 		<div className={styles.post_action_button}>
 			<div>{props.Icon}</div>
-			<div>
+			<div style={{ fontSize: props.fontSize }}>
 				<span>{props.count}</span>
 			</div>
 		</div>

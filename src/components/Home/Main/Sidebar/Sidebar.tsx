@@ -10,13 +10,6 @@ function Sidebar() {
 				<Card title="Following" />
 				<Card title="Following" />
 				<Card title="Following" />
-				<Card title="Following" />
-				<Card title="Following" />
-				<Card title="Following" />
-				<Card title="Following" />
-				<Card title="Following" />
-				<Card title="Following" />
-				<Card title="Following" />
 			</aside>
 		</div>
 	);

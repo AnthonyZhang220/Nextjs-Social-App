@@ -5,18 +5,20 @@
 	.draft_container {
 		display: flex;
 		flex-direction: row;
+		padding: 11px 0;
 
 		.draft_avatar {
 			flex-basis: 38px;
+			margin-right: 11px;
 		}
 
 		.draft_body {
 			display: flex;
 			flex-direction: column;
-			flex-grow: 1;
-			.draft_form {
-				padding: 5px;
+			// flex: 1 1 auto;
+			width: 100%;
 
+			.draft_form {
 				.draft_userinput {
 					line-height: 30px;
 					display: inline-block;
@@ -27,18 +29,22 @@
 					font-size: 20px;
 					outline: none;
 
-					&:focus + .draft_visible {
+					&:focus + .draft_visibility {
 						display: block;
 					}
 				}
 
-				.draft_visible {
+				.draft_visibility {
 					padding: 11px;
 					display: none;
 					border-top: none;
 					border-left: none;
 					border-right: none;
 					border-bottom: 1px solid rgb(47, 51, 54);
+
+					&:focus {
+						display: block;
+					}
 				}
 
 				.draft_content {
@@ -48,20 +54,27 @@
 				.draft_action {
 					display: flex;
 					justify-content: space-between;
-					align-items: flex-end;
+					align-items: center;
 
 					.draft_attachment {
 						display: flex;
 						flex-direction: row;
+						gap: 11px;
+						vertical-align: baseline;
 					}
+
+					.draft_attachment * {
+						display: block;
+					}
+
 					.draft_post {
 					}
 				}
 			}
 		}
-	}
-}
 
-.draft * {
-	padding: 2px;
+		.draft_body > div {
+			margin-bottom: 2px;
+		}
+	}
 }

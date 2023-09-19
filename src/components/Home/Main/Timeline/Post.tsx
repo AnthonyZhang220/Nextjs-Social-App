@@ -35,13 +35,14 @@ function Post(props: PostData) {
 					<div className={styles.post_content}>
 						<span>{content}</span>
 					</div>
-					<div className={styles.post_image}>
-						<Image
-							src={image}
-							alt={username}
-						/>
+					<div className={styles.post_media}>
+						<div className={styles.post_image}>
+							<Image src={image} alt={username} />
+						</div>
 					</div>
-					<PostAction />
+					<div className={styles.post_action}>
+						<PostAction />
+					</div>
 				</div>
 			</div>
 		</article>

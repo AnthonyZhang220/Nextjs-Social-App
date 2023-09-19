@@ -36,19 +36,30 @@ export default function PostAction() {
 				increment={increment}
 				content="like"
 				count={postData.replys.count}
-				Icon={<FavoriteBorderOutlinedIcon />}
+				fontSize={12}
+				Icon={
+					<FavoriteBorderOutlinedIcon sx={{ fontSize: 12, display: "block" }} />
+				}
 			/>
 			<PostActionButton
 				increment={increment}
 				content="reply"
 				count={postData.likes.count}
-				Icon={<ChatBubbleOutlineOutlinedIcon />}
+				fontSize={12}
+				Icon={
+					<ChatBubbleOutlineOutlinedIcon
+						sx={{ fontSize: 12, display: "block" }}
+					/>
+				}
 			/>
 			<PostActionButton
 				increment={increment}
 				content="view"
 				count={postData.views.count}
-				Icon={<VisibilityOutlinedIcon />}
+				fontSize={12}
+				Icon={
+					<VisibilityOutlinedIcon sx={{ fontSize: 12, display: "block" }} />
+				}
 			/>
 		</div>
 	);
