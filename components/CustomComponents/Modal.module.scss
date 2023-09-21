@@ -1,0 +1,16 @@
+.modal {
+	position: fixed;
+	z-index: 1;
+	left: 50%;
+	top: 50%;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+
+	.modal_container {
+		background-color: #f1f2f3;
+		margin: 20% auto;
+		padding: 20px 10px;
+		box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.16);
+	}
+}
