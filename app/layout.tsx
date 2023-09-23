@@ -9,14 +9,16 @@ export const metadata: Metadata = {
 	description: "Created by NextJS, Typescript and React.",
 };
 
-export default function RootLayout({
-	children,
-}: {
+export default function RootLayout(props: {
 	children: React.ReactNode;
+	auth: React.ReactNode;
 }) {
 	return (
 		<html lang="en">
-			<body className={inter.className}>{children}</body>
+			<body className={inter.className}>
+				{props.children}
+				{props.auth}
+			</body>
 		</html>
 	);
 }

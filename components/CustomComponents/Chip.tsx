@@ -5,7 +5,7 @@ import Link from "next/link";
 interface ChipProps {
 	link: string;
 	label: string;
-	Icon: React.FC;
+	Icon: JSX.Element;
 	fontSize?: number | 100;
 }
 
@@ -14,7 +14,7 @@ const Chip: React.FC<ChipProps> = ({ fontSize, link, label, Icon }) => {
 		<Link href={link} className={styles.chip}>
 			<div className={styles.chip_container}>
 				<div>
-					<Icon />
+					{Icon}
 				</div>
 				<div className={styles.chip_content}>
 					<span>{label.toUpperCase()}</span>

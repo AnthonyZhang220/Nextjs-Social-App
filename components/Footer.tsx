@@ -1,6 +1,7 @@
+// import Link from "next/link";
 import styles from "./Footer.module.scss";
 
-interface Link {
+interface LinkRef {
 	label: string;
 	link: string;
 	type?: string;
@@ -8,7 +9,7 @@ interface Link {
 
 interface footerData {
 	category: string;
-	list: Array<Link>;
+	list: Array<LinkRef>;
 }
 
 const footerData = [
@@ -27,7 +28,7 @@ export default function Footer() {
 					<div className={styles.footer_site} key={index}>
 						<h4>{category}</h4>
 						{list.map(({ label, link }) => (
-							<a href={link}>{label}</a>
+							<a key={link} href={link}>{label}</a>
 						))}
 					</div>
 				))}

@@ -1,6 +1,4 @@
-import LeftNav from "../../../components/Home/LeftNav/LeftNav";
-import Timeline from "../../../components/Home/Timeline/Timeline";
-import Sidebar from "../../../components/Home/Sidebar/Sidebar";
+import LeftNav from "../../components/Home/LeftNav/LeftNav";
 
 import styles from "./page.module.scss";
 

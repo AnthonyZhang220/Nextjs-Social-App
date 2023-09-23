@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Chat / NextJS Social App",
+	title: "Auth / NextJS Social App",
 	description: "Created by NextJS, Typescript and React.",
 };
 
@@ -10,5 +10,5 @@ export default function AuthLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return { children };
+	return children;
 }

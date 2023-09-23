@@ -1,9 +1,9 @@
 import Link from "next/link";
+
 import Searchbar from "./CustomComponents/Searchbar";
 import SearchIcon from "@mui/icons-material/Search";
 import Button from "./CustomComponents/Button";
 import styles from "./Header.module.scss";
-import Search from "@mui/icons-material/Search";
 
 export default function Header() {
 	return (
@@ -30,24 +30,28 @@ export default function Header() {
 					</div>
 					<div className={styles.navbar_button}>
 						<div className={styles.navbar_signup}>
-							<Button
-								label="Login"
-								color="#121314"
-								bgColor="#ffffff"
-								radius={10}
-								paddingX={10}
-								paddingY={5}
-							/>
+							<Link href="/login">
+								<Button
+									label="Login"
+									color="#121314"
+									bgColor="#ffffff"
+									radius={10}
+									paddingX={10}
+									paddingY={5}
+								/>
+							</Link>
 						</div>
 						<div className={styles.navbar_login}>
-							<Button
-								label="Sign Up"
-								color="#ffffff"
-								bgColor="#1d9bf0"
-								radius={10}
-								paddingX={10}
-								paddingY={5}
-							/>
+							<Link href="/signup">
+								<Button
+									label="Sign Up"
+									color="#ffffff"
+									bgColor="#1d9bf0"
+									radius={10}
+									paddingX={10}
+									paddingY={5}
+								/>
+							</Link>
 						</div>
 					</div>
 				</nav>
