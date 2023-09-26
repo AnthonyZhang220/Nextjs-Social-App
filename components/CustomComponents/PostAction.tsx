@@ -1,3 +1,5 @@
+"use client";
+
 import { PostActionButton } from "./PostActionButton";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";

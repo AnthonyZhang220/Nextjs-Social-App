@@ -1,0 +1,14 @@
+.chatdetail {
+	display: flex;
+	flex-direction: column;
+	min-width: 600px;
+	border-left: 1px solid rgb(47, 51, 54);
+	border-right: 1px solid rgb(47, 51, 54);
+
+	.chatdetail_header {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		border-bottom: inset;
+	}
+}

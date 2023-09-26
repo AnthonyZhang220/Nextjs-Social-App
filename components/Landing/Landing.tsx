@@ -1,3 +1,5 @@
+'use client'
+
 import styles from "./Landing.module.scss"
 
 function Landing() {

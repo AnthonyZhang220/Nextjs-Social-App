@@ -1,4 +1,4 @@
-import Card from "../../CustomComponents/Card";
+import Card from "../CustomComponents/Card";
 import styles from "./Sidebar.module.scss";
 
 function Sidebar() {

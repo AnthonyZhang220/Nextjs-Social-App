@@ -1,16 +1,16 @@
-interface IconProps {
+"use client";
+
+type IconProps = {
 	src?: string;
 	width?: number;
 	height?: number;
 	component?: JSX.Element;
 }
 
-const Icon = (props: IconProps) => {
+function Icon(props: IconProps) {
 	return (
-		<div>
-			{props.component ? (
-				<div>{props.component}</div>
-			) : (
+		<>
+			{props.component ?? (
 				<div style={{ width: props.width, height: props.height }}>
 					<img
 						src={props.src}
@@ -20,8 +20,8 @@ const Icon = (props: IconProps) => {
 					/>
 				</div>
 			)}
-		</div>
+		</>
 	);
-};
+}
 
 export default Icon;

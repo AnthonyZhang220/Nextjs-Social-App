@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./PostActionButton.module.scss";
 
 interface PostActionButtonProps {

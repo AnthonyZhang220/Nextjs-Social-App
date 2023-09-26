@@ -1,3 +1,4 @@
+"use client";
 import Avatar from "./Avatar";
 import styles from "./ChatTab.module.scss";
 

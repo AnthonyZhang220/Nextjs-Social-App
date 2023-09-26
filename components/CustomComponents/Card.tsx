@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./Card.module.scss";
 
 interface CardProps {
@@ -17,8 +19,7 @@ export default function Card(props: CardProps) {
 						<p>123</p>
 					</div>
 				</div>
-				<div className={styles.card_action}>
-				</div>
+				<div className={styles.card_action}></div>
 			</section>
 		</div>
 	);

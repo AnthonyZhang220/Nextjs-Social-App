@@ -1,3 +1,5 @@
+"use client"
+
 interface AvatarProps {
 	avatar_src: string | undefined;
 	size: number;

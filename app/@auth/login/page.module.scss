@@ -1,3 +1,34 @@
 .login {
-    
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+
+	.login .login_form {
+		display: flex;
+		flex-direction: column;
+
+		div {
+			margin: 2px;
+		}
+	}
+
+	.divider {
+		font-size: 20px;
+		display: flex;
+		align-items: center;
+	}
+
+	.divider::before,
+	.divider::after {
+		flex: 1;
+		content: "";
+		padding: 1px;
+		background-color: #f1f2f3;
+		border-radius: 4px;
+		margin: 2px;
+	}
+}
+
+.login  div {
+	margin: 5px 0;
 }

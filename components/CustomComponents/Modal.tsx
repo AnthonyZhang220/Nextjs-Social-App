@@ -1,5 +1,7 @@
 "use client";
 
+"use client";
+
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import styles from "./Modal.module.scss";
@@ -12,6 +14,7 @@ type ModalProps = {
 
 export default function Modal(props: ModalProps) {
 	const [openModal, setOpenModal] = useState(false);
+
 	return (
 		<div className={styles.modal}>
 			<div className={styles.modal_container}>

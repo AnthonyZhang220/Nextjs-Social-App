@@ -1,18 +1,18 @@
-import Avatar from "../../CustomComponents/Avatar";
-import PostAction from "../../CustomComponents/PostAction";
-import Image from "../../CustomComponents/Image";
+import Avatar from "../CustomComponents/Avatar";
+import PostAction from "../CustomComponents/PostAction";
+import Image from "../CustomComponents/Image";
 import Link from "next/link";
 
 import styles from "./Post.module.scss";
 
-interface PostData {
+type PostData = {
 	avatar?: string;
 	profile_url?: string;
 	displayName: string;
 	username: string;
 	image?: string;
 	content: string;
-}
+};
 
 function Post(props: PostData) {
 	const { avatar, username, image, content, displayName, profile_url } = props;

@@ -1,38 +1,11 @@
-import Draft from "./Draft";
-import Post from "./Post";
-import Tab from "../../CustomComponents/Tab";
+import Draft from "../Draft/Draft";
+import Post from "../Post/Post";
+import Tab from "../CustomComponents/Tab";
 import styles from "./Timeline.module.scss";
 
 export default function Timeline() {
 	return (
 		<section className={styles.timeline}>
-			<Draft />
-			<div className={styles.timeline_tabgroup}>
-				<Tab
-					value="posts"
-					label="posts"
-					fontSize={16}
-					pX={8}
-					pY={4}
-					borderRadius={0}
-				/>
-				<Tab
-					value="replies"
-					label="replies"
-					fontSize={16}
-					pX={8}
-					pY={4}
-					borderRadius={0}
-				/>
-				<Tab
-					value="likes"
-					label="likes"
-					fontSize={16}
-					pX={8}
-					pY={4}
-					borderRadius={0}
-				/>
-			</div>
 			{posts.map((data, index) => (
 				<Post {...data} key={index} />
 			))}

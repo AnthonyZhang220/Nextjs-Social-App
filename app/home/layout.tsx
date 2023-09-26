@@ -1,6 +1,6 @@
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 import type { Metadata } from "next";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/Footer";
 
 export const metadata: Metadata = {
 	title: "Home / NextJS Social App",

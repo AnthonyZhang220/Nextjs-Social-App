@@ -1,6 +1,8 @@
-import Avatar from "../../CustomComponents/Avatar";
-import Button from "../../CustomComponents/Button";
-import Icon from "../../CustomComponents/Icon";
+"use client";
+
+import Avatar from "../CustomComponents/Avatar";
+import Button from "../CustomComponents/Button";
+import Icon from "../CustomComponents/Icon";
 import ImageOutlinedIcon from "@mui/icons-material/ImageOutlined";
 import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -20,19 +22,18 @@ export default function Draft() {
 					<Avatar avatar_src={url} size={45} />
 				</div>
 				<div className={styles.draft_body}>
-					<form action="/" className={styles.draft_form}>
-						<input
+					<div className={styles.draft_form}>
+						<div
 							className={styles.draft_userinput}
-							type="text"
-							placeholder="What's happening?"
-						/>
-						<div>
-							<select name="visibility" className={styles.draft_visibility}>
-								<option value="everyone">Everyone</option>
-								<option value="friends">Friends Only</option>
-								<option value="me">Me Only</option>
-							</select>
+							contentEditable="true"
+						>
+							What's happening?
 						</div>
+						<select name="visibility" className={styles.draft_visibility}>
+							<option value="everyone">Everyone</option>
+							<option value="friends">Friends Only</option>
+							<option value="me">Me Only</option>
+						</select>
 						<div className={styles.draft_action}>
 							<div className={styles.draft_attachment}>
 								<Icon component={<ImageOutlinedIcon />} />
@@ -52,7 +53,7 @@ export default function Draft() {
 								</Link>
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
 			</div>
 		</section>

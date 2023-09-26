@@ -1,0 +1,19 @@
+.chatlist {
+	display: flex;
+	flex-direction: column;
+	max-width: 400px;
+	border-left: 1px solid rgb(47, 51, 54);
+	border-right: 1px solid rgb(47, 51, 54);
+
+	.chatlist_tabgroup {
+		padding: 0 14px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		cursor: pointer;
+	}
+}
+
+.chatlist > div {
+	flex: 0 1 auto;
+}
