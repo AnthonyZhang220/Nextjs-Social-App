@@ -13,7 +13,6 @@ export default function App() {
 					<Landing />
 				</div>
 			</main>
-			<Footer />
 		</div>
 	);
 }

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 interface AvatarProps {
 	avatar_src: string | undefined;
@@ -14,7 +14,7 @@ export default function Avatar(props: AvatarProps) {
 			alt={avatar_src}
 			width={size}
 			height={size}
-			style={{ borderRadius: "50%" }}
+			style={{ borderRadius: "50%", display: "block" }}
 		/>
 	);
 }

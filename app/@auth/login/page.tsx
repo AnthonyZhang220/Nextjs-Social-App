@@ -7,11 +7,8 @@ import styles from "./page.module.scss";
 
 export default function Login() {
 	return (
-		<Modal>
+		<Modal title="Sign in to X" buttonContent="Save">
 			<div className={styles.login}>
-				<div className={styles.login_title}>
-					<h3>Sign in to X</h3>
-				</div>
 				<div className={styles.login_cred}>
 					<form action="" className={styles.login_form}>
 						<label htmlFor="email">Email:</label>

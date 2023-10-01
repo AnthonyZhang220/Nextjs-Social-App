@@ -23,12 +23,11 @@ export default function Draft() {
 				</div>
 				<div className={styles.draft_body}>
 					<div className={styles.draft_form}>
-						<div
+						<input
 							className={styles.draft_userinput}
 							contentEditable="true"
-						>
-							What's happening?
-						</div>
+							placeholder="What's happening"
+						/>
 						<select name="visibility" className={styles.draft_visibility}>
 							<option value="everyone">Everyone</option>
 							<option value="friends">Friends Only</option>

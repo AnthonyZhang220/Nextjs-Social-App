@@ -7,15 +7,19 @@ import styles from "./page.module.scss";
 export default function Chat() {
 	return (
 		<main className={styles.main}>
-			<div className={styles.main_container}>
-				<div className={styles.main_leftnav}>
+			<div className={styles.leftnav}>
+				<div className={styles.menu}>
 					<LeftNav />
 				</div>
-				<div className={styles.main_timeline}>
+			</div>
+			<div className={styles.main_content}>
+				<div className={styles.chatlist}>
 					<ChatList />
 				</div>
-				<div className={styles.main_chatdetail}>
-					<ChatDetail />
+				<div className={styles.chatdetail}>
+					<div className={styles.chatdetail_container}>
+						<ChatDetail createdAt={new Date()} />
+					</div>
 				</div>
 			</div>
 		</main>

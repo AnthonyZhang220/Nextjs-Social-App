@@ -1,6 +1,5 @@
 import Header from "../../components/Header/Header";
 import type { Metadata } from "next";
-import Footer from "../../components/Footer/Footer";
 
 export const metadata: Metadata = {
 	title: "Home / NextJS Social App",
@@ -16,7 +15,6 @@ export default function HomeLayout({
 		<div className="home">
 			<Header />
 			{children}
-			<Footer />
 		</div>
 	);
 }

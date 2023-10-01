@@ -31,6 +31,7 @@ function LeftNav() {
 					Icon={
 						pathname === "/home" ? <HomeRoundedIcon /> : <HomeOutlinedIcon />
 					}
+					selected={pathname === "/home"}
 				/>
 				<Chip
 					link={"./moment"}
@@ -42,6 +43,7 @@ function LeftNav() {
 							<CameraOutlinedIcon />
 						)
 					}
+					selected={pathname === "/moment"}
 				/>
 				<Chip
 					link={"./discover"}
@@ -53,6 +55,7 @@ function LeftNav() {
 							<ExploreOutlinedIcon />
 						)
 					}
+					selected={pathname === "/discover"}
 				/>
 				<Chip
 					link={"./notification"}
@@ -64,6 +67,7 @@ function LeftNav() {
 							<NotificationsOutlinedIcon />
 						)
 					}
+					selected={pathname === "/notification"}
 				/>
 				<Chip
 					link={"./chat"}
@@ -71,6 +75,7 @@ function LeftNav() {
 					Icon={
 						pathname === "/chat" ? <ChatRoundedIcon /> : <ChatOutlinedIcon />
 					}
+					selected={pathname === "/chat"}
 				/>
 				<Chip
 					link={"./me"}
@@ -78,6 +83,7 @@ function LeftNav() {
 					Icon={
 						pathname === "/me" ? <PersonRoundedIcon /> : <PersonOutlinedIcon />
 					}
+					selected={pathname === "/me"}
 				/>
 			</div>
 		</nav>

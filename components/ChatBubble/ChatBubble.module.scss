@@ -1,30 +1,25 @@
 .chatbubble {
-	border-radius: 4px;
 	display: flex;
 	gap: 2px;
 	padding: 5px;
 
 	.chatbubble_container {
+		display: flex;
+		border-radius: 8px;
 		background-color: white;
-		margin: 5px;
-		position: relative;
+		margin: 0 5px;
+		outline-style: none;
 
-		&:after {
-			content: "";
-			position: absolute;
-			right: 0;
-			top: 50%;
-			width: 0;
-			height: 0;
-			border: 20px solid transparent;
-			border-left-color: white;
-			border-right: 0;
-			border-bottom: 0;
-			margin-top: -10px;
-			margin-right: -20px;
+		.content {
+			padding: 5px;
+			font-size: 14px;
+			text-align: left;
+			color: black;
+			word-break: break-word;
 		}
 	}
 
 	.chatbubble_avatar {
+		display: block;
 	}
 }

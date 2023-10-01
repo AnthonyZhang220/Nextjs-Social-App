@@ -19,7 +19,7 @@
 		.listitem_body {
 			display: flex;
 			flex-direction: column;
-			overflow: hidden;
+			min-width: 0;
 
 			.listitem_user {
 				margin-bottom: 2px;
@@ -34,6 +34,7 @@
 
 			.listitem_content {
 				font-size: 14px;
+				overflow: hidden;
 
 				span {
 					white-space: nowrap;

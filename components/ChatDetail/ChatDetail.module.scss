@@ -1,14 +1,51 @@
 .chatdetail {
 	display: flex;
 	flex-direction: column;
-	min-width: 600px;
-	border-left: 1px solid rgb(47, 51, 54);
-	border-right: 1px solid rgb(47, 51, 54);
-
-	.chatdetail_header {
+	height: calc(100vh - 64px);
+	
+	& > div {
+		padding: 5px;
+	}
+	
+	.chatdetail_body {
 		display: flex;
 		flex-direction: column;
-		text-align: center;
-		border-bottom: inset;
+		min-height: 0px;
+		overflow-y: auto;
+
+		.chatdetail_profile {
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			border-bottom: 1px inset;
+		}
+
+		.chatdetail_conversation {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	.chatdetail_input {
+		border-top: 1px solid rgb(47, 51, 54);
+		background-color: inherit;
+		padding: 10px 15px;
+
+		.chatdetail_media {
+			position: absolute;
+			left: 0;
+			top: 50%;
+		}
+
+		.chatdetail_box {
+			background-color: #202327;
+			border-radius: 8px;
+			padding: 10px 15px;
+			outline: none;
+
+			[data-placeholder]:empty:before {
+				content: attr(data-placeholder);
+			}
+		}
 	}
 }

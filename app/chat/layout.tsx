@@ -17,7 +17,6 @@ export default function ChatLayout({
 		<div className="chat">
 			<Header />
 			{children}
-			<Footer />
 		</div>
 	);
 }

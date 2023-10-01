@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 
 export default function Signup() {
 	return (
-		<Modal>
+		<Modal title="Sign up" buttonContent="Next">
 			<div className={styles.login}>
 				<div className={styles.login_title}>
 					<h4>Create a account</h4>

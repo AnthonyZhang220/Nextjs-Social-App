@@ -1,17 +1,37 @@
 .main {
 	display: flex;
-	justify-content: center;
-	align-items: center;
 	margin: 0 auto;
-	max-width: 1336px;
+	max-width: 1200px;
+	height: 100%;
 
-	.main_container {
-		display: flex;
-		flex-direction: row;
+	.leftnav {
+		flex: 0 1 auto;
 		gap: 14px;
 
-		.main_leftnav {
-			flex-basis: 220px;
+		.menu {
+			position: sticky;
+			top: 64px;
+		}
+	}
+
+	.main_content {
+		display: flex;
+		flex: 1 1 auto;
+		gap: 14px;
+
+		.timeline {
+			flex: 1 1 700px;
+		}
+
+		.sidebar {
+			display: flex;
+			flex-direction: column;
+			flex: 1 1 300px;
+
+			.sidebar_container {
+				position: sticky;
+				top: 64px;
+			}
 		}
 	}
 }

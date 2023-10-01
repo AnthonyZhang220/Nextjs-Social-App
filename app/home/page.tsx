@@ -1,22 +1,34 @@
 import LeftNav from "../../components/LeftNav/LeftNav";
 import Timeline from "../../components/Timeline/Timeline";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import Draft from "../../components/Draft/Draft";
+import Footer from "../../components/Footer/Footer";
+import PostLoading from "../../components/Post/PostLoading";
+import { Suspense } from "react";
 
 import styles from "./page.module.scss";
-import Draft from "../../components/Draft/Draft";
 
 export default function Home() {
 	return (
 		<main className={styles.main}>
-			<div className={styles.main_container}>
-				<div className={styles.main_leftnav}>
+			<div className={styles.leftnav}>
+				<div className={styles.menu}>
 					<LeftNav />
 				</div>
-				<div className={styles.main_timeline}>
+			</div>
+			<div className={styles.main_content}>
+				<div className={styles.timeline}>
 					<Draft />
-					<Timeline />
+					<Suspense fallback={<PostLoading />}>
+						<Timeline />
+					</Suspense>
 				</div>
-				<Sidebar />
+				<div className={styles.sidebar}>
+					<div className={styles.sidebar_container}>
+						<Sidebar />
+						<Footer />
+					</div>
+				</div>
 			</div>
 		</main>
 	);

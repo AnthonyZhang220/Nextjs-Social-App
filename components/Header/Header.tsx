@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
+import Dropdown from "../Dropdown/Dropdown";
 import Avatar from "../CustomComponents/Avatar";
 import Searchbar from "../CustomComponents/Searchbar";
 import SearchIcon from "@mui/icons-material/Search";
@@ -11,6 +13,10 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
 	const { data: session } = useSession();
+	const [open, setOpen] = useState(false);
+	const handleOpenProfileDropdown = () => {
+		setOpen(!open);
+	};
 
 	return (
 		<header className={styles.header}>
@@ -39,7 +45,19 @@ export default function Header() {
 
 					{session ? (
 						session?.user ? (
-							<Avatar avatar_src={session.user.image ?? undefined} size={30} />
+							<div onClick={() => handleOpenProfileDropdown()}>
+								<Avatar
+									avatar_src={session.user.image ?? undefined}
+									size={30}
+								/>
+								{open ? (
+									<Dropdown>
+										<Link href="/logout" onClick={() => signOut()}>
+											Logout
+										</Link>
+									</Dropdown>
+								) : null}
+							</div>
 						) : null
 					) : (
 						<div className={styles.navbar_button}>

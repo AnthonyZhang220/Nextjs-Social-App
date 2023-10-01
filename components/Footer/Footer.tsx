@@ -23,12 +23,12 @@ export default function Footer() {
 	return (
 		<footer className={styles.footer}>
 			<div className={styles.footer_column_grid}>
-				<div className={styles.footer_logo}>Social App</div>
 				{footerData.map(({ category, list }, index) => (
 					<div className={styles.footer_site} key={index}>
-						<h4>{category}</h4>
 						{list.map(({ label, link }) => (
-							<a key={link} href={link}>{label}</a>
+							<a key={link} href={link}>
+								{label}
+							</a>
 						))}
 					</div>
 				))}
