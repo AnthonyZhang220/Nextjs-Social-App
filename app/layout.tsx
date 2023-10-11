@@ -1,6 +1,6 @@
-import "./globals.scss";
+import "../styles/sass/globals.scss";
 import type { Metadata } from "next";
-import SessionProvider from "../components/Providers/SessionProvider";
+import SessionProvider from "../components/layout/SessionProvider";
 import { getServerSession } from "next-auth";
 import { Inter } from "next/font/google";
 

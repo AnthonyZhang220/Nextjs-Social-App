@@ -1,5 +1,5 @@
-import Modal from "../../../components/CustomComponents/Modal";
-import Searchbar from "../../../components/CustomComponents/Searchbar";
+import Modal from "../../../components/components/Modal";
+import Searchbar from "../../../components/components/Searchbar";
 import styles from "./page.module.scss";
 
 export default function Signup() {

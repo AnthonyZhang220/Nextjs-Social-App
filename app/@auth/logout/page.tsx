@@ -1,12 +1,12 @@
 "use client";
 
-import Modal from "../../../components/CustomComponents/Modal";
-import Button from "../../../components/CustomComponents/Button";
+import Modal from "../../../components/components/Modal";
+import Button from "../../../components/components/Button";
 import styles from "./page.module.scss";
 
 export default function Logout() {
 	return (
-		<Modal title="Logout" buttonContent="Next">
+		<Modal title="Logout" buttonContent="Next" toggleModal={() => {}}>
 			<div className={styles.logout}>
 				<div></div>
 				<Button label="Return to login page" bgColor="" radius={16} />

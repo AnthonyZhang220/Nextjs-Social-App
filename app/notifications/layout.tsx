@@ -2,7 +2,7 @@ import Header from "../../components/layout/Header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Home / NextJS Social App",
+	title: "Notifications / NextJS Social App",
 	description: "Created by NextJS, Typescript and React.",
 };
 

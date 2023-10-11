@@ -2,14 +2,36 @@
 	display: flex;
 	margin: 0 auto;
 	max-width: 1200px;
+	height: 100%;
 
-	.main_container {
+	.leftnav {
+		flex: 0 1 auto;
+		margin: 0px 5px;
+
+		.menu {
+			position: sticky;
+			top: 64px;
+		}
+	}
+
+	.main_content {
 		display: flex;
-		flex-direction: row;
-		gap: 14px;
+		flex: 1 1 auto;
 
-		.main_leftnav {
-			flex-basis: 220px;
+		.timeline {
+			flex: 1 1 700px;
+		}
+
+		.sidebar {
+			display: flex;
+			flex-direction: column;
+			margin: 0px 5px;
+			flex: 1 1 300px;
+
+			.sidebar_container {
+				position: sticky;
+				top: 64px;
+			}
 		}
 	}
 }

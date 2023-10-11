@@ -1,6 +1,6 @@
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import Landing from "../components/Landing/Landing";
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
+import Landing from "../components/layout/Landing";
 
 import styles from "./page.module.scss";
 

@@ -1,23 +1,31 @@
-import LeftNav from "../../components/LeftNav/LeftNav";
-import Profile from "../../components/Profile/Profile";
-import Timeline from "../../components/Timeline/Timeline";
+import LeftNav from "../../components/layout/LeftNav";
+import Profile from "../../components/layout/Profile";
+import Sidebar from "../../components/layout/Sidebar";
+import Timeline from "../../components/layout/Timeline";
 
 import styles from "./page.module.scss";
 
 export default function User() {
 	return (
 		<main className={styles.main}>
-			<div className={styles.main_container}>
-				<div className={styles.main_leftnav}>
+			<div className={styles.leftnav}>
+				<div className={styles.menu}>
 					<LeftNav />
 				</div>
-				<div className={styles.main_timeline}>
+			</div>
+			<div className={styles.main_content}>
+				<div className={styles.timeline}>
 					<Profile
 						displayName={profile.displayName}
 						username={profile.username}
 						content={profile.content}
 					/>
 					<Timeline />
+				</div>
+				<div className={styles.sidebar}>
+					<div className={styles.sidebar_container}>
+						<Sidebar />
+					</div>
 				</div>
 			</div>
 		</main>

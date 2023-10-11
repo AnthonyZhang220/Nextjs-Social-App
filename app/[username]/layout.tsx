@@ -1,10 +1,10 @@
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
+import Header from "../../components/layout/Header";
+import Footer from "../../components/layout/Footer";
 
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Dashboard / NextJS Social App",
+	title: "Profile / NextJS Social App",
 	description: "Created by NextJS, Typescript and React.",
 };
 

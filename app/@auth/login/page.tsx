@@ -1,13 +1,24 @@
 "use client";
 
+import { useState } from "react";
 import { signIn } from "next-auth/react";
-import Modal from "../../../components/CustomComponents/Modal";
-import Button from "../../../components/CustomComponents/Button";
+import Modal from "../../../components/components/Modal";
+import Button from "../../../components/components/Button";
 import styles from "./page.module.scss";
 
 export default function Login() {
+	const [openModal, setOpenModal] = useState(false);
+	const toggleModal = () => {
+		setOpenModal(!openModal);
+	};
+
 	return (
-		<Modal title="Sign in to X" buttonContent="Save">
+		<Modal
+			title="Sign in to X"
+			buttonContent="Save"
+			isOpen={openModal}
+			toggleModal={toggleModal}
+		>
 			<div className={styles.login}>
 				<div className={styles.login_cred}>
 					<form action="" className={styles.login_form}>
@@ -24,7 +35,7 @@ export default function Login() {
 				<div className={styles.login_OAuth}>
 					<div
 						className={styles.login_OAuth_button}
-						onClick={() => signIn("google")}
+						onClick={() => signIn("google", { callbackUrl: "/home" })}
 					>
 						<Button
 							label="Coutinue with Google"
@@ -35,7 +46,7 @@ export default function Login() {
 					</div>
 					<div
 						className={styles.login_OAuth_button}
-						onClick={() => signIn("github")}
+						onClick={() => signIn("github", { callbackUrl: "/home" })}
 					>
 						<Button
 							label="Coutinue with Github"

@@ -17,16 +17,20 @@
 	.main_content {
 		display: flex;
 		flex: 1 1 auto;
+		border-right: 1px solid rgb(47, 51, 54);
 
-		.timeline {
-			flex: 1 1 700px;
+		.notification {
+			flex: 0 1 300px;
+			height: 100%;
+			border-left: 1px solid rgb(47, 51, 54);
+			border-right: 1px solid rgb(47, 51, 54);
 		}
 
 		.sidebar {
 			display: flex;
 			flex-direction: column;
-			flex: 1 1 300px;
-			margin: 0px 14px;
+			flex: 1 1 500px;
+			margin: 0px 5px;
 
 			.sidebar_container {
 				position: sticky;

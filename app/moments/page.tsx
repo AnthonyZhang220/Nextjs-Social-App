@@ -8,7 +8,7 @@ import { Suspense } from "react";
 
 import styles from "./page.module.scss";
 
-export default function Home() {
+export default function Notifications() {
 	return (
 		<main className={styles.main}>
 			<div className={styles.leftnav}>
@@ -17,12 +17,7 @@ export default function Home() {
 				</div>
 			</div>
 			<div className={styles.main_content}>
-				<div className={styles.timeline}>
-					<Draft />
-					<Suspense fallback={<PostLoading />}>
-						<Timeline />
-					</Suspense>
-				</div>
+				<div className={styles.notification}></div>
 				<div className={styles.sidebar}>
 					<div className={styles.sidebar_container}>
 						<Sidebar />

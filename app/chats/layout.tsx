@@ -1,18 +1,19 @@
 import Header from "../../components/layout/Header";
+
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Home / NextJS Social App",
+	title: "Chats / NextJS Social App",
 	description: "Created by NextJS, Typescript and React.",
 };
 
-export default function HomeLayout({
+export default function ChatLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
 	return (
-		<div className="home">
+		<div className="chat">
 			<Header />
 			{children}
 		</div>
