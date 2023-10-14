@@ -32,12 +32,6 @@ export default function Footer() {
 						))}
 					</div>
 				))}
-				<div className={styles.footer_newsletter}>
-					<form action="" method="post">
-						<input type="search" name="search" />
-						<button type="submit">Submit</button>
-					</form>
-				</div>
 			</div>
 		</footer>
 	);

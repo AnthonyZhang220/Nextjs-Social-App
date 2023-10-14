@@ -21,36 +21,32 @@ export default function Draft() {
 				<div className={styles.draft_avatar}>
 					<Avatar avatar_src={url} size={45} />
 				</div>
-				<div className={styles.draft_body}>
-					<div className={styles.draft_form}>
-						<input
-							className={styles.draft_userinput}
-							contentEditable="true"
-							placeholder="What's happening"
-						/>
-						<select name="visibility" className={styles.draft_visibility}>
+				<div className={styles.draft_content}>
+					<div className={styles.draft_visibility}>
+						<select name="visibility">
 							<option value="everyone">Everyone</option>
 							<option value="friends">Friends Only</option>
 							<option value="me">Me Only</option>
 						</select>
-						<div className={styles.draft_action}>
-							<div className={styles.draft_attachment}>
-								<Icon component={<ImageOutlinedIcon />} />
-								<Icon component={<EmojiEmotionsOutlinedIcon />} />
-								<Icon component={<LocationOnOutlinedIcon />} />
-								<Icon component={<AlternateEmailOutlinedIcon />} />
-							</div>
-							<div className={styles.draft_post}>
-								<Link href="/" style={{ display: "block" }}>
-									<Button
-										label="Post"
-										radius={14}
-										bgColor="#1d9bf0"
-										paddingX={15}
-										paddingY={5}
-									/>
-								</Link>
-							</div>
+					</div>
+					<div contentEditable="true" className={styles.draft_userinput}></div>
+					<div className={styles.draft_action}>
+						<div className={styles.draft_attachment}>
+							<Icon component={<ImageOutlinedIcon />} />
+							<Icon component={<EmojiEmotionsOutlinedIcon />} />
+							<Icon component={<LocationOnOutlinedIcon />} />
+							<Icon component={<AlternateEmailOutlinedIcon />} />
+						</div>
+						<div className={styles.draft_post}>
+							<Link href="/" style={{ display: "block" }}>
+								<Button
+									label="Post"
+									radius={14}
+									bgColor="#1d9bf0"
+									paddingX={15}
+									paddingY={5}
+								/>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -58,3 +54,6 @@ export default function Draft() {
 		</section>
 	);
 }
+
+
+

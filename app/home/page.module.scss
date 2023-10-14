@@ -16,10 +16,10 @@
 
 	.main_content {
 		display: flex;
-		flex: 1 1 auto;
+		flex: 0 1 auto;
 
 		.timeline {
-			flex: 1 1 700px;
+			flex: 0 1 700px;
 		}
 
 		.sidebar {

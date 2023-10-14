@@ -2,6 +2,7 @@ import LeftNav from "../../components/layout/LeftNav";
 import Profile from "../../components/layout/Profile";
 import Sidebar from "../../components/layout/Sidebar";
 import Timeline from "../../components/layout/Timeline";
+import Footer from "../../components/layout/Footer";
 
 import styles from "./page.module.scss";
 
@@ -25,6 +26,7 @@ export default function User() {
 				<div className={styles.sidebar}>
 					<div className={styles.sidebar_container}>
 						<Sidebar />
+						<Footer />
 					</div>
 				</div>
 			</div>

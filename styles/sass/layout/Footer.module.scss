@@ -1,5 +1,6 @@
 .footer {
-	max-width: 400px;
+	display: flex;
+	flex-direction: column;
 
 	.footer_column_grid {
 		display: flex;
@@ -7,17 +8,10 @@
 		justify-content: space-around;
 
 		.footer_site {
-			h5 {
-				margin: 0 0 16px;
-				line-height: 20px;
-				font-weight: 500;
-				font-size: 14px;
-			}
-
 			a {
 				margin-top: 0;
-				line-height: 20px;
-				font-size: 14px;
+				line-height: 1rem;
+				font-size: 0.75rem;
 				display: block;
 				border-radius: 2px;
 			}

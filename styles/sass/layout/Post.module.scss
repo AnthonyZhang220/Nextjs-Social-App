@@ -20,15 +20,17 @@
 				margin-bottom: 2px;
 
 				.post_displayname {
+					font-weight: 500;
 					margin-right: 4px;
 				}
 				.post_username {
-					font-size: 14px;
+					font-size: 0.75rem;
+					color: rgb(113, 118, 123);
 				}
 			}
 
 			.post_content {
-				font-size: 14px;
+				font-size: 0.75rem;
 			}
 
 			.post_media {

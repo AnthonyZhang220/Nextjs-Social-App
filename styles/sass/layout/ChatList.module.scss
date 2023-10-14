@@ -1,5 +1,4 @@
 .chatlist {
-	height: 100%;
 	display: flex;
 	flex-direction: column;
 	max-width: 300px;
@@ -13,6 +12,6 @@
 	}
 }
 
-.chatlist > div {
-	flex: 0 1 auto;
-}
+// .chatlist > div {
+// 	flex: 0 1 auto;
+// }

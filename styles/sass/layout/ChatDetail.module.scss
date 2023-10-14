@@ -43,6 +43,7 @@
 			border-radius: 8px;
 			padding: 10px 15px;
 			outline: none;
+			word-break: break-all;
 
 			[data-placeholder]:empty:before {
 				content: attr(data-placeholder);

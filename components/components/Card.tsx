@@ -12,7 +12,7 @@ export default function Card(props: CardProps) {
 		<div className={styles.card}>
 			<section className={styles.card_container}>
 				<div className={styles.card_title}>
-					<h3>{props.title}</h3>
+					<h5>{props.title}</h5>
 				</div>
 				<div className={styles.card_content}>
 					<div>

@@ -27,7 +27,6 @@ export default function Header() {
 							<img src="/logo/S-logos_white.png" width="50px" height="auto" />
 						</Link>
 						<Link href="/home">Home</Link>
-						<Link href="/moments">Moments</Link>
 						<div className={styles.navbar_search}>
 							<Searchbar
 								Icon={<SearchIcon />}
