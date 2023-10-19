@@ -1,7 +1,9 @@
+@use "../abstracts/mixins" as *;
+
 .chatlist {
 	display: flex;
 	flex-direction: column;
-	max-width: 300px;
+	max-width: 350px;
 
 	.chatlist_tabgroup {
 		padding: 0 14px;
@@ -9,6 +11,14 @@
 		justify-content: space-around;
 		align-items: center;
 		cursor: pointer;
+	}
+
+	@include screen-lg {
+		max-width: 300px;
+	}
+
+	@include screen-md {
+		display: none;
 	}
 }
 

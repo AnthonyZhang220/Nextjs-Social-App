@@ -4,28 +4,6 @@
 @use "./themes/theme";
 @use "./base/typography";
 
-%main-flex {
-	display: flex;
-	margin: 0 auto;
-	max-width: 1200px;
-	height: 100%;
-}
-
-%main-content-flex {
-	display: flex;
-	flex: 1 1 auto;
-}
-
-%leftnav-shared {
-	flex: 0 1 auto;
-	margin: 0px 5px;
-
-	.menu {
-		position: sticky;
-		top: 64px;
-	}
-}
-
 :root {
 	--max-width: 1232px;
 	--border-radius: 12px;

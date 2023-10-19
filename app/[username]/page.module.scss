@@ -1,22 +1,27 @@
+@use "../../styles/sass/abstracts/mixins" as *;
+
 .main {
-	display: flex;
 	margin: 0 auto;
 	max-width: 1200px;
 	height: 100%;
 
-	.leftnav {
-		flex: 0 1 auto;
-		margin: 0px 5px;
-
-		.menu {
-			position: sticky;
-			top: 64px;
-		}
-	}
-
-	.main_content {
+	.main_container {
 		display: flex;
-		flex: 1 1 auto;
+		justify-content: center;
+
+		.leftnav {
+			justify-content: flex-end;
+			margin: 0 0.875rem;
+
+			@include screen-sm {
+				margin: 0px 5px;
+			}
+
+			.menu {
+				position: sticky;
+				top: 64px;
+			}
+		}
 
 		.timeline {
 			flex: 1 1 700px;
@@ -25,8 +30,16 @@
 		.sidebar {
 			display: flex;
 			flex-direction: column;
-			margin: 0px 5px;
+			margin: 0 0.875rem;
 			flex: 1 1 300px;
+
+			@include screen-lg {
+				max-width: 290px;
+			}
+
+			@include screen-md {
+				display: none;
+			}
 
 			.sidebar_container {
 				position: sticky;

@@ -34,11 +34,11 @@
 
 			.listitem_content {
 				font-size: 14px;
-				overflow: hidden;
-
-				span {
+				
+				p {
 					white-space: nowrap;
 					text-overflow: ellipsis;
+					overflow: hidden;
 				}
 			}
 		}

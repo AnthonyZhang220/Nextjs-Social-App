@@ -2,12 +2,12 @@
 
 interface AvatarProps {
 	avatar_src: string | undefined;
-	size: number;
-	radius?: number;
+	size?: number;
+	draggable?: boolean | undefined;
 }
 
 export default function Avatar(props: AvatarProps) {
-	const { avatar_src, size, radius } = props;
+	const { avatar_src, size, draggable } = props;
 	return (
 		<img
 			src={avatar_src}
@@ -15,6 +15,7 @@ export default function Avatar(props: AvatarProps) {
 			width={size}
 			height={size}
 			style={{ borderRadius: "50%", display: "block" }}
+			draggable={draggable}
 		/>
 	);
 }

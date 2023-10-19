@@ -1,4 +1,4 @@
-import prisma from "../../../prisma/databse";
+import prisma from "../../../prisma/database";
 
 export const resolvers = {
 	Query: {

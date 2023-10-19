@@ -17,20 +17,21 @@ const footerData = [
 	{ category: "More", list: [{ label: "Commerce", link: "" }] },
 	{ category: "About Social App", list: [{ label: "Github", link: "" }] },
 	{ category: "Legal", list: [{ label: "Privacy Policy", link: "" }] },
+	{ category: "Legal", list: [{ label: "@Anthony Zhang", link: "" }] },
 ];
 
 export default function Footer() {
 	return (
 		<footer className={styles.footer}>
-			<div className={styles.footer_column_grid}>
+			<div className={styles.footer_container}>
 				{footerData.map(({ category, list }, index) => (
-					<div className={styles.footer_site} key={index}>
+					<>
 						{list.map(({ label, link }) => (
-							<a key={link} href={link}>
+							<a key={link} href={link} className={styles.footer_site}>
 								{label}
 							</a>
 						))}
-					</div>
+					</>
 				))}
 			</div>
 		</footer>

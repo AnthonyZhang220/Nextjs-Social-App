@@ -1,7 +1,32 @@
-@use "breakpoints";
+@use "breakpoints" as *;
 
-@mixin breakpoints($size) {
-	@media (min-width: map-get($breakpoints, $size)) {
+@mixin screen-xs {
+	@media (max-width: map-get($breakpoints, "xs")) {
+		@content;
+	}
+}
+@mixin screen-sm {
+	@media (max-width: map-get($breakpoints, "sm")) {
+		@content;
+	}
+}
+@mixin screen-md {
+	@media (max-width: map-get($breakpoints, "md")) {
+		@content;
+	}
+}
+@mixin screen-lg {
+	@media (max-width: map-get($breakpoints, "lg")) {
+		@content;
+	}
+}
+@mixin screen-xl {
+	@media (max-width: map-get($breakpoints, "xl")) {
+		@content;
+	}
+}
+@mixin screen-xxl {
+	@media (max-width: map-get($breakpoints, "xxl")) {
 		@content;
 	}
 }

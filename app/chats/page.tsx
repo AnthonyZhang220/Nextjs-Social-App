@@ -7,12 +7,12 @@ import styles from "./page.module.scss";
 export default function Chats() {
 	return (
 		<main className={styles.main}>
-			<div className={styles.leftnav}>
-				<div className={styles.menu}>
-					<LeftNav />
+			<div className={styles.main_container}>
+				<div className={styles.leftnav}>
+					<div className={styles.menu}>
+						<LeftNav />
+					</div>
 				</div>
-			</div>
-			<div className={styles.main_content}>
 				<div className={styles.chatlist}>
 					<ChatList />
 				</div>

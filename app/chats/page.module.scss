@@ -1,33 +1,36 @@
+@use "../../styles/sass/abstracts/mixins" as *;
+
 .main {
-	display: flex;
 	margin: 0 auto;
 	max-width: 1200px;
-	height: 100vh;
-
-	.leftnav {
-		flex: 0 1 auto;
-		margin: 0px 5px;
-
-		.menu {
-			position: sticky;
-			top: 64px;
-		}
-	}
-
-	.main_content {
+	
+	.main_container {
+		height: 100vh;
 		display: flex;
-		flex: 1 1 900px;
+		justify-content: center;
 		border-right: 1px solid rgb(47, 51, 54);
 
+		.leftnav {
+			justify-content: flex-end;
+			margin: 0 0.875rem;
+
+			@include screen-sm {
+				margin: 0 0.3125rem;
+			}
+
+			.menu {
+				position: sticky;
+				top: 64px;
+			}
+		}
+
 		.chatlist {
-			flex: 0 1 300px;
-			height: 100%;
 			border-left: 1px solid rgb(47, 51, 54);
 			border-right: 1px solid rgb(47, 51, 54);
 		}
 
 		.chatdetail {
-			flex: 1 1 500px;
+			flex: 1 1 600px;
 
 			.chatdetail_container {
 				position: sticky;

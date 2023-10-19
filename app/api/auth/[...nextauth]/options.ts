@@ -3,7 +3,7 @@ import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import TwitterProvider from "next-auth/providers/twitter";
 import { PrismaAdapter } from "@auth/prisma-adapter";
-import prisma from "../../../../prisma/databse";
+import prisma from "../../../../prisma/database";
 
 export const options: NextAuthOptions = {
 	adapter: PrismaAdapter(prisma),
@@ -21,6 +21,9 @@ export const options: NextAuthOptions = {
 			clientSecret: process.env.TWITTER_SECRET ?? "",
 		}),
 	],
+	session: {
+		strategy: "jwt",
+	},
 	// pages: {
 	// 	signIn: "/signin",
 	// 	signOut: "/signout",

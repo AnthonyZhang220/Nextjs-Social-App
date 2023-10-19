@@ -32,6 +32,7 @@ function LeftNav() {
 						pathname === "/home" ? <HomeRoundedIcon /> : <HomeOutlinedIcon />
 					}
 					selected={pathname === "/home"}
+					fontSize="1.125rem"
 				/>
 				<Chip
 					link={"./moments"}
@@ -44,6 +45,7 @@ function LeftNav() {
 						)
 					}
 					selected={pathname === "/moments"}
+					fontSize="1.125rem"
 				/>
 				<Chip
 					link={"./discover"}
@@ -56,6 +58,7 @@ function LeftNav() {
 						)
 					}
 					selected={pathname === "/discover"}
+					fontSize="1.125rem"
 				/>
 				<Chip
 					link={"./notifications"}
@@ -68,6 +71,7 @@ function LeftNav() {
 						)
 					}
 					selected={pathname === "/notifications"}
+					fontSize="1.125rem"
 				/>
 				<Chip
 					link={"./chats"}
@@ -76,6 +80,7 @@ function LeftNav() {
 						pathname === "/chats" ? <ChatRoundedIcon /> : <ChatOutlinedIcon />
 					}
 					selected={pathname === "/chats"}
+					fontSize="1.125rem"
 				/>
 				<Chip
 					link={"./me"}
@@ -84,6 +89,7 @@ function LeftNav() {
 						pathname === "/me" ? <PersonRoundedIcon /> : <PersonOutlinedIcon />
 					}
 					selected={pathname === "/me"}
+					fontSize="1.125rem"
 				/>
 			</div>
 		</nav>

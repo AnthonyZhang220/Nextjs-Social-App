@@ -23,13 +23,17 @@ export default function Draft() {
 				</div>
 				<div className={styles.draft_content}>
 					<div className={styles.draft_visibility}>
-						<select name="visibility">
+						<select name="visibility" className={styles.select}>
 							<option value="everyone">Everyone</option>
 							<option value="friends">Friends Only</option>
 							<option value="me">Me Only</option>
 						</select>
 					</div>
-					<div contentEditable="true" className={styles.draft_userinput}></div>
+					<div
+						contentEditable="true"
+						className={styles.draft_userinput}
+						placeholder="What's happening?"
+					></div>
 					<div className={styles.draft_action}>
 						<div className={styles.draft_attachment}>
 							<Icon component={<ImageOutlinedIcon />} />
@@ -54,6 +58,3 @@ export default function Draft() {
 		</section>
 	);
 }
-
-
-

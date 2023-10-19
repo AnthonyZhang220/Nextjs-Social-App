@@ -1,6 +1,8 @@
 import Image from "../components/Image";
 import Avatar from "../components/Avatar";
 import Link from "next/link";
+import Button from "../components/Button";
+
 import styles from "../../styles/sass/layout/Profile.module.scss";
 
 type ProfileData = {
@@ -10,33 +12,48 @@ type ProfileData = {
 	username: string;
 	image?: string;
 	content: string;
+	banner: string;
 };
 
 export default function Profile(props: ProfileData) {
-	const { avatar, profile_url, displayName, username, image, content } = props;
+	const { avatar, profile_url, displayName, username, image, content, banner } =
+		props;
 	return (
 		<section className={styles.profile}>
 			<div className={styles.profile_container}>
 				<div className={styles.profile_banner}>
-				</div>
-				<div className={styles.profile_avatar}>
-					<Avatar avatar_src={avatar} size={80} />
+					<img src={banner} alt={image} />
 				</div>
 				<div className={styles.profile_body}>
-					<div className={styles.profile_user}>
-						<Link href={profile_url || ""}>
-							<span className={styles.profile_displayname}>{displayName}</span>
+					<div className={styles.profile_action}>
+						<Link href="#" className={styles.avatar}>
+							<div className={styles.avatar_aspect_ratio}>
+								<Avatar avatar_src={avatar} draggable={true} />
+							</div>
 						</Link>
-						<Link href={profile_url || ""}>
-							<span className={styles.profile_username}>@{username}</span>
-						</Link>
+						<div className={styles.profile_button}>
+							<Button label="Edit profile" bgColor="black" radius={16} />
+						</div>
 					</div>
-					<div className={styles.post_content}>
-						<span>{content}</span>
-					</div>
-					<div className={styles.profile_media}>
-						<div className={styles.profile_image}>
-							<Image src={image} alt={username} />
+					<div className={styles.profile_content}>
+						<div className={styles.profile_user}>
+							<Link href={profile_url || ""}>
+								<h4 className={styles.profile_displayname}>{displayName}</h4>
+							</Link>
+							<Link href={profile_url || ""}>
+								<h5 className={styles.profile_username}>@{username}</h5>
+							</Link>
+						</div>
+						<div className={styles.profile_bio}>
+							<span>{content}</span>
+						</div>
+						<div className={styles.profile_info}>
+							<span className={styles.joined_at}>Dec 2022</span>
+							<span className={styles.city}>New York</span>
+						</div>
+						<div className={styles.profile_follow}>
+							<div className={styles.profile_following}>1</div>
+							<div className={styles.profile_follower}>2</div>
 						</div>
 					</div>
 				</div>

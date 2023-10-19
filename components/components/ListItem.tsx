@@ -30,7 +30,7 @@ function ListItem(props: ListItemData) {
 						</div>
 					</div>
 					<div className={styles.listitem_content}>
-						<span>{content}</span>
+						<p>{content}</p>
 					</div>
 				</div>
 			</div>

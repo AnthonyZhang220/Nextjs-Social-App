@@ -4,6 +4,7 @@ import { useState } from "react";
 import { signIn } from "next-auth/react";
 import Modal from "../../../components/components/Modal";
 import Button from "../../../components/components/Button";
+import { Divider } from "../../../components/components/Divider";
 import styles from "./page.module.scss";
 
 export default function Login() {
@@ -13,12 +14,7 @@ export default function Login() {
 	};
 
 	return (
-		<Modal
-			title="Sign in to X"
-			buttonContent="Save"
-			isOpen={openModal}
-			toggleModal={toggleModal}
-		>
+		<Modal title="Sign in to NextJS App" buttonContent="Save">
 			<div className={styles.login}>
 				<div className={styles.login_cred}>
 					<form action="" className={styles.login_form}>
@@ -31,11 +27,11 @@ export default function Login() {
 						<span>Forgot password?</span>
 					</div>
 				</div>
-				<div className={styles.divider}>or</div>
+				<Divider text="or" fontSize="0.875rem" />
 				<div className={styles.login_OAuth}>
 					<div
 						className={styles.login_OAuth_button}
-						onClick={() => signIn("google", { callbackUrl: "/home" })}
+						onClick={() => signIn("google")}
 					>
 						<Button
 							label="Coutinue with Google"
@@ -46,7 +42,7 @@ export default function Login() {
 					</div>
 					<div
 						className={styles.login_OAuth_button}
-						onClick={() => signIn("github", { callbackUrl: "/home" })}
+						onClick={() => signIn("github")}
 					>
 						<Button
 							label="Coutinue with Github"

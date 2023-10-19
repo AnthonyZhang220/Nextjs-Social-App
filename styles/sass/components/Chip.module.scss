@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as *;
+
 .chip {
 	display: flex;
 	justify-content: flex-start;
@@ -21,6 +23,7 @@
 			font-size: 20px;
 			font-weight: 300;
 		}
+
 		svg {
 			font-size: 30px;
 		}
@@ -33,15 +36,10 @@
 			display: flex;
 			justify-content: flex-start;
 			margin: 0 15px;
-		}
-	}
-}
 
-@media screen and (max-width: 768px) {
-	.chip {
-		.chip_container {
-			.chip_content {
+			@include screen-xxl {
 				display: none;
+				transition: all 0.5s;
 			}
 		}
 	}

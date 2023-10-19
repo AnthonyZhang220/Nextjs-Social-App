@@ -1,33 +1,30 @@
 .login {
 	display: flex;
 	flex-direction: column;
+	padding: 0 1rem;
 
-	.login .login_form {
-		display: flex;
-		flex-direction: column;
+	.login_cred {
+		
+		& div {
+			margin: 0.875rem 0;
+		}
 
-		div {
-			margin: 2px;
+		.login_form {
+			display: flex;
+			flex-direction: column;
+			width: 100%;
+
+			label {
+				margin: 0.75rem 0;
+			}
 		}
 	}
 
-	.divider {
-		font-size: 20px;
-		display: flex;
-		align-items: center;
+	.login_OAuth {
+		.login_OAuth_button {
+			& div {
+				margin: 0.875rem 0;
+			}
+		}
 	}
-
-	.divider::before,
-	.divider::after {
-		flex: 1;
-		content: "";
-		padding: 1px;
-		background-color: #f1f2f3;
-		border-radius: 4px;
-		margin: 2px;
-	}
-}
-
-.login  div {
-	margin: 5px 0;
 }
