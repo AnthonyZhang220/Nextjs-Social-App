@@ -1,0 +1,11 @@
+.button {
+	text-align: center;
+
+	.label {
+		display: block;
+	}
+
+	&:hover {
+		box-shadow: inset 0 0 0 10em rgba(0, 0, 0, 0.2);
+	}
+}

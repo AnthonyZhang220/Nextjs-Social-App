@@ -1,0 +1,21 @@
+.post_action_button {
+	display: flex;
+	gap: 2px;
+	
+	div {
+		display: flex;
+		font-size: 0.75rem;
+		justify-content: center;
+		align-items: center;
+
+		svg {
+			width: 0.75rem;
+			height: 0.75rem;
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: #1d9bf0;
+	}
+}

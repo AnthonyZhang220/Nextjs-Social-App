@@ -36,3 +36,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Documentation used in this project
 
 1. Next-Auth.js: https://next-auth.js.org/configuration/initialization#route-handlers-app
+2. Google Auth Library: https://www.npmjs.com/package/google-auth-library
+3. Material UI: 
+

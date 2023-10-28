@@ -1,0 +1,19 @@
+.video_sidebar {
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		.category {
+			padding: 0 0.5rem;
+		}
+
+		.title_count {
+			padding: 0 0.5rem;
+		}
+
+		.comments {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
