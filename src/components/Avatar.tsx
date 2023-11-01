@@ -2,7 +2,7 @@
 
 interface AvatarProps {
 	avatar_src: string | undefined;
-	size?: number;
+	size?: number | 50;
 	draggable?: boolean | undefined;
 }
 

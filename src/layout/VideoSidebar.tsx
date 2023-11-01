@@ -1,5 +1,7 @@
 import { Comment } from "@/components/Comment";
 import type { CommentType } from "@/components/Comment";
+import { posts as comments } from "@/mockdata";
+
 import styles from "../styles/sass/layout/VideoSidebar.module.scss";
 
 type VideoSidebarType = {
@@ -8,17 +10,18 @@ type VideoSidebarType = {
 };
 
 export const VideoSidebar = (props: VideoSidebarType) => {
-	const { count, comments } = props;
+	const testComments = comments;
+	const testCount: number = 123;
+	
 	return (
 		<div className={styles.video_sidebar}>
 			<div className={styles.container}>
 				<div className={styles.category}></div>
 				<div className={styles.title_count}>
-					<span>All Comments(123) {count}</span>
+					<h4>All Comments(123) {testCount}</h4>
 				</div>
-
 				<div className={styles.comments}>
-					{comments.map((comment: CommentType) => (
+					{testComments.map((comment: CommentType) => (
 						<Comment key={comment.id} {...comment} />
 					))}
 				</div>

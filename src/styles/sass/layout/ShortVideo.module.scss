@@ -1,0 +1,82 @@
+@use "../abstracts/mixins" as *;
+
+.shortvideo {
+	border-radius: 1rem;
+	flex: 1 1 70%;
+
+	.shortvideo_container {
+		position: relative;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.player_container {
+			width: 100%;
+		}
+
+		.player_overlay {
+			position: absolute;
+			height: auto;
+			right: 0;
+			padding-right: 0.5rem;
+			bottom: 6rem;
+
+			.info_container {
+				display: flex;
+				flex-direction: column;
+				gap: 1rem;
+				text-align: center;
+				filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+
+				.avatar {
+					display: flex;
+					flex-direction: column;
+				}
+
+				.like {
+					display: flex;
+					flex-direction: column;
+				}
+
+				.reply {
+					display: flex;
+					flex-direction: column;
+				}
+
+				div {
+					padding: 0.25rem 0.5rem;
+				}
+			}
+		}
+
+		.video_info {
+			position: absolute;
+			height: auto;
+			left: 0;
+			padding: 1rem;
+			bottom: 4rem;
+			display: flex;
+			flex-direction: column;
+
+			.author {
+				.time {
+				}
+			}
+
+			.title {
+			}
+
+			.related_category {
+			}
+		}
+
+		.control_overlay {
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+		}
+	}
+}

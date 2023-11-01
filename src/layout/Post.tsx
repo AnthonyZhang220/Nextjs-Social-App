@@ -5,6 +5,7 @@ import Video from "@/components/Video";
 import Link from "next/link";
 
 import styles from "../styles/sass/layout/Post.module.scss";
+import { ShortVideo } from "./ShortVideo";
 
 type PostData = {
 	avatar?: string;
@@ -45,8 +46,8 @@ function Post(props: PostData) {
 							</div>
 						) : null}
 						{video ? (
-							<div className={styles.post_image}>
-								<Video src={video} width="300px" />
+							<div className={styles.post_video}>
+								<ShortVideo video_src={video} />
 							</div>
 						) : null}
 					</div>

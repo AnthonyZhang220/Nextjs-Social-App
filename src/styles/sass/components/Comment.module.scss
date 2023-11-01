@@ -1,10 +1,13 @@
 .comment {
-	padding: 0 0.5rem;
+	padding: 0.5rem;
+
 	.container {
 		display: flex;
+		flex-direction: row;
 
 		.avatar {
 			flex-basis: 2rem;
+			margin-right: 0.5rem;
 		}
 
 		.body {
@@ -16,21 +19,21 @@
 				display: inline-flex;
 
 				.displayName {
-					font-weight: 500;
+					font-weight: 400;
 				}
 			}
-		}
 
-		.text_content {
-			font-size: 0.75rem;
-		}
+			.text_content {
+				font-size: 0.75rem;
+			}
 
-		.image {
-			width: 100%;
-		}
+			.image {
+				width: 100%;
+			}
 
-		.action {
-			color: rgb(113, 118, 123);
+			.action {
+				color: rgb(113, 118, 123);
+			}
 		}
 	}
 }

@@ -1,52 +1,52 @@
 @use "../../styles/sass/abstracts/mixins" as *;
 
 .main {
-	margin: 0 auto;
-	max-width: 1200px;
-	height: 100%;
+	position: relative;
+	width: 100%;
 
 	.main_container {
 		display: flex;
-		justify-content: center;
 
 		.leftnav {
-			justify-content: flex-end;
 			margin: 0 0.875rem;
 
 			@include screen-sm {
 				margin: 0px 5px;
 			}
-
-			.menu {
-				position: sticky;
-				top: 4rem;
-			}
 		}
 
-		.timeline {
-			flex: 0 1 700px;
+		.videoslide {
+			overflow: hidden;
+			flex: 1 1 auto;
+			padding-right: 68px;
+			border-radius: 1rem;
 		}
+	}
 
-		.sidebar {
+	.nav_arrow {
+		position: absolute;
+		top: 50%;
+		right: 12px;
+		transform: translateY(-50%);
+
+		.prev {
 			display: flex;
-			flex-direction: column;
-			max-width: 350px;
-			flex: 0 1 350px;
-			margin: 0 0.875rem;
+			justify-content: center;
+			align-items: center;
+			border-radius: 1rem 1rem 0 0;
+			background-color: rgb(47, 51, 54);
+			width: 44px;
+			height: 44px;
+		}
 
-			@include screen-lg {
-				max-width: 290px;
-			}
-			
-			@include screen-md {
-				display: none;
-				max-width: 290px;
-			}
-
-			.sidebar_container {
-				position: sticky;
-				top: 4rem;
-			}
+		.next {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 0 0 1rem 1rem;
+			background-color: rgb(47, 51, 54);
+			width: 44px;
+			height: 44px;
 		}
 	}
 }

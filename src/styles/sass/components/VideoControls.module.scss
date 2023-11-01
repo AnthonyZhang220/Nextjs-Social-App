@@ -1,0 +1,33 @@
+.video_control {
+	display: flex;
+	flex-direction: column;
+
+	svg {
+		display: block;
+	}
+
+	.timeline {
+		input {
+			width: 100%;
+		}
+	}
+
+	.control {
+		display: flex;
+		padding: 0.5rem;
+		justify-content: space-between;
+		align-items: center;
+		height: 3rem;
+		background-image: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.6));
+
+		.basic {
+			display: flex;
+			gap: 0.5rem;
+		}
+
+		.feature {
+			display: flex;
+			gap: 0.5rem;
+		}
+	}
+}

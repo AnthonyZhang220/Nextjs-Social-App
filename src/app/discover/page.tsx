@@ -1,9 +1,7 @@
 import LeftNav from "../../layout/LeftNav";
-import Timeline from "../../layout/Timeline";
-import Sidebar from "../../layout/Sidebar";
-import Draft from "../../layout/Draft";
-import Footer from "../../layout/Footer";
-import PostLoading from "../../layout/PostLoading";
+import VideoSlide from "@/layout/VideoSlide";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { Suspense } from "react";
 
 import styles from "./page.module.scss";
@@ -13,21 +11,18 @@ export default function Discover() {
 		<main className={styles.main}>
 			<div className={styles.main_container}>
 				<div className={styles.leftnav}>
-					<div className={styles.menu}>
-						<LeftNav />
-					</div>
+					<LeftNav />
 				</div>
-				<div className={styles.timeline}>
-					<Draft />
-					<Suspense fallback={<PostLoading />}>
-						<Timeline />
-					</Suspense>
+				<div className={styles.videoslide}>
+					<VideoSlide />
 				</div>
-				<div className={styles.sidebar}>
-					<div className={styles.sidebar_container}>
-						<Sidebar />
-						<Footer />
-					</div>
+			</div>
+			<div className={styles.nav_arrow}>
+				<div className={styles.prev}>
+					<KeyboardArrowUpIcon />
+				</div>
+				<div className={styles.next}>
+					<KeyboardArrowDownIcon />
 				</div>
 			</div>
 		</main>

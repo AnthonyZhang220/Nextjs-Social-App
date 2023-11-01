@@ -1,10 +1,11 @@
 .video_container {
 	max-width: 100%; /* Ensure the container doesn't exceed its parent's width */
 	overflow: hidden;
-	border-radius: 16px;
 }
+
 
 .video_container video {
 	width: 100%; /* Make the image take up the full width of the container */
 	height: auto; /* Preserve the image's aspect ratio */
+	object-fit: fill;
 }

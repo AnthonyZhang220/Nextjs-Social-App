@@ -1,38 +1,32 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { useInView } from "react-intersection-observer";
-
+import { forwardRef } from "react";
 import styles from "../styles/sass/components/Video.module.scss";
 
-type VideoProp = {
+type VideoPropType = {
 	src: string | undefined;
 	alt?: string | undefined;
 	width?: string | undefined;
 	height?: string | undefined;
+	borderRadius?: number;
 };
 
-export default function Video(props: VideoProp) {
-	const videoRef = useRef<HTMLVideoElement>(null);
-	const { ref, inView } = useInView({ threshold: 1, delay: 1000 });
-
-	useEffect(() => {
-		if (videoRef.current === null) return;
-
-		if (inView === true) {
-			videoRef.current.muted = true;
-			videoRef.current.play();
-		} else {
-			videoRef.current.muted = true;
-			videoRef.current.pause();
-		}
-	});
-
+const Video = forwardRef<HTMLVideoElement, VideoPropType>((props, ref) => {
 	return (
-		<div className={styles.video_container} ref={ref}>
-			<video width="100%" height={props.height} ref={videoRef} muted controls>
+		<div
+			className={styles.video_container}
+			style={{ borderRadius: props.borderRadius }}
+		>
+			<video
+				width="100%"
+				height={props.height}
+				ref={ref}
+				muted
+			>
 				<source src={props.src} />
 			</video>
 		</div>
 	);
-}
+});
+
+export default Video;

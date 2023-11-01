@@ -1,17 +1,27 @@
 .video_sidebar {
+	flex: 1 1 30%;
+	background-color: rgba(0, 0, 0, 0.32);
+	transform: translateZ(0);
+	
 	.container {
 		display: flex;
 		flex-direction: column;
-
+		height: calc(100vh - 4rem);
+		
+		& > div {
+			margin: 0.5rem 0;
+		}
+		
 		.category {
-			padding: 0 0.5rem;
+			padding: 0 0.75rem;
 		}
-
+		
 		.title_count {
-			padding: 0 0.5rem;
+			padding: 0 0.75rem;
 		}
-
+		
 		.comments {
+			overflow-y: auto;
 			display: flex;
 			flex-direction: column;
 		}

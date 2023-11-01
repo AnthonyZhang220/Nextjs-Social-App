@@ -1,0 +1,27 @@
+.videoslide {
+	position: relative;
+	border-radius: 1rem;
+	overflow: hidden;
+	display: flex;
+	height: calc(100% - 1rem);
+
+	.background_overlay {
+		bottom: 0;
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: 0;
+		z-index: -1;
+
+		.blur_img {
+			filter: blur(60px);
+			height: 100%;
+			opacity: 0.8;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+			user-select: none;
+			width: 100%;
+		}
+	}
+}

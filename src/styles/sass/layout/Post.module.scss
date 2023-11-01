@@ -35,7 +35,15 @@
 			}
 
 			.post_media {
+				display: flex;
+				flex-direction: column;
+
 				.post_image {
+					width: 100%;
+				}
+
+				.post_video {
+					position: relative;
 					width: 100%;
 				}
 			}
