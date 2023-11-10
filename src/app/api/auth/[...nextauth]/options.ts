@@ -22,30 +22,22 @@ export const googleAuthClient = new OAuth2Client(
 export const options: NextAuthOptions = {
 	session: {
 		strategy: "database",
+		maxAge: 14 * 24 * 60 * 60, // 14 days
+		updateAge: 24 * 60 * 60, // 24 hours
 	},
 	adapter,
 	providers: [
 		GithubProvider({
-			clientId: process.env.GITHUB_ID ?? "",
-			clientSecret: process.env.GITHUB_SECRET ?? "",
-			profile(profile, token) {
-				return {
-					id: profile.client_id,
-					name: profile.name,
-					email: profile.email,
-					image: profile.picture,
-					token: token.access_token,
-				};
-			},
-			allowDangerousEmailAccountLinking: true,
+			clientId: process.env.GITHUB_ID as string,
+			clientSecret: process.env.GITHUB_SECRET as string,
 		}),
 		GoogleProvider({
-			clientId: process.env.GOOGLE_ID ?? "",
-			clientSecret: process.env.GOOGLE_SECRET ?? "",
+			clientId: process.env.GOOGLE_ID as string,
+			clientSecret: process.env.GOOGLE_SECRET as string,
 		}),
 		TwitterProvider({
-			clientId: process.env.TWITTER_ID ?? "",
-			clientSecret: process.env.TWITTER_SECRET ?? "",
+			clientId: process.env.TWITTER_ID as string,
+			clientSecret: process.env.TWITTER_SECRET as string,
 		}),
 		CredentialsProvider({
 			// this!
@@ -61,19 +53,49 @@ export const options: NextAuthOptions = {
 		}),
 	],
 	pages: {
-		signIn: "/signin",
-		signOut: "/signout",
+		signIn: "/login",
+		signOut: "/home",
 		error: "/error",
 		verifyRequest: "/auth/verify-request",
-		newUser: "/auth/new-user",
+		newUser: "/me",
 	},
 	callbacks: {
-		// async session({ session, token }) {
-		// 	//
+		// /*
+		//  * While using `jwt` as a strategy, `jwt()` callback will be called before
+		//  * the `session()` callback. So we have to add custom parameters in `token`
+		//  * via `jwt()` callback to make them accessible in the `session()` callback
+		//  */
+		// async jwt({ token, user }) {
+		// 	if (user) {
+		// 		/*
+		// 		 * For adding custom parameters to user in session, we first need to add those parameters
+		// 		 * in token which then will be available in the `session()` callback
+		// 		 */
+		// 		token.role = user.role;
+		// 		token.fullName = user.fullName;
+		// 	}
+		// 	return token;
 		// },
-		// async jwt({ token, user, account, profile }) {
-		// 	//
+		// async session({ session, token }) {
+		// 	if (session.user) {
+		// 		// ** Add custom params to user in session which are added in `jwt()` callback via `token` parameter
+		// 		session.user.role = token.role;
+		// 		session.user.fullName = token.fullName;
+		// 	}
+		// 	return session;
 		// },
 	},
 	secret: process.env.NEXT_AUTH_SECRET,
+	debug: true,
+	logger: {
+		error(code, metadata) {
+			console.error(code, metadata);
+		},
+		warn(code) {
+			console.warn(code);
+		},
+		debug(code, metadata) {
+			console.debug(code, metadata);
+		},
+	},
 };

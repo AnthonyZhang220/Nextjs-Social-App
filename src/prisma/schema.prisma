@@ -5,37 +5,56 @@ generator client {
   provider = "prisma-client-js"
 }
 
+generator pothos {
+  provider = "prisma-pothos-types"
+}
+
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Account {
-  id                String  @id @default(cuid())
-  userId            String  
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
-  expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String? @db.Text
-  session_state     String?
+  id                 String  @id @default(uuid())
+  userId             String  @map("user_id")
+  type               String
+  provider           String
+  providerAccountId  String  @map("provider_account_id")
+  refresh_token      String?
+  access_token       String?
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String?
+  session_state      String?
+  oauth_token_secret String?
+  oauth_token        String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
-  @@map("account")
+  @@map("accounts")
 }
 
-model Session {
-  id           String   @id @default(cuid())
-  sessionToken String   @unique
-  userId       String
-  expires      DateTime
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+model User {
+  id            String    @id @default(uuid())
+  name          String?
+  username      String?   @unique
+  displayName   String?
+  email         String?   @unique
+  emailVerified DateTime? @map("email_verified")
+  created_At    DateTime  @default(now()) @map(name: "created_at")
+  updated_At    DateTime  @updatedAt @map(name: "updated_at")
+  posts         Post[]
+  profile       Profile?
+  friends       Friend[]
+  comment       Comment[]
+  like          Like[]
+  mention       Tag[]
+  accounts      Account[]
+  sessions      Session[]
+
+  @@map(name: "users")
 }
 
 model VerificationToken {
@@ -44,28 +63,21 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+  @@map("verificationtokens")
 }
 
-model User {
-  id          String    @id @default(uuid())
-  username    String    @unique
-  displayName String
-  email       String    @unique
-  createdAt   DateTime  @default(now())
-  posts       Post[]
-  profile     Profile?
-  friends     Friend[]
-  comment     Comment[]
-  like        Like[]
-  mention     Tag[]
-  Account     Account[]
-  sessions    Session[]
+model Session {
+  id           String   @id @default(uuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+  user         User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@map("user")
+  @@map("sessions")
 }
 
 model Location {
-  id        Int       @id @default(autoincrement())
+  id        String    @id @default(uuid())
   name      String // Name or label for the location (e.g., "Eiffel Tower")
   latitude  Float // Latitude coordinate (e.g., 48.858844)
   longitude Float // Longitude coordinate (e.g., 2.294351)
@@ -75,8 +87,8 @@ model Location {
 }
 
 model Friend {
-  author   User   @relation(fields: [authorId], references: [id])
-  authorId String @unique
+  friend   User   @relation(fields: [friendId], references: [id])
+  friendId String @unique
 }
 
 model Tag {
@@ -130,17 +142,21 @@ model Post {
   like      Like[]
   comment   Comment[]
   media     Media[]
-  view      Int
+  viewCount Int
   author    User      @relation(fields: [authorId], references: [id])
-  authorId  String
+  authorId  String    @unique
+
+  @@map("posts")
 }
 
 model Profile {
   id         String    @id @default(uuid())
-  photo      String
+  avatar     String?
+  banner     String?
   bio        String?
+  profession String?
   location   Location? @relation(fields: [locationId], references: [id])
-  locationId Int?
+  locationId String?
   user       User      @relation(fields: [userId], references: [id])
   userId     String    @unique
 }

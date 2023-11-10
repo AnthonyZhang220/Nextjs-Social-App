@@ -3,6 +3,7 @@ import SessionProvider from "../utils/SessionProvider";
 import { getServerSession } from "next-auth";
 import Script from "next/script";
 import OneTapComponent from "@/utils/OneTapComponent";
+import { ApolloWrapper } from "../lib/ApolloWrapper";
 
 import { Inter } from "next/font/google";
 
@@ -42,12 +43,14 @@ export default async function RootLayout(props: {
 				/>
 			</head>
 			<body className={inter.className}>
-				<SessionProvider session={session}>
-					<OneTapComponent />
-					{props.children}
-					{props.auth}
-					{props.settings}
-				</SessionProvider>
+				<ApolloWrapper>
+					<SessionProvider session={session}>
+						<OneTapComponent />
+						{props.children}
+						{props.auth}
+						{props.settings}
+					</SessionProvider>
+				</ApolloWrapper>
 			</body>
 		</html>
 	);

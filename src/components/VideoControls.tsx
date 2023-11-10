@@ -1,5 +1,7 @@
+"use client";
+
+import { useRef } from "react";
 import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
-import PauseCircleRoundedIcon from "@mui/icons-material/PauseCircleRounded";
 import VolumeOffRoundedIcon from "@mui/icons-material/VolumeOffRounded";
 import VolumeUpRoundedIcon from "@mui/icons-material/VolumeUpRounded";
 import VolumeDownRoundedIcon from "@mui/icons-material/VolumeDownRounded";
@@ -7,6 +9,7 @@ import FullscreenRoundedIcon from "@mui/icons-material/FullscreenRounded";
 import FullscreenExitRoundedIcon from "@mui/icons-material/FullscreenExitRounded";
 import AspectRatioRoundedIcon from "@mui/icons-material/AspectRatioRounded";
 import FitScreenOutlinedIcon from "@mui/icons-material/FitScreenOutlined";
+import PauseRoundedIcon from "@mui/icons-material/PauseRounded";
 
 import styles from "../styles/sass/components/VideoControls.module.scss";
 
@@ -30,6 +33,18 @@ type VideoControlsPropType = {
 };
 
 export default function VideoControls(props: VideoControlsPropType) {
+	const volumeRef = useRef<HTMLDivElement>(null);
+
+	const showVolumeSlider = () => {
+		if (volumeRef.current === null) return;
+		volumeRef.current.style.display = "block";
+	};
+
+	const hideVolumeSlider = () => {
+		if (volumeRef.current === null) return;
+		volumeRef.current.style.display = "none";
+	};
+
 	const {
 		paused,
 		muted,
@@ -66,7 +81,7 @@ export default function VideoControls(props: VideoControlsPropType) {
 					<div>
 						{isPlaying ? (
 							<div onClick={() => togglePlay()}>
-								<PauseCircleRoundedIcon />
+								<PauseRoundedIcon />
 							</div>
 						) : (
 							<div onClick={() => togglePlay()}>
@@ -82,27 +97,37 @@ export default function VideoControls(props: VideoControlsPropType) {
 					</div>
 				</div>
 				<div className={styles.feature}>
-					{volume == 0 ? (
-						<div onClick={() => toggleMute()}>
-							<VolumeOffRoundedIcon />
+					<div
+						className={styles.volume}
+						onMouseEnter={() => showVolumeSlider()}
+						onMouseLeave={() => hideVolumeSlider()}
+					>
+						{volume == 0 ? (
+							<div onClick={() => toggleMute()}>
+								<VolumeOffRoundedIcon />
+							</div>
+						) : volume < 0.5 ? (
+							<div onClick={() => toggleMute()}>
+								<VolumeDownRoundedIcon />
+							</div>
+						) : (
+							<div onClick={() => toggleMute()}>
+								<VolumeUpRoundedIcon />
+							</div>
+						)}
+						<div ref={volumeRef} className={styles.volume_slider}>
+							<input
+								type="range"
+								min="0"
+								max="1"
+								step="0.01"
+								value={volume}
+								onChange={(e) => handleVolume(e)}
+								onMouseEnter={() => showVolumeSlider()}
+								onMouseLeave={() => hideVolumeSlider()}
+							/>
 						</div>
-					) : volume < 0.5 ? (
-						<div onClick={() => toggleMute()}>
-							<VolumeDownRoundedIcon />
-						</div>
-					) : (
-						<div onClick={() => toggleMute()}>
-							<VolumeUpRoundedIcon />
-						</div>
-					)}
-					<input
-						type="range"
-						min="0"
-						max="1"
-						step="0.1"
-						value={volume}
-						onChange={(e) => handleVolume(e)}
-					/>
+					</div>
 					{isBrowserFullScreen ? (
 						<div>
 							<FitScreenOutlinedIcon />

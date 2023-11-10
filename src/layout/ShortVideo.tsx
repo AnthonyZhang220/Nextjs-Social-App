@@ -7,6 +7,7 @@ import Video from "../components/Video";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import CommentIcon from "@mui/icons-material/Comment";
 import VideoControls from "@/components/VideoControls";
+import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 import Link from "next/dist/client/link";
 import styles from "../styles/sass/layout/ShortVideo.module.scss";
 
@@ -25,8 +26,7 @@ export const ShortVideo = (props: ShortVideoType) => {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const fullScreenDivRef = useRef<HTMLDivElement>(null);
 	const { ref, inView, entry } = useInView({
-		threshold: 1,
-		delay: 1000,
+		threshold: 0.8,
 	});
 
 	const [volume, setVolume] = useState(0);
@@ -73,11 +73,15 @@ export const ShortVideo = (props: ShortVideoType) => {
 	//AUTO PLAY DURING SCROLL
 	useEffect(() => {
 		if (videoRef.current === null) return;
-		videoRef.current.muted = true;
 
 		if (inView === true) {
+			videoRef.current.volume = 0;
+			setMuted(true);
+			setVolume(0);
 			handlePlay();
 		} else {
+			setMuted(true);
+			setVolume(0);
 			handlePause();
 		}
 	}, [inView]);
@@ -114,17 +118,17 @@ export const ShortVideo = (props: ShortVideoType) => {
 		if (videoRef.current === null) return;
 
 		if (volume === 0) {
-			videoRef.current.muted = false;
 			videoRef.current.volume = 0.2;
 			setVolume(0.2);
-			setMuted(false);
 		} else {
-			videoRef.current.muted = true;
 			videoRef.current.volume = 0;
 			setVolume(0);
-			setMuted(true);
 		}
 	};
+
+	useEffect(() => {
+		console.log(videoRef.current?.volume);
+	}, [videoRef.current?.volume]);
 
 	const handleVolume = (e: any) => {
 		if (videoRef.current === null) return;
@@ -132,13 +136,29 @@ export const ShortVideo = (props: ShortVideoType) => {
 		setVolume(e.target.value);
 	};
 
+	const enterFullscreen = (element: HTMLDivElement) => {
+		if (element === null) return;
+
+		if (element.requestFullscreen) {
+			element.requestFullscreen();
+		}
+	};
+
+	const exitFullscreen = () => {
+		if (document.exitFullscreen) {
+			document.exitFullscreen();
+		}
+	};
+
 	const toggleFullScreen = () => {
 		if (fullScreenDivRef.current === null) return;
-		if (isFullScreen) {
-			document.exitFullscreen();
-			setIsFullScreen(!isFullScreen);
-		} else {
-			fullScreenDivRef.current.requestFullscreen();
+
+		if (fullScreenDivRef.current) {
+			if (isFullScreen) {
+				exitFullscreen();
+			} else {
+				enterFullscreen(fullScreenDivRef.current);
+			}
 			setIsFullScreen(!isFullScreen);
 		}
 	};
@@ -162,7 +182,11 @@ export const ShortVideo = (props: ShortVideoType) => {
 	return (
 		<div className={styles.shortvideo} ref={fullScreenDivRef}>
 			<div className={styles.shortvideo_container}>
-				<div className={styles.player_container} ref={ref}>
+				<div
+					className={styles.player_container}
+					ref={ref}
+					onClick={() => togglePlay()}
+				>
 					<Video src={video_src} ref={videoRef} />
 				</div>
 				{short ? (
@@ -214,6 +238,11 @@ export const ShortVideo = (props: ShortVideoType) => {
 						toggleMute={toggleMute}
 					/>
 				</div>
+				{isPlaying ? null : (
+					<div className={styles.play_button} onClick={() => togglePlay()}>
+						<PlayArrowRoundedIcon />
+					</div>
+				)}
 			</div>
 		</div>
 	);

@@ -9,7 +9,6 @@ import TextField from "../../../components/TextField";
 import styles from "./page.module.scss";
 
 export default function Login() {
-
 	return (
 		<Modal title="Sign in to NextJS App" buttonContent="Login">
 			<div className={styles.login}>
@@ -28,7 +27,7 @@ export default function Login() {
 				<div className={styles.login_OAuth}>
 					<div
 						className={styles.login_OAuth_button}
-						onClick={() => signIn("google")}
+						onClick={() => signIn("google", { callbackUrl: "/home" })}
 					>
 						<Button
 							label="Coutinue with Google"
@@ -39,7 +38,7 @@ export default function Login() {
 					</div>
 					<div
 						className={styles.login_OAuth_button}
-						onClick={() => signIn("github")}
+						onClick={() => signIn("github", { callbackUrl: "/home" })}
 					>
 						<Button
 							label="Coutinue with Github"

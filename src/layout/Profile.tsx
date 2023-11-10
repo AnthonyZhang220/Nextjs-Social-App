@@ -10,10 +10,10 @@ import { profile } from "@/mockdata";
 import styles from "../styles/sass/layout/Profile.module.scss";
 
 type ProfileData = {
-	avatar?: string;
+	avatar?: string | null;
 	profile_url?: string;
-	displayName: string;
-	username: string;
+	displayName?: string | null;
+	username?: string | null;
 	image?: string;
 	content: string;
 	banner: string;

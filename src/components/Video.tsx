@@ -21,7 +21,7 @@ const Video = forwardRef<HTMLVideoElement, VideoPropType>((props, ref) => {
 				width="100%"
 				height={props.height}
 				ref={ref}
-				muted
+				
 			>
 				<source src={props.src} />
 			</video>

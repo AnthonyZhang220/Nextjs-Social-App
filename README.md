@@ -35,7 +35,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ## Documentation used in this project
 
-1. Next-Auth.js: https://next-auth.js.org/configuration/initialization#route-handlers-app
+1. Next-Auth.js: https://next-auth.js.org/getting-started/example
 2. Google Auth Library: https://www.npmjs.com/package/google-auth-library
-3. Material UI: 
+3. Material UI Icon: https://mui.com/material-ui/material-icons/ 
+4. apollo-client-nextjs: https://github.com/apollographql/apollo-client-nextjs
+5. Prisma: https://www.prisma.io/docs/getting-started/setup-prisma/start-from-scratch/relational-databases-typescript-postgresql
+6. Pothos Graphql: https://pothos-graphql.dev/docs/plugins/prisma#creating-types-with-builderprismaobject
+7. graphql-yoga: https://the-guild.dev/graphql/yoga-server/docs/integrations/integration-with-nextjs
+8. 
 

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
-import { signOut, useSession } from "next-auth/react";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 import Dropdown from "./Dropdown";
 import Avatar from "../components/Avatar";
@@ -51,59 +51,62 @@ export default function Header() {
 							/>
 						</div>
 					</div>
-					{session ? (
-						session?.user ? (
-							<div onClick={() => handleOpenProfileDropdown()}>
+					<div className={styles.navbar_button}>
+						<div className={styles.notification}>
+							{pathname === "/notifications" ? (
+								<NotificationsRoundedIcon onClick={() => router.back()} />
+							) : (
+								<Link href="/notifications">
+									<NotificationsOutlinedIcon />
+								</Link>
+							)}
+						</div>
+						{session ? (
+							<div
+								className={styles.navbar_profile_avatar}
+								onClick={() => handleOpenProfileDropdown()}
+							>
 								<Avatar
-									avatar_src={session.user.image ?? undefined}
-									size={30}
+									avatar_src={session.user?.image ?? undefined}
+									size={40}
 								/>
 								{open ? (
 									<Dropdown>
-										<Link href="/logout" onClick={() => signOut()}>
+										<Link href="/logout">
 											Logout
 										</Link>
 									</Dropdown>
 								) : null}
 							</div>
-						) : null
-					) : (
-						<div className={styles.navbar_button}>
-							<div className={styles.notification}>
-								{pathname === "/notifications" ? (
-									<NotificationsRoundedIcon onClick={() => router.back()} />
-								) : (
-									<Link href="/notifications">
-										<NotificationsOutlinedIcon />
+						) : (
+							<>
+								<div className={styles.navbar_signup}>
+									<Link href="/login">
+										<Button
+											label="Login"
+											color="#121314"
+											bgColor="#ffffff"
+											radius={10}
+											paddingX={10}
+											paddingY={5}
+										/>
 									</Link>
-								)}
-							</div>
-							<div className={styles.navbar_signup}>
-								<Link href="/login">
-									<Button
-										label="Login"
-										color="#121314"
-										bgColor="#ffffff"
-										radius={10}
-										paddingX={10}
-										paddingY={5}
-									/>
-								</Link>
-							</div>
-							<div className={styles.navbar_login}>
-								<Link href="/signup">
-									<Button
-										label="Sign Up"
-										color="#ffffff"
-										bgColor="#1d9bf0"
-										radius={10}
-										paddingX={10}
-										paddingY={5}
-									/>
-								</Link>
-							</div>
-						</div>
-					)}
+								</div>
+								<div className={styles.navbar_login}>
+									<Link href="/signup">
+										<Button
+											label="Sign Up"
+											color="#ffffff"
+											bgColor="#1d9bf0"
+											radius={10}
+											paddingX={10}
+											paddingY={5}
+										/>
+									</Link>
+								</div>
+							</>
+						)}
+					</div>
 				</nav>
 			</div>
 		</header>
