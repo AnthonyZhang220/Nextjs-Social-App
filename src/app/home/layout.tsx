@@ -1,4 +1,3 @@
-import Header from "../../layout/Header";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,7 +12,6 @@ export default function HomeLayout({
 }) {
 	return (
 		<div className="home">
-			<Header />
 			{children}
 		</div>
 	);

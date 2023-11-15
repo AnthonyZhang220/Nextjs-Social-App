@@ -5,7 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 
-import Dropdown from "./Dropdown";
+import Dropdown from "../components/Dropdown";
 import Avatar from "../components/Avatar";
 import Searchbar from "../components/Searchbar";
 import SearchIcon from "@mui/icons-material/Search";
@@ -19,10 +19,6 @@ export default function Header() {
 	const { data: session } = useSession();
 	const pathname = usePathname();
 	const router = useRouter();
-	const [open, setOpen] = useState(false);
-	const handleOpenProfileDropdown = () => {
-		setOpen(!open);
-	};
 
 	return (
 		<header className={styles.header}>
@@ -62,21 +58,17 @@ export default function Header() {
 							)}
 						</div>
 						{session ? (
-							<div
-								className={styles.navbar_profile_avatar}
-								onClick={() => handleOpenProfileDropdown()}
-							>
-								<Avatar
-									avatar_src={session.user?.image ?? undefined}
-									size={40}
-								/>
-								{open ? (
-									<Dropdown>
-										<Link href="/logout">
-											Logout
-										</Link>
-									</Dropdown>
-								) : null}
+							<div className={styles.navbar_profile_avatar}>
+								<Dropdown
+									element={
+										<Avatar
+											avatar_src={session.user?.image ?? undefined}
+											size={40}
+										/>
+									}
+								>
+									<Link href="/logout">Logout</Link>
+								</Dropdown>
 							</div>
 						) : (
 							<>

@@ -1,8 +1,15 @@
+import prisma from "@/prisma/database";
 import { builder } from "../builder";
+import { PostCreateInput } from "./Post";
 
 builder.prismaObject("User", {
 	fields: (t) => ({
 		id: t.exposeString("id"),
+		postCount: t.relationCount("posts", {
+			where: {
+				published: true,
+			},
+		}),
 		name: t.exposeString("name", { nullable: true }),
 		displayName: t.exposeString("displayName", { nullable: true }),
 		email: t.exposeString("email", { nullable: true }),
@@ -12,19 +19,59 @@ builder.prismaObject("User", {
 		imageUrl: t.exposeString("imageUrl"),
 		category: t.exposeString("category"),
 		profile: t.relation("profile", { nullable: true }),
-		friends: t.relation("firend"),
-		comments: t.relation("comment"),
-		accounts: t.relation("account"),
-		sessions: t.relation("session"),
-		posts: t.relation("post"),
+		friend: t.relation("friend"),
+		comment: t.relation("comment"),
+		account: t.relation("account"),
+		session: t.relation("session"),
+		post: t.relation("post", {
+			query: (args, context) => ({
+				orderBy: {
+					created_At: "desc",
+				},
+			}),
+		}),
+		bio: t.string({
+			// The profile relation will always be loaded, and user will now be typed to include the
+			// profile field so you can return the bio from the nested profile relation.
+			resolve: (user) => user.profile.bio,
+		}),
 	}),
 });
 
-
-builder.queryField("currentUser", (t)=>{
-	t.prismaField({
-		type:['User'],
-	    resolve: (query, _parent, _args, _ctx, _info) =>
-				prisma.link.findMany({ ...query });
+export const UserUniqueInput = builder.inputType("UserUniqueInput", {
+	fields: (t) => ({
+		id: t.int(),
+		email: t.string(),
 	}),
-})
+});
+
+export const UserCreateInput = builder.inputType("UserCreateInput", {
+	fields: (t) => ({
+		email: t.string({ required: true }),
+		name: t.string(),
+		post: t.field({ type: [PostCreateInput] }),
+	}),
+});
+
+builder.queryType({
+	fields: (t) => ({
+		me: t.prismaField({
+			type: "User",
+			args: {
+				id: t.arg.id({ required: true }),
+			},
+			resolve: (query, root, args, ctx, info) =>
+				prisma.user.findUnique({
+					...query,
+					where: { id: args.id },
+				}),
+		}),
+	}),
+});
+
+builder.queryFields((t) => ({
+	allUsers: t.prismaField({
+		type: "User",
+		resolve: (query) => prisma.user.findMany({ ...query }),
+	}),
+}));

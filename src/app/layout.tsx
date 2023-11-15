@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import SessionProvider from "../utils/SessionProvider";
+import SessionProvider from "../lib/SessionProvider";
 import { getServerSession } from "next-auth";
 import Script from "next/script";
-import OneTapComponent from "@/utils/OneTapComponent";
+import OneTapComponent from "@/lib/OneTapComponent";
 import { ApolloWrapper } from "../lib/ApolloWrapper";
 
 import { Inter } from "next/font/google";

@@ -11,16 +11,28 @@ import styles from "./page.module.scss";
 type ProfileData = {
 	avatar?: string;
 	profile_url?: string;
+	name?: string;
 	displayName: string;
 	username: string;
 	image?: string;
 	content: string;
 	banner: string;
+	created_At?: Date;
+	location?: string;
 };
 
 export default function Profile(props: ProfileData) {
-	const { avatar, profile_url, displayName, username, image, content, banner } =
-		profile;
+	const {
+		avatar,
+		profile_url,
+		displayName,
+		username,
+		image,
+		content,
+		banner,
+		created_At,
+		location,
+	} = props;
 
 	return (
 		<Modal buttonContent="Save">
@@ -52,8 +64,10 @@ export default function Profile(props: ProfileData) {
 								<TextField name="name" lineHeight={1.5} placeholder={content} />
 							</div>
 							<div className={styles.profile_info}>
-								<span className={styles.joined_at}>Dec 2022</span>
-								<span className={styles.city}>New York</span>
+								<span className={styles.joined_at}>
+									{created_At?.toISOString()}
+								</span>
+								<span className={styles.city}>{location}</span>
 							</div>
 							<div className={styles.profile_follow}>
 								<div className={styles.profile_following}>1</div>
