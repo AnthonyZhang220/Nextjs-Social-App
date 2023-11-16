@@ -1,6 +1,6 @@
 import prisma from "@/prisma/database";
 import { builder } from "../builder";
-import { PostCreateInput } from "./post";
+import { PostCreateInput } from "./Post";
 
 builder.prismaObject("User", {
 	fields: (t) => ({
@@ -24,7 +24,7 @@ builder.prismaObject("User", {
 		post: t.relation("posts", {
 			query: (args, context) => ({
 				orderBy: {
-					created_At: "desc",
+					createdAt: "desc",
 				},
 			}),
 		}),
@@ -33,12 +33,13 @@ builder.prismaObject("User", {
 			// profile field so you can return the bio from the nested profile relation.
 			resolve: (user) => user.profile.bio,
 		}),
+		
 	}),
 });
 
 export const UserUniqueInput = builder.inputType("UserUniqueInput", {
 	fields: (t) => ({
-		id: t.int(),
+		id: t.string(),
 		email: t.string(),
 	}),
 });
@@ -52,11 +53,12 @@ export const UserCreateInput = builder.inputType("UserCreateInput", {
 });
 
 builder.queryType({
+	description: "Query User info by email",
 	fields: (t) => ({
 		me: t.prismaField({
 			type: "User",
 			args: {
-				id: t.arg.id({ required: true }),
+				email: t.arg.email({ required: true }),
 			},
 			resolve: (query, root, args, ctx, info) =>
 				prisma.user.findUnique({
@@ -70,6 +72,6 @@ builder.queryType({
 builder.queryFields((t) => ({
 	allUsers: t.prismaField({
 		type: "User",
-		resolve: (query) => prisma.user.findMany({ ...query }),
+		resolve: () => prisma.user.findMany(),
 	}),
 }));

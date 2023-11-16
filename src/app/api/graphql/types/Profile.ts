@@ -1,5 +1,5 @@
 import prisma from "@/prisma/database";
-import { UserUniqueInput } from "./user";
+import { UserUniqueInput } from "./User";
 import { builder } from "../builder";
 
 builder.prismaObject("Profile", {
@@ -7,15 +7,14 @@ builder.prismaObject("Profile", {
 		id: t.exposeString("id"),
 		avatar: t.exposeString("avatar", { nullable: true }),
 		banner: t.exposeString("banner", { nullable: true }),
-		bio: t.exposeString("bio"),
-		profession: t.exposeString("profession"),
+		bio: t.exposeString("bio", { nullable: true }),
+		profession: t.exposeString("profession", { nullable: true }),
 		location: t.relation("location"),
-		locationId: t.exposeString("locationId"),
-		user: t.relation("User"),
+		locationId: t.exposeString("locationId" { nullable: true }),
+		user: t.relation("user"),
 		userId: t.exposeString("userId"),
 	}),
 });
-
 
 builder.mutationField("createProfile", (t) =>
 	t.prismaField({
