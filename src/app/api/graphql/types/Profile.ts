@@ -1,9 +1,6 @@
 import prisma from "@/prisma/database";
-import { UserUniqueInput } from "./User";
+import { UserUniqueInput } from "./user";
 import { builder } from "../builder";
-import "./Profile";
-import "./Post";
-import "./User";
 
 builder.prismaObject("Profile", {
 	fields: (t) => ({

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Viewport } from "next";
 import SessionProvider from "../lib/SessionProvider";
 import { getServerSession } from "next-auth";
 import Script from "next/script";
@@ -17,7 +18,6 @@ export const metadata: Metadata = {
 	referrer: "origin-when-cross-origin",
 	keywords: ["Next.js", "React", "JavaScript"],
 	authors: [{ name: "Anthony Zhang", url: "anthonyzhang1997.netlify.app" }],
-	colorScheme: "dark",
 	creator: "Anthony Zhang",
 	publisher: "Anthony Zhang",
 	icons: {
@@ -25,6 +25,11 @@ export const metadata: Metadata = {
 		shortcut: "/favicon.ico",
 		apple: "/static/apple.jpeg",
 	},
+};
+
+export const viewport: Viewport = {
+	themeColor: "black",
+	colorScheme: "dark",
 };
 
 export default async function RootLayout(props: {

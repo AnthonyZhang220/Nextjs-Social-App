@@ -1,6 +1,6 @@
 import prisma from "@/prisma/database";
 import { builder } from "../builder";
-import { PostCreateInput } from "./Post";
+import { PostCreateInput } from "./post";
 
 builder.prismaObject("User", {
 	fields: (t) => ({
@@ -13,17 +13,15 @@ builder.prismaObject("User", {
 		name: t.exposeString("name", { nullable: true }),
 		displayName: t.exposeString("displayName", { nullable: true }),
 		email: t.exposeString("email", { nullable: true }),
-		created_At: t.expose("created_At", { type: Date }),
-		updated_At: t.expose("updated_At", { type: Date }),
-		description: t.exposeString("description"),
-		imageUrl: t.exposeString("imageUrl"),
-		category: t.exposeString("category"),
+		createdAt: t.expose("createdAt", { type: Date }),
+		updatedAt: t.expose("updatedAt", { type: Date }),
+		image: t.exposeString("image", { nullable: true }),
 		profile: t.relation("profile", { nullable: true }),
-		friend: t.relation("friend"),
-		comment: t.relation("comment"),
-		account: t.relation("account"),
-		session: t.relation("session"),
-		post: t.relation("post", {
+		friend: t.relation("friends"),
+		comment: t.relation("comments"),
+		account: t.relation("accounts"),
+		session: t.relation("sessions"),
+		post: t.relation("posts", {
 			query: (args, context) => ({
 				orderBy: {
 					created_At: "desc",

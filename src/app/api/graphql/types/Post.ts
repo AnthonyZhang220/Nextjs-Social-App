@@ -16,7 +16,6 @@ builder.prismaObject("Post", {
 		viewCount: t.exposeInt("viewCount"),
 		profile: t.relation("profile", { nullable: true }),
 		author: t.relation("user"),
-		authorId: t.exposeString("authorId"),
 	}),
 });
 

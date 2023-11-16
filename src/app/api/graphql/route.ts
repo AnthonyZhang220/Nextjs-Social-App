@@ -13,7 +13,7 @@ const { handleRequest } = createYoga<{
 	graphqlEndpoint: "/api/graphql",
 
 	// Yoga needs to know how to create a valid Next response
-	fetchAPI: { Request: Request, Response: Response },
+	fetchAPI: { Response: Response },
 });
 
 export {

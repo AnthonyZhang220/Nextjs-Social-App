@@ -6,7 +6,9 @@ generator client {
 }
 
 generator pothos {
-  provider = "prisma-pothos-types"
+  provider     = "prisma-pothos-types"
+  clientOutput = "@prisma/client"
+  output       = "./pothos-types.ts"
 }
 
 datasource db {
@@ -41,6 +43,7 @@ model User {
   name          String?
   username      String?   @unique
   displayName   String?
+  image         String?
   email         String?   @unique
   emailVerified DateTime? @map("email_verified")
   createdAt     DateTime  @default(now()) @map(name: "created_at")

@@ -1,31 +1,33 @@
 import SchemaBuilder from "@pothos/core";
 import PrismaPlugin from "@pothos/plugin-prisma";
-import type { PrismaTypes } from "@pothos/plugin-prisma/generated.ts";
-import { DateTimeResolver } from "graphql-scalars";
+import { DateResolver } from "graphql-scalars";
+
+// This is the default location for the generator, but this can be
+// customized as described above.
+// Using a type only import will help avoid issues with undeclared
+// exports in esm mode
+import type PrismaTypes from "../../../prisma/pothos-types";
 
 import prisma from "@/prisma/database";
 
-// 2.
-
 export const builder = new SchemaBuilder<{
-	// 3.
-	PrismaTypes: PrismaTypes;
 	Scalars: {
-		Date: {
-			Input: Date;
-			Output: Date;
-		};
+		Date: { Input: Date; Output: Date };
 	};
+	PrismaTypes: PrismaTypes;
 }>({
-	// 4.
 	plugins: [PrismaPlugin],
 	prisma: {
 		client: prisma,
-		filterConnectionTotalCount: true,
-		// warn when not using a query parameter correctly
-		onUnusedQuery: process.env.NODE_ENV === "production" ? null : "warn",
 	},
 });
+
+// in GraphQL the Query type and Mutation type can each only be called once. So we call it here and will add fields to them on the go
+builder.queryType();
+builder.mutationType();
+
+// This is where we've created the new date scalar
+builder.addScalarType("Date", DateResolver, {});
 
 // Define your schema using the builder
 builder.queryType({
@@ -62,5 +64,3 @@ builder.mutationType({
 		}),
 	}),
 });
-
-builder.addScalarType("Date", DateTimeResolver, {});
