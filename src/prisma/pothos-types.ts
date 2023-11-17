@@ -271,7 +271,7 @@ export default interface PrismaTypes {
                 Name: "User";
             };
             post: {
-                Shape: Post | null;
+                Shape: Post;
                 Name: "Post";
             };
         };
@@ -286,8 +286,8 @@ export default interface PrismaTypes {
         Where: Prisma.PostWhereInput;
         Create: {};
         Update: {};
-        RelationName: "likes" | "comments" | "medias" | "category" | "author";
-        ListRelations: "likes" | "comments" | "medias" | "category";
+        RelationName: "likes" | "comments" | "media" | "category" | "author";
+        ListRelations: "likes" | "comments" | "media" | "category";
         Relations: {
             likes: {
                 Shape: Like[];
@@ -297,7 +297,7 @@ export default interface PrismaTypes {
                 Shape: Comment[];
                 Name: "Comment";
             };
-            medias: {
+            media: {
                 Shape: Media[];
                 Name: "Media";
             };

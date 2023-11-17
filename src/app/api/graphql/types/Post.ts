@@ -1,58 +1,200 @@
+//./api/graphql/types/Post.ts
+
 import prisma from "@/prisma/database";
 import { builder } from "../builder";
+import { Visible } from "./enums";
+// import { UserUniqueInput } from "./User";
 
 builder.prismaObject("Post", {
 	fields: (t) => ({
 		id: t.exposeString("id"),
 		visibleTo: t.exposeString("visibleTo"),
-		createdAt: t.expose("createdAt", { type: Date }),
-		updatedAt: t.expose("updatedAt", { type: Date }),
 		published: t.exposeBoolean("published"),
 		hasImage: t.exposeBoolean("hasImage"),
 		hasVideo: t.exposeBoolean("hasVideo"),
-		title: t.exposeString("title"),
-		category: t.relation("category"),
+		createdAt: t.expose("createdAt", { type: "DateTime" }),
+		updatedAt: t.expose("updatedAt", { type: "DateTime" }),
+		title: t.exposeString("title", { nullable: true }),
 		content: t.exposeString("content", { nullable: true }),
-		likes: t.relation("likes"),
+		likeCount: t.relationCount("likes"),
+		replyCount: t.relationCount("comments"),
 		viewCount: t.exposeInt("viewCount"),
-		author: t.relation("author"),
 	}),
 });
 
-builder.queryField("timeline", (t) =>
-	t.prismaField({
-		type: "Post",
-		resolve: async (query, _parent, _args, _info) =>
-			prisma.post.findMany({
-				...query,
-				where: { published: true },
-			}),
-	})
-);
+builder.enumType(Visible, {
+	name: "Visible",
+});
 
-builder.queryType({
+export const PostCreateInput = builder.inputType("PostCreateInput", {
 	fields: (t) => ({
-		post: t.prismaField({
-			type: "Post",
-			args: {
-				id: t.arg.id({ required: true }),
-			},
-			resolve: (query, root, args, ctx, info) =>
-				prisma.post.findUnique({
-					...query,
-					where: { id: args.id },
-				}),
+		title: t.string({ required: true }),
+		content: t.string({ required: true }),
+		visibleTo: t.field({
+			type: Visible,
+			required: true,
 		}),
 	}),
 });
 
-export const PostCreateInput = builder.inputType("PostCreatInput", {
-	fields: (t) => ({
-		visibleTo: t.string({ required: true }),
-		published: t.boolean({ required: true }),
-		hasImage: t.boolean({ required: true }),
-		hasVideo: t.boolean({ required: true }),
-		imageUrl: t.string(),
-		content: t.string(),
-	}),
+const SortOrder = builder.enumType("SortOrder", {
+	values: ["asc", "desc"] as const,
 });
+
+const PostOrderByUpdatedAtInput = builder.inputType(
+	"PostOrderByUpdatedAtInput",
+	{
+		fields: (t) => ({
+			updatedAt: t.field({
+				type: SortOrder,
+				required: true,
+			}),
+		}),
+	}
+);
+
+builder.queryFields((t) => ({
+	postById: t.prismaField({
+		type: "Post",
+		nullable: true,
+		args: {
+			id: t.arg.string({ required: true }),
+		},
+		resolve: (query, parent, args) =>
+			prisma.post.findUnique({
+				...query,
+				where: { id: args.id },
+			}),
+	}),
+	timelineByCategory: t.prismaField({
+		type: ["Post"],
+		args: {
+			searchString: t.arg.string(),
+			skip: t.arg.int(),
+			take: t.arg.int(),
+			orderBy: t.arg({
+				type: PostOrderByUpdatedAtInput,
+			}),
+		},
+		resolve: (query, parent, args) => {
+			const or = args.searchString
+				? {
+						OR: [
+							{ title: { contains: args.searchString } },
+							{ content: { contains: args.searchString } },
+						],
+				  }
+				: {};
+
+			return prisma.post.findMany({
+				...query,
+				where: {
+					published: true,
+					...or,
+				},
+				take: args.take ?? undefined,
+				skip: args.skip ?? undefined,
+				orderBy: args.orderBy ?? undefined,
+			});
+		},
+	}),
+	draftsByUser: t.prismaField({
+		type: ["Post"],
+		nullable: true,
+		args: {
+			id: t.arg.string(),
+			email: t.arg.string(),
+		},
+		resolve: (query, parent, args) => {
+			return prisma.user
+				.findUnique({
+					where: {
+						id: args.id ?? undefined,
+						email: args.email ?? undefined,
+					},
+				})
+				.posts({
+					...query,
+					where: {
+						published: false,
+					},
+				});
+		},
+	}),
+}));
+
+builder.mutationFields((t) => ({
+	createDraft: t.prismaField({
+		type: "Post",
+		args: {
+			data: t.arg({
+				type: PostCreateInput,
+				required: true,
+			}),
+			author: t.arg.string({ required: true }),
+		},
+		resolve: (query, parent, args) => {
+			return prisma.post.create({
+				...query,
+				data: {
+					title: args.data.title,
+					content: args.data.content ?? undefined,
+					published: false,
+					author: {
+						connect: {
+							email: args.author,
+						},
+					},
+				},
+			});
+		},
+	}),
+	togglePublishPost: t.prismaField({
+		type: "Post",
+		args: {
+			id: t.arg.string({ required: true }),
+		},
+		resolve: async (query, parent, args) => {
+			// Toggling become simpler once this bug is resolved: https://github.com/prisma/prisma/issues/16715
+			const postPublished = await prisma.post.findUnique({
+				where: { id: args.id },
+				select: { published: true },
+			});
+			console.log(postPublished);
+			return prisma.post.update({
+				...query,
+				where: { id: args.id },
+				data: { published: !postPublished?.published },
+			});
+		},
+	}),
+	incrementPostViewCount: t.prismaField({
+		type: "Post",
+		args: {
+			id: t.arg.string({ required: true }),
+		},
+		resolve: (query, parent, args) => {
+			return prisma.post.update({
+				...query,
+				where: { id: args.id },
+				data: {
+					viewCount: {
+						increment: 1,
+					},
+				},
+			});
+		},
+	}),
+	deletePost: t.prismaField({
+		type: "Post",
+		args: {
+			id: t.arg.string({ required: true }),
+		},
+		resolve: (query, parent, args) => {
+			return prisma.post.delete({
+				...query,
+				where: { id: args.id },
+			});
+		},
+	}),
+}));

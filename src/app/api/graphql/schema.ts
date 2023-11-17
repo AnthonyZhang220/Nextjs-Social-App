@@ -1,7 +1,19 @@
-import { builder } from "./builder";
-// import "./types/Profile";
-// import "./types/Post";
-// import "./types/User";
+//./api/graphql/schema.ts
 
-// Convert the schema builder to an executable GraphQL schema
-export const schema = builder.toSchema();
+import { builder } from "./builder";
+
+import "./types/Comment";
+import "./types/Friend";
+import "./types/Like";
+import "./types/Profile";
+import "./types/Post";
+import "./types/User";
+
+
+import { writeFileSync } from "fs";
+import { resolve } from "path";
+import { printSchema } from "graphql";
+
+export const schema = builder.toSchema({});
+
+writeFileSync(resolve(__dirname, "./schema.graphql"), printSchema(schema));

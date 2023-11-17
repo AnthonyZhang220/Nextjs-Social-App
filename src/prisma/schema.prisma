@@ -99,6 +99,8 @@ model Location {
   city      String? // City where the location is located
   country   String? // Country where the location is located
   profile   Profile[]
+
+  @@map("location")
 }
 
 model Friend {
@@ -121,11 +123,11 @@ model Image {
 }
 
 model Media {
-  id     String  @id @default(uuid())
-  image  Image[]
-  video  String
-  post   Post?   @relation(fields: [postId], references: [id])
-  postId String?
+  id       String  @id @default(uuid())
+  image    Image[]
+  videoSrc String?
+  post     Post?   @relation(fields: [postId], references: [id])
+  postId   String?
 }
 
 model Comment {
@@ -138,25 +140,25 @@ model Comment {
 }
 
 model Like {
-  author   User    @relation(fields: [authorId], references: [id])
-  authorId String  @unique
-  post     Post?   @relation(fields: [postId], references: [id])
-  postId   String?
+  author   User   @relation(fields: [authorId], references: [id])
+  authorId String @unique
+  post     Post   @relation(fields: [postId], references: [id])
+  postId   String
 }
 
 model Post {
   id        String     @id @default(uuid())
-  visibleTo String
+  visibleTo Visible
   published Boolean    @default(false)
   hasImage  Boolean
   hasVideo  Boolean
-  createdAt DateTime   @default(now())
-  updatedAt DateTime   @updatedAt
-  title     String     @db.VarChar(255)
+  createdAt DateTime   @default(now()) @map(name: "created_at")
+  updatedAt DateTime   @updatedAt @map(name: "updated_at")
+  title     String?    @db.VarChar(255)
   content   String?
   likes     Like[]
   comments  Comment[]
-  medias    Media[]
+  media     Media[]
   category  Category[]
   viewCount Int
   author    User       @relation(fields: [authorId], references: [id])
@@ -165,8 +167,15 @@ model Post {
   @@map("posts")
 }
 
+enum Visible {
+  Everyone
+  Friends
+  Me
+}
+
 model Category {
-  id     String  @id @default(uuid())
-  post   Post?   @relation(fields: [postId], references: [id])
-  postId String?
+  id       String  @id @default(uuid())
+  category String  @unique
+  post     Post?   @relation(fields: [postId], references: [id])
+  postId   String?
 }
