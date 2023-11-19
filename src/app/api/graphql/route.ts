@@ -2,9 +2,11 @@
 
 import { createYoga } from "graphql-yoga";
 import { schema } from "./schema";
+import { createContext } from "./context";
 
 const { handleRequest } = createYoga({
 	schema,
+	context: createContext,
 	// While using Next.js file convention for routing, we need to configure Yoga to use the correct endpoint
 	graphqlEndpoint: "/api/graphql",
 

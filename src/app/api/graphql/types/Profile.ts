@@ -10,6 +10,8 @@ builder.prismaObject("Profile", {
 		banner: t.exposeString("banner", { nullable: true }),
 		bio: t.exposeString("bio", { nullable: true }),
 		profession: t.exposeString("profession", { nullable: true }),
+		location: t.relation("location", { nullable: true }),
+		locationId: t.exposeString("locationId", { nullable: true }),
 		user: t.relation("user"),
 		userId: t.exposeString("userId"),
 	}),

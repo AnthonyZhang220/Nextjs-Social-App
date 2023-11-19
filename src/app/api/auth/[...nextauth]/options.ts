@@ -19,7 +19,7 @@ export const googleAuthClient = new OAuth2Client(
 	process.env.OAUTH_GOOGLE_CLIENT_ID as string
 );
 
-export const options: NextAuthOptions = {
+export const authOptions: NextAuthOptions = {
 	session: {
 		strategy: "database",
 		maxAge: 14 * 24 * 60 * 60, // 14 days
@@ -60,30 +60,32 @@ export const options: NextAuthOptions = {
 		newUser: "/me",
 	},
 	callbacks: {
-		// /*
-		//  * While using `jwt` as a strategy, `jwt()` callback will be called before
-		//  * the `session()` callback. So we have to add custom parameters in `token`
-		//  * via `jwt()` callback to make them accessible in the `session()` callback
-		//  */
-		// async jwt({ token, user }) {
-		// 	if (user) {
-		// 		/*
-		// 		 * For adding custom parameters to user in session, we first need to add those parameters
-		// 		 * in token which then will be available in the `session()` callback
-		// 		 */
-		// 		token.role = user.role;
-		// 		token.fullName = user.fullName;
-		// 	}
-		// 	return token;
-		// },
-		// async session({ session, token }) {
-		// 	if (session.user) {
-		// 		// ** Add custom params to user in session which are added in `jwt()` callback via `token` parameter
-		// 		session.user.role = token.role;
-		// 		session.user.fullName = token.fullName;
-		// 	}
-		// 	return session;
-		// },
+		async signIn({ user, account, profile, email, credentials }) {
+			// The user object contains information about the authenticated user
+			// The account object contains information about the authentication account
+			// The profile object contains the user profile information from the provider
+
+			// Check if it's the user's first login
+			const isFirstLogin = !user.id;
+
+			if (isFirstLogin) {
+				// Create a user profile or perform other actions for the first login
+				await prisma.user.create({
+					data: {
+						email: user?.email,
+						username: user?.name,
+						profile: {
+							create: {
+								avatar: user.image,
+							},
+						},
+						// Add other user properties as needed
+					},
+				});
+			}
+
+			return Promise.resolve(true);
+		},
 	},
 	secret: process.env.NEXT_AUTH_SECRET,
 	debug: true,

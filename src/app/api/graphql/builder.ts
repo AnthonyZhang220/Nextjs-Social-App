@@ -3,6 +3,7 @@
 import SchemaBuilder from "@pothos/core";
 import PrismaPlugin from "@pothos/plugin-prisma";
 import { DateTimeResolver } from "graphql-scalars";
+import { createContext } from "./context";
 
 // This is the default location for the generator, but this can be
 // customized as described above.
@@ -14,7 +15,7 @@ import prisma from "@/prisma/database";
 
 export const builder = new SchemaBuilder<{
 	PrismaTypes: PrismaTypes;
-	Context: {};
+	Context: ReturnType<typeof createContext>;
 	Scalars: {
 		DateTime: { Input: Date; Output: Date };
 	};
@@ -27,13 +28,13 @@ export const builder = new SchemaBuilder<{
 	},
 });
 
+/* MUST DEFINE A ROOT QUERY TYPE AND root MUTATION TYPE WHEN USING POTHOS GRAPHQL */
 builder.queryType({
 	description: "The query root type.",
 	fields: (t) => ({
 		ok: t.boolean({ resolve: () => true }),
 	}),
 });
-
 builder.mutationType({});
 
 // This is where we've created the new date scalar

@@ -5,5 +5,6 @@ builder.prismaObject("Category", {
 		id: t.exposeString("id"),
 		category: t.exposeString("category"),
 		post: t.relation("post"),
+		postId: t.exposeString("postId", { nullable: true }),
 	}),
 });

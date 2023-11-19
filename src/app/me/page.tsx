@@ -1,18 +1,20 @@
-"use client";
-
 import LeftNav from "../../layout/LeftNav";
 import Profile from "../../layout/Profile";
 import Sidebar from "../../layout/Sidebar";
 import Timeline from "../../layout/Timeline";
 import Footer from "../../layout/Footer";
-import { useSession } from "next-auth/react";
 
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "../api/auth/[...nextauth]/options";
+
+import getCurrentUser from "@/utils/getCurrentUser";
 import { profile } from "@/mockdata";
 
 import styles from "./page.module.scss";
 
-export default function Me() {
-	const { data: session, status } = useSession();
+export default async function Me() {
+	const session = await getServerSession(authOptions);
+	const { data, error } = getCurrentUser({ session });
 
 	if (session) {
 		return (

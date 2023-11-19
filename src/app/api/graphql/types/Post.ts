@@ -2,43 +2,50 @@
 
 import prisma from "@/prisma/database";
 import { builder } from "../builder";
-import { Visible } from "./enums";
-// import { UserUniqueInput } from "./User";
+import { UserUniqueInput } from "./User";
+import { Visible } from "../enums/visible";
 
-builder.prismaObject("Post", {
-	fields: (t) => ({
-		id: t.exposeString("id"),
-		visibleTo: t.exposeString("visibleTo"),
-		published: t.exposeBoolean("published"),
-		hasImage: t.exposeBoolean("hasImage"),
-		hasVideo: t.exposeBoolean("hasVideo"),
-		createdAt: t.expose("createdAt", { type: "DateTime" }),
-		updatedAt: t.expose("updatedAt", { type: "DateTime" }),
-		title: t.exposeString("title", { nullable: true }),
-		content: t.exposeString("content", { nullable: true }),
-		likeCount: t.relationCount("likes"),
-		replyCount: t.relationCount("comments"),
-		viewCount: t.exposeInt("viewCount"),
-	}),
+const SortOrder = builder.enumType("SortOrder", {
+	values: ["asc", "desc"] as const,
 });
 
 builder.enumType(Visible, {
 	name: "Visible",
 });
 
-export const PostCreateInput = builder.inputType("PostCreateInput", {
+builder.prismaObject("Post", {
 	fields: (t) => ({
-		title: t.string({ required: true }),
-		content: t.string({ required: true }),
+		id: t.exposeString("id"),
 		visibleTo: t.field({
 			type: Visible,
-			required: true,
+			resolve: (post) => post.visibleTo as Visible,
 		}),
+		published: t.exposeBoolean("published"),
+		hasMedia: t.exposeBoolean("hasMedia"),
+		createdAt: t.expose("createdAt", { type: "DateTime" }),
+		updatedAt: t.expose("updatedAt", { type: "DateTime" }),
+		title: t.exposeString("title", { nullable: true }),
+		content: t.exposeString("content", { nullable: true }),
+		likes: t.relation("likes"),
+		comments: t.relation("comments"),
+		media: t.relation("media"),
+		category: t.relation("category"),
+		viewCount: t.exposeInt("viewCount"),
+		likeCount: t.relationCount("likes"),
+		replyCount: t.relationCount("comments"),
+		author: t.relation("author"),
+		authorId: t.exposeString("authorId"),
 	}),
 });
 
-const SortOrder = builder.enumType("SortOrder", {
-	values: ["asc", "desc"] as const,
+export const PostCreateInput = builder.inputType("PostCreateInput", {
+	fields: (t) => ({
+		title: t.string({ required: true }),
+		published: t.boolean({ required: true }),
+		visibleTo: t.field({ type: Visible, required: true }),
+		content: t.string({ required: true }),
+		hasMedia: t.boolean({ required: true }),
+	}),
 });
 
 const PostOrderByUpdatedAtInput = builder.inputType(
@@ -53,8 +60,43 @@ const PostOrderByUpdatedAtInput = builder.inputType(
 	}
 );
 
+/* QUERY FIELDS */
 builder.queryFields((t) => ({
-	postById: t.prismaField({
+	getAllPublishedPost: t.prismaField({
+		type: ["Post"],
+		resolve: (query) => {
+			return prisma.post.findMany({
+				...query,
+				where: { published: true, visibleTo: "Everyone" },
+			});
+		},
+	}),
+	searchPostByString: t.prismaField({
+		type: ["Post"],
+		args: {
+			searchString: t.arg.string(),
+			skip: t.arg.int(),
+			take: t.arg.int(),
+		},
+		resolve: (query, root, args, ctx, info) => {
+			const { searchString, skip, take } = args;
+			const postSearch = searchString
+				? {
+						OR: [
+							{ title: { contains: searchString } },
+							{ content: { contains: searchString } },
+						],
+				  }
+				: {};
+			return prisma.post.findMany({
+				...query,
+				where: { published: true, ...postSearch },
+				take: take ?? undefined,
+				skip: skip ?? undefined,
+			});
+		},
+	}),
+	getPostInfoById: t.prismaField({
 		type: "Post",
 		nullable: true,
 		args: {
@@ -66,10 +108,48 @@ builder.queryFields((t) => ({
 				where: { id: args.id },
 			}),
 	}),
+	getPostFromFriends: t.prismaField({
+		type: ["Post"],
+		args: {
+			id: t.arg.string(),
+		},
+		resolve: async (query, parent, args) => {
+			// Fetch the user's friends
+			const user = await prisma.user.findUniqueOrThrow({
+				where: {
+					id: args.id ?? undefined,
+				},
+				select: {
+					friends: true,
+				},
+			});
+
+			if (!user) {
+				// Handle case where user is not found
+				return [];
+			}
+
+			const friendIds = user.friends.map((friend) => friend.friendId);
+
+			// Fetch posts where the author is one of the user's friends
+			const posts = await prisma.post.findMany({
+				...query,
+				where: {
+					authorId: {
+						in: friendIds,
+					},
+					published: true,
+					visibleTo: "Everyone" || "Friends",
+				},
+			});
+
+			return posts;
+		},
+	}),
 	timelineByCategory: t.prismaField({
 		type: ["Post"],
 		args: {
-			searchString: t.arg.string(),
+			category: t.arg.string(),
 			skip: t.arg.int(),
 			take: t.arg.int(),
 			orderBy: t.arg({
@@ -77,20 +157,11 @@ builder.queryFields((t) => ({
 			}),
 		},
 		resolve: (query, parent, args) => {
-			const or = args.searchString
-				? {
-						OR: [
-							{ title: { contains: args.searchString } },
-							{ content: { contains: args.searchString } },
-						],
-				  }
-				: {};
-
 			return prisma.post.findMany({
 				...query,
 				where: {
 					published: true,
-					...or,
+					visibleTo: "Everyone",
 				},
 				take: args.take ?? undefined,
 				skip: args.skip ?? undefined,
@@ -123,6 +194,7 @@ builder.queryFields((t) => ({
 	}),
 }));
 
+/* MUTATION FIELDS */
 builder.mutationFields((t) => ({
 	createDraft: t.prismaField({
 		type: "Post",
@@ -139,10 +211,13 @@ builder.mutationFields((t) => ({
 				data: {
 					title: args.data.title,
 					content: args.data.content ?? undefined,
-					published: false,
+					published: args.data.published,
+					visibleTo: args.data.visibleTo,
+					viewCount: 1,
+					hasMedia: args.data.hasMedia,
 					author: {
 						connect: {
-							email: args.author,
+							id: args.author,
 						},
 					},
 				},

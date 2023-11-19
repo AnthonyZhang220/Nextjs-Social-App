@@ -221,7 +221,7 @@ export default interface PrismaTypes {
                 Name: "Image";
             };
             post: {
-                Shape: Post | null;
+                Shape: Post;
                 Name: "Post";
             };
         };

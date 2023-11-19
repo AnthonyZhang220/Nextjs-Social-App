@@ -126,20 +126,22 @@ model Media {
   id       String  @id @default(uuid())
   image    Image[]
   videoSrc String?
-  post     Post?   @relation(fields: [postId], references: [id])
-  postId   String?
+  post     Post    @relation(fields: [postId], references: [id])
+  postId   String
 }
 
 model Comment {
+  id       String  @id @default(uuid())
+  content  String
   author   User    @relation(fields: [authorId], references: [id])
   authorId String  @unique
-  content  String
   post     Post?   @relation(fields: [postId], references: [id])
   postId   String?
   mention  Tag[]
 }
 
 model Like {
+  id       String @id @default(uuid())
   author   User   @relation(fields: [authorId], references: [id])
   authorId String @unique
   post     Post   @relation(fields: [postId], references: [id])
@@ -150,8 +152,7 @@ model Post {
   id        String     @id @default(uuid())
   visibleTo Visible
   published Boolean    @default(false)
-  hasImage  Boolean
-  hasVideo  Boolean
+  hasMedia  Boolean
   createdAt DateTime   @default(now()) @map(name: "created_at")
   updatedAt DateTime   @updatedAt @map(name: "updated_at")
   title     String?    @db.VarChar(255)
