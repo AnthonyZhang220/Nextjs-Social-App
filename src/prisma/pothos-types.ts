@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { Prisma, Account, User, Profile, VerificationToken, Session, Location, Friend, Tag, Image, Media, Comment, Like, Post, Category } from "@prisma/client";
+import type { Prisma, Account, User, Friendship, Profile, VerificationToken, Session, Location, Tag, Image, Media, Comment, Like, Post, Category } from "@prisma/client";
 export default interface PrismaTypes {
     Account: {
         Name: "Account";
@@ -30,8 +30,8 @@ export default interface PrismaTypes {
         Where: Prisma.UserWhereInput;
         Create: {};
         Update: {};
-        RelationName: "posts" | "profile" | "friends" | "comments" | "likes" | "mentions" | "accounts" | "sessions";
-        ListRelations: "posts" | "friends" | "comments" | "likes" | "mentions" | "accounts" | "sessions";
+        RelationName: "posts" | "profile" | "friends" | "friendOf" | "comments" | "likes" | "mentions" | "accounts" | "sessions";
+        ListRelations: "posts" | "friends" | "friendOf" | "comments" | "likes" | "mentions" | "accounts" | "sessions";
         Relations: {
             posts: {
                 Shape: Post[];
@@ -42,8 +42,12 @@ export default interface PrismaTypes {
                 Name: "Profile";
             };
             friends: {
-                Shape: Friend[];
-                Name: "Friend";
+                Shape: Friendship[];
+                Name: "Friendship";
+            };
+            friendOf: {
+                Shape: Friendship[];
+                Name: "Friendship";
             };
             comments: {
                 Shape: Comment[];
@@ -64,6 +68,29 @@ export default interface PrismaTypes {
             sessions: {
                 Shape: Session[];
                 Name: "Session";
+            };
+        };
+    };
+    Friendship: {
+        Name: "Friendship";
+        Shape: Friendship;
+        Include: Prisma.FriendshipInclude;
+        Select: Prisma.FriendshipSelect;
+        OrderBy: Prisma.FriendshipOrderByWithRelationInput;
+        WhereUnique: Prisma.FriendshipWhereUniqueInput;
+        Where: Prisma.FriendshipWhereInput;
+        Create: {};
+        Update: {};
+        RelationName: "friends" | "friendOf";
+        ListRelations: never;
+        Relations: {
+            friends: {
+                Shape: User;
+                Name: "User";
+            };
+            friendOf: {
+                Shape: User;
+                Name: "User";
             };
         };
     };
@@ -139,25 +166,6 @@ export default interface PrismaTypes {
             profile: {
                 Shape: Profile[];
                 Name: "Profile";
-            };
-        };
-    };
-    Friend: {
-        Name: "Friend";
-        Shape: Friend;
-        Include: Prisma.FriendInclude;
-        Select: Prisma.FriendSelect;
-        OrderBy: Prisma.FriendOrderByWithRelationInput;
-        WhereUnique: Prisma.FriendWhereUniqueInput;
-        Where: Prisma.FriendWhereInput;
-        Create: {};
-        Update: {};
-        RelationName: "friend";
-        ListRelations: never;
-        Relations: {
-            friend: {
-                Shape: User;
-                Name: "User";
             };
         };
     };

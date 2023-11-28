@@ -1,4 +1,10 @@
 import type { NextAuthOptions } from "next-auth";
+import type {
+	GetServerSidePropsContext,
+	NextApiRequest,
+	NextApiResponse,
+} from "next";
+import { getServerSession } from "next-auth";
 /* Providers */
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
@@ -30,6 +36,14 @@ export const authOptions: NextAuthOptions = {
 		GithubProvider({
 			clientId: process.env.GITHUB_ID as string,
 			clientSecret: process.env.GITHUB_SECRET as string,
+			async profile(profile, tokens) {
+				return {
+					id: profile.id,
+					username: profile.name,
+					email: profile.email,
+					image: profile.picture,
+				};
+			},
 		}),
 		GoogleProvider({
 			clientId: process.env.GOOGLE_ID as string,
@@ -38,6 +52,14 @@ export const authOptions: NextAuthOptions = {
 		TwitterProvider({
 			clientId: process.env.TWITTER_ID as string,
 			clientSecret: process.env.TWITTER_SECRET as string,
+			async profile(profile, tokens) {
+				return {
+					id: profile.id,
+					username: profile.name,
+					email: profile.email,
+					image: profile.picture,
+				};
+			},
 		}),
 		CredentialsProvider({
 			// this!
@@ -70,7 +92,10 @@ export const authOptions: NextAuthOptions = {
 
 			if (isFirstLogin) {
 				// Create a user profile or perform other actions for the first login
-				await prisma.user.create({
+				const newUser = await prisma.user.update({
+					where: {
+						id: user.id,
+					},
 					data: {
 						email: user?.email,
 						username: user?.name,
@@ -82,22 +107,39 @@ export const authOptions: NextAuthOptions = {
 						// Add other user properties as needed
 					},
 				});
+
+				user.id = newUser.id;
 			}
 
 			return Promise.resolve(true);
 		},
+		async session({ session, token, user }) {
+			session.user = user;
+			console.log("server" + { ...session.user });
+			return session;
+		},
 	},
 	secret: process.env.NEXT_AUTH_SECRET,
 	debug: true,
-	logger: {
-		error(code, metadata) {
-			console.error(code, metadata);
-		},
-		warn(code) {
-			console.warn(code);
-		},
-		debug(code, metadata) {
-			console.debug(code, metadata);
-		},
-	},
 };
+
+export function auth(
+	...args:
+		| [GetServerSidePropsContext["req"], GetServerSidePropsContext["res"]]
+		| [NextApiRequest, NextApiResponse]
+		| []
+) {
+	return getServerSession(...args, authOptions);
+}
+
+// export async function getUserByAccessToken(access_token: string) {
+// 	const user = await prisma.session
+// 		.findUniqueOrThrow({
+// 			where: {
+// 				sessionToken: access_token,
+// 			},
+// 		})
+// 		.user();
+
+// 	return Promise.resolve(user?.id);
+// }

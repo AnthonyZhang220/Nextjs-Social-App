@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -43,4 +41,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 6. Pothos Graphql: https://pothos-graphql.dev/docs/plugins/prisma#creating-types-with-builderprismaobject
 7. graphql-yoga: https://the-guild.dev/graphql/yoga-server/docs/integrations/integration-with-nextjs
 8. 
+
+
+## Blog used that greatly helps with the development of this project
+
+1. https://www.apollographql.com/blog/announcement/frontend/using-apollo-client-with-next-js-13-releasing-an-official-library-to-support-the-app-router/
+
 

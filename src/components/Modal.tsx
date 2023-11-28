@@ -2,20 +2,20 @@
 
 import CloseIcon from "@mui/icons-material/Close";
 import Button from "./Button";
-import {
-	useRef,
-	useCallback,
-	useEffect,
-	MouseEventHandler,
-} from "react";
+import { useRef, useCallback, useEffect, MouseEventHandler } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../styles/sass/components/Modal.module.scss";
+import { FetchResult } from "@apollo/client";
 
 type ModalProps = {
 	title?: string;
 	onClose?: () => void;
 	children: React.ReactNode;
 	buttonContent: string;
+	buttonAction?:
+		| ((event: React.FormEvent<HTMLFormElement>) => Promise<void>)
+		| (() => void)
+		| ((event: React.FormEvent<HTMLFormElement>) => Promise<FetchResult<any>>);
 };
 
 export default function Modal(props: ModalProps) {
@@ -63,6 +63,7 @@ export default function Modal(props: ModalProps) {
 						paddingX={10}
 						color="black"
 						paddingY={5}
+						onClick={props.buttonAction}
 					/>
 				</div>
 				<div className={styles.children}>{props.children}</div>

@@ -2,6 +2,7 @@
 
 import prisma from "@/prisma/database";
 import { builder } from "../builder";
+import { Truculenta } from "next/font/google";
 // import { PostCreateInput } from "./Post";
 
 builder.prismaObject("User", {
@@ -35,8 +36,10 @@ builder.prismaObject("User", {
 				published: true,
 			},
 		}),
-		profile: t.relation("profile"),
+		profile: t.relation("profile", { nullable: true }),
 		friends: t.relation("friends"),
+		friendOf: t.relation("friends"),
+		friendCount: t.relationCount("friends"),
 		comments: t.relation("comments"),
 		likes: t.relation("likes"),
 	}),
@@ -70,10 +73,15 @@ builder.queryFields((t) => ({
 			prisma.user.findUniqueOrThrow({
 				...query,
 				where: { id: args.id },
-				include: {
-					profile: true,
-				},
 			}),
+	}),
+	getMyTimeline: t.prismaField({
+		type: ["Post"],
+		args: {
+			id: t.arg.string({ required: true }),
+		},
+		resolve: (query, root, args, ctx, info) =>
+			prisma.post.findMany({ ...query, where: { authorId: args.id } }),
 	}),
 	searchUserByString: t.prismaField({
 		type: ["User"],
@@ -99,6 +107,57 @@ builder.queryFields((t) => ({
 				where: { ...userSearch },
 				take: take ?? undefined,
 				skip: skip ?? undefined,
+			});
+		},
+	}),
+}));
+
+builder.mutationFields((t) => ({
+	updateProfile: t.prismaField({
+		type: "User",
+		args: {
+			id: t.arg.string({ required: true }),
+			displayName: t.arg.string(),
+			bio: t.arg.string(),
+			image: t.arg.string(),
+			banner: t.arg.string(),
+			avatar: t.arg.string(),
+			city: t.arg.string(),
+		},
+		resolve: (query, parent, args, info) => {
+			return prisma.user.update({
+				...query,
+				where: {
+					id: args.id,
+				},
+				data: {
+					displayName: args.displayName,
+					image: args.image,
+					profile: {
+						upsert: {
+							create: {
+								bio: args.bio,
+								banner: args.banner,
+								avatar: args.avatar,
+							},
+							update: {
+								bio: args.bio,
+								banner: args.banner,
+								avatar: args.avatar,
+								location: {
+									upsert: {
+										create: {
+											city: args.city,
+										},
+										update: {
+											city: args.city,
+										},
+									},
+								},
+							},
+						},
+					},
+				},
 			});
 		},
 	}),

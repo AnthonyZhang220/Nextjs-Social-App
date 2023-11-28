@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Header from "@/layout/Header";
 
 export const metadata: Metadata = {
 	title: "Home / NextJS Social App",
@@ -10,9 +11,5 @@ export default function HomeLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return (
-		<div className="home">
-			{children}
-		</div>
-	);
+	return <div className="home">{children}</div>;
 }

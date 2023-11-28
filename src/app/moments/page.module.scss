@@ -23,8 +23,18 @@
 			}
 		}
 
-		.timeline {
+		.main_content {
 			flex: 0 1 700px;
+			min-height: calc(100vh - 4rem);
+			border-left: 1px solid rgb(47, 51, 54);
+			border-right: 1px solid rgb(47, 51, 54);
+
+			.profile_section {
+			}
+
+			.timeline_section {
+				border-top: 1px solid rgb(47, 51, 54);
+			}
 		}
 
 		.sidebar {

@@ -1,14 +1,16 @@
-import LeftNav from "../../layout/LeftNav";
-import Profile from "../../layout/Profile";
-import Sidebar from "../../layout/Sidebar";
-import Timeline from "../../layout/Timeline";
-import Footer from "../../layout/Footer";
+import LeftNav from "../../../layout/LeftNav";
+import Profile from "../../../layout/Profile";
+import Sidebar from "../../../layout/Sidebar";
+import Timeline from "../../../layout/Timeline";
+import Footer from "../../../layout/Footer";
 
 import { profile } from "@/mockdata";
 
 import styles from "./page.module.scss";
 
-export default function User() {
+export default function User({ params }: { params: { username: string } }) {
+	
+
 	return (
 		<main className={styles.main}>
 			<div className={styles.main_container}>

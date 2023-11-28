@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import styles from "../styles/sass/components/Button.module.scss";
 
 type ButtonProp = {
@@ -8,6 +8,7 @@ type ButtonProp = {
 	color?: string;
 	paddingY?: number;
 	paddingX?: number;
+	onClick?: (...args: any[]) => void;
 };
 
 function Button(props: ButtonProp) {
@@ -22,6 +23,7 @@ function Button(props: ButtonProp) {
 				color: props.color,
 				cursor: "pointer",
 			}}
+			onClick={props.onClick}
 		>
 			<span className={styles.label}>{props.label}</span>
 		</div>

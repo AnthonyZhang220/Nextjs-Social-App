@@ -1,5 +1,3 @@
-import Header from "../../layout/Header";
-
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,10 +10,5 @@ export default function ChatLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	return (
-		<div className="chat">
-			<Header />
-			{children}
-		</div>
-	);
+	return <div className="chat">{children}</div>;
 }

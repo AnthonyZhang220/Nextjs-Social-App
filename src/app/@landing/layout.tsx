@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Home / NextJS Social App",
+	title: "NextJS Social App",
 	description: "Created by NextJS, Typescript and React.",
 };
 
-export default function DiscoverLayout({
+export default function LandingLayout({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	return <div className="home">{children}</div>;
+	return <div className="landing">{children}</div>;
 }

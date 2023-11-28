@@ -7,33 +7,51 @@ import Link from "next/link";
 import styles from "../styles/sass/layout/Post.module.scss";
 import { ShortVideo } from "./ShortVideo";
 
-type PostData = {
+export type PostData = {
 	avatar?: string;
-	profile_url?: string;
-	displayName: string;
-	username: string;
+	username?: string;
 	image?: string;
 	video?: string;
-	content: string;
+	content?: string;
+	author: AuthorDataType;
+	viewCount?: number;
+	replyCount?: number;
+	likeCount?: number;
+};
+
+export type AuthorDataType = {
+	image?: string;
+	name?: string;
+	displayName?: string;
 };
 
 function Post(props: PostData) {
-	const { avatar, username, image, content, displayName, profile_url, video } =
-		props;
+	const {
+		avatar,
+		username,
+		content,
+		video,
+		viewCount,
+		replyCount,
+		likeCount,
+		author,
+	} = props;
+
+	const { image, displayName, name } = author;
 
 	return (
 		<article className={styles.post}>
 			<div className={styles.post_container}>
 				<div className={styles.post_avatar}>
-					<Avatar avatar_src={avatar} size={45} />
+					<Avatar avatar_src={image} size={45} alt={displayName} />
 				</div>
 				<div className={styles.post_body}>
 					<div className={styles.post_user}>
-						<Link href={profile_url || ""}>
+						<Link href={username || ""}>
 							<span className={styles.post_displayname}>{displayName}</span>
 						</Link>
-						<Link href={profile_url || ""}>
-							<span className={styles.post_username}>@{username}</span>
+						<Link href={username || ""}>
+							<span className={styles.post_username}>@{name}</span>
 						</Link>
 					</div>
 					<div className={styles.post_content}>
@@ -52,7 +70,11 @@ function Post(props: PostData) {
 						) : null}
 					</div>
 					<div className={styles.post_action}>
-						<PostAction />
+						<PostAction
+							viewCount={viewCount}
+							replyCount={replyCount}
+							likeCount={likeCount}
+						/>
 					</div>
 				</div>
 			</div>

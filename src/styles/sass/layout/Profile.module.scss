@@ -1,7 +1,4 @@
 .profile {
-	border-left: 1px solid rgb(47, 51, 54);
-	border-right: 1px solid rgb(47, 51, 54);
-
 	.profile_container {
 		display: flex;
 		flex-direction: column;
@@ -51,16 +48,16 @@
 						z-index: 0;
 						width: 100%;
 						padding-bottom: 100%;
-					}
-
-					img {
-						position: absolute;
-						top: 0px;
-						bottom: 0px;
-						left: 0px;
-						right: 0px;
-						height: 100%;
-						width: 100%;
+						
+						img {
+							position: absolute;
+							top: 0px;
+							bottom: 0px;
+							left: 0px;
+							right: 0px;
+							height: 100%;
+							width: 100%;
+						}
 					}
 				}
 

@@ -39,18 +39,19 @@ model Account {
 }
 
 model User {
-  id            String    @id @default(uuid())
+  id            String       @id @default(uuid())
   name          String?
-  username      String?   @unique
+  username      String?      @unique
   displayName   String?
   image         String?
-  email         String?   @unique
-  emailVerified DateTime? @map("email_verified")
-  createdAt     DateTime  @default(now()) @map(name: "created_at")
-  updatedAt     DateTime  @updatedAt @map(name: "updated_at")
+  email         String?      @unique
+  emailVerified DateTime?    @map("email_verified")
+  createdAt     DateTime     @default(now()) @map(name: "created_at")
+  updatedAt     DateTime     @updatedAt @map(name: "updated_at")
   posts         Post[]
   profile       Profile?
-  friends       Friend[]
+  friends       Friendship[] @relation("friends")
+  friendOf      Friendship[] @relation("friendOf")
   comments      Comment[]
   likes         Like[]
   mentions      Tag[]
@@ -58,6 +59,15 @@ model User {
   sessions      Session[]
 
   @@map(name: "users")
+}
+
+model Friendship {
+  friends    User   @relation("friends", fields: [friendsId], references: [id])
+  friendsId  String
+  friendOf   User   @relation("friendOf", fields: [friendOfId], references: [id])
+  friendOfId String
+
+  @@id([friendOfId, friendsId])
 }
 
 model Profile {
@@ -93,19 +103,14 @@ model Session {
 
 model Location {
   id        String    @id @default(uuid())
-  name      String // Name or label for the location (e.g., "Eiffel Tower")
-  latitude  Float // Latitude coordinate (e.g., 48.858844)
-  longitude Float // Longitude coordinate (e.g., 2.294351)
+  name      String? // Name or label for the location (e.g., "Eiffel Tower")
+  latitude  Float? // Latitude coordinate (e.g., 48.858844)
+  longitude Float? // Longitude coordinate (e.g., 2.294351)
   city      String? // City where the location is located
   country   String? // Country where the location is located
   profile   Profile[]
 
   @@map("location")
-}
-
-model Friend {
-  friend   User   @relation(fields: [friendId], references: [id])
-  friendId String @unique
 }
 
 model Tag {
@@ -152,7 +157,6 @@ model Post {
   id        String     @id @default(uuid())
   visibleTo Visible
   published Boolean    @default(false)
-  hasMedia  Boolean
   createdAt DateTime   @default(now()) @map(name: "created_at")
   updatedAt DateTime   @updatedAt @map(name: "updated_at")
   title     String?    @db.VarChar(255)
@@ -163,7 +167,7 @@ model Post {
   category  Category[]
   viewCount Int
   author    User       @relation(fields: [authorId], references: [id])
-  authorId  String     @unique
+  authorId  String
 
   @@map("posts")
 }

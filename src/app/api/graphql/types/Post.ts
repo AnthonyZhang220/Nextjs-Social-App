@@ -21,7 +21,6 @@ builder.prismaObject("Post", {
 			resolve: (post) => post.visibleTo as Visible,
 		}),
 		published: t.exposeBoolean("published"),
-		hasMedia: t.exposeBoolean("hasMedia"),
 		createdAt: t.expose("createdAt", { type: "DateTime" }),
 		updatedAt: t.expose("updatedAt", { type: "DateTime" }),
 		title: t.exposeString("title", { nullable: true }),
@@ -40,11 +39,11 @@ builder.prismaObject("Post", {
 
 export const PostCreateInput = builder.inputType("PostCreateInput", {
 	fields: (t) => ({
-		title: t.string({ required: true }),
+		title: t.string(),
 		published: t.boolean({ required: true }),
 		visibleTo: t.field({ type: Visible, required: true }),
 		content: t.string({ required: true }),
-		hasMedia: t.boolean({ required: true }),
+		author: t.string({ required: true }),
 	}),
 });
 
@@ -108,10 +107,10 @@ builder.queryFields((t) => ({
 				where: { id: args.id },
 			}),
 	}),
-	getPostFromFriends: t.prismaField({
+	getPostsFromFriends: t.prismaField({
 		type: ["Post"],
 		args: {
-			id: t.arg.string(),
+			id: t.arg.string({ required: true }),
 		},
 		resolve: async (query, parent, args) => {
 			// Fetch the user's friends
@@ -119,7 +118,7 @@ builder.queryFields((t) => ({
 				where: {
 					id: args.id ?? undefined,
 				},
-				select: {
+				include: {
 					friends: true,
 				},
 			});
@@ -128,16 +127,26 @@ builder.queryFields((t) => ({
 				// Handle case where user is not found
 				return [];
 			}
+			console.log("user", user);
 
-			const friendIds = user.friends.map((friend) => friend.friendId);
+			const friendIds = user.friends.map((friend) => friend.friendsId);
 
 			// Fetch posts where the author is one of the user's friends
 			const posts = await prisma.post.findMany({
 				...query,
 				where: {
-					authorId: {
-						in: friendIds,
-					},
+					OR: [
+						{
+							authorId: {
+								in: friendIds,
+							},
+						},
+						{
+							authorId: {
+								contains: args.id,
+							},
+						},
+					],
 					published: true,
 					visibleTo: "Everyone" || "Friends",
 				},
@@ -196,14 +205,13 @@ builder.queryFields((t) => ({
 
 /* MUTATION FIELDS */
 builder.mutationFields((t) => ({
-	createDraft: t.prismaField({
+	createPost: t.prismaField({
 		type: "Post",
 		args: {
 			data: t.arg({
 				type: PostCreateInput,
 				required: true,
 			}),
-			author: t.arg.string({ required: true }),
 		},
 		resolve: (query, parent, args) => {
 			return prisma.post.create({
@@ -214,10 +222,9 @@ builder.mutationFields((t) => ({
 					published: args.data.published,
 					visibleTo: args.data.visibleTo,
 					viewCount: 1,
-					hasMedia: args.data.hasMedia,
 					author: {
 						connect: {
-							id: args.author,
+							id: args.data.author,
 						},
 					},
 				},

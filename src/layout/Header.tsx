@@ -15,8 +15,8 @@ import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined
 
 import styles from "../styles/sass/layout/Header.module.scss";
 
-export default function Header() {
-	const { data: session } = useSession();
+export default function Header({ ...props }) {
+	const { session } = props;
 	const pathname = usePathname();
 	const router = useRouter();
 
@@ -64,6 +64,7 @@ export default function Header() {
 										<Avatar
 											avatar_src={session.user?.image ?? undefined}
 											size={40}
+											alt={session.user?.name ?? undefined}
 										/>
 									}
 								>

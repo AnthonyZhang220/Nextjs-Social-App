@@ -1,8 +1,6 @@
 .timeline {
 	display: flex;
 	flex-direction: column;
-	border-left: 1px solid rgb(47, 51, 54);
-	border-right: 1px solid rgb(47, 51, 54);
 
 	.timeline_tabgroup {
 		padding: 0 14px;
@@ -10,6 +8,16 @@
 		justify-content: space-around;
 		align-items: center;
 		cursor: pointer;
+	}
+
+	.timeline_empty {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+
+		div {
+			padding: 1rem;
+		}
 	}
 }
 

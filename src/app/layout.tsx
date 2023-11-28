@@ -3,6 +3,7 @@ import { Viewport } from "next";
 import SessionProvider from "../lib/SessionProvider";
 import { getServerSession } from "next-auth";
 import Script from "next/script";
+import { auth } from "./api/auth/[...nextauth]/options";
 import OneTapComponent from "@/lib/OneTapComponent";
 import { ApolloWrapper } from "../lib/ApolloWrapper";
 
@@ -36,8 +37,9 @@ export default async function RootLayout(props: {
 	children: React.ReactNode;
 	auth: React.ReactNode;
 	settings: React.ReactNode;
+	landing: React.ReactNode;
 }) {
-	const session = await getServerSession();
+	const session = await auth();
 
 	return (
 		<html lang="en">
@@ -51,9 +53,9 @@ export default async function RootLayout(props: {
 				<ApolloWrapper>
 					<SessionProvider session={session}>
 						<OneTapComponent />
-						{props.children}
 						{props.auth}
 						{props.settings}
+						{props.children}
 					</SessionProvider>
 				</ApolloWrapper>
 			</body>

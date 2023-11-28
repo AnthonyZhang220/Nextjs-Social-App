@@ -8,19 +8,13 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import styles from "../styles/sass/components/PostAction.module.scss";
 
 type PostActionProps = {
-	replyCount?: number | undefined;
-	likeCount?: number | undefined;
-	views?: number | undefined;
+	replyCount: number | undefined;
+	likeCount: number | undefined;
+	viewCount: number | undefined;
 };
 
 export default function PostAction(props: PostActionProps) {
-	const postData = {
-		replyCount: 3,
-		likeCount: 100,
-		views: 1000,
-	};
-
-	const { replyCount, likeCount, views } = postData;
+	const { replyCount, likeCount, viewCount } = props;
 	return (
 		<div className={styles.post_action_container}>
 			<PostActionButton
@@ -35,7 +29,7 @@ export default function PostAction(props: PostActionProps) {
 			/>
 			<PostActionButton
 				content="view"
-				count={views}
+				count={viewCount}
 				Icon={<VisibilityOutlinedIcon />}
 			/>
 		</div>
