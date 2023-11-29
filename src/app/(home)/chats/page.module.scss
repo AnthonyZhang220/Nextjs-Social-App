@@ -1,0 +1,16 @@
+@use "../../../styles/sass/abstracts/mixins" as *;
+
+.chatlist {
+	min-height: calc(100vh - 4rem);
+	border-left: 1px solid rgb(47, 51, 54);
+	border-right: 1px solid rgb(47, 51, 54);
+}
+
+.chatdetail {
+	flex: 1 1 600px;
+
+	.chatdetail_container {
+		position: sticky;
+		top: 64px;
+	}
+}

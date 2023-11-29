@@ -1,0 +1,36 @@
+@use "../../../styles/sass/abstracts/mixins" as *;
+
+.main_content {
+	flex: 0 1 700px;
+	min-height: calc(100vh - 4rem);
+	border-left: 1px solid rgb(47, 51, 54);
+	border-right: 1px solid rgb(47, 51, 54);
+	
+	.draft_section {
+		border-bottom: 1px solid rgb(47, 51, 54);
+	}
+
+	.timeline_section {
+	}
+}
+
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	max-width: 350px;
+	flex: 0 1 350px;
+	margin: 0 0.875rem;
+
+	@include screen-lg {
+		max-width: 290px;
+	}
+
+	@include screen-md {
+		display: none;
+	}
+
+	.sidebar_container {
+		position: sticky;
+		top: 4rem;
+	}
+}

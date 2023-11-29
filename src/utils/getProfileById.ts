@@ -32,11 +32,17 @@ const query = gql`
 	}
 `;
 
-async function getProfileById() {
+type PropType = {
+	id?: string;
+};
+
+async function getProfileById({
+	id = "044c2ac0-49f7-4cf8-857c-45e9ccfcd0b8",
+}: PropType = {}) {
 	const { data, error, loading } = await getClient().query({
 		query,
 		variables: {
-			id: "044c2ac0-49f7-4cf8-857c-45e9ccfcd0b8",
+			id: id,
 		},
 	});
 

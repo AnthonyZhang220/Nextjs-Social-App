@@ -11,7 +11,7 @@ type ModalProps = {
 	title?: string;
 	onClose?: () => void;
 	children: React.ReactNode;
-	buttonContent: string;
+	buttonContent?: string;
 	buttonAction?:
 		| ((event: React.FormEvent<HTMLFormElement>) => Promise<void>)
 		| (() => void)

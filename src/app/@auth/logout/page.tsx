@@ -1,21 +1,25 @@
 "use client";
 
 import { signOut } from "next-auth/react";
+import { Suspense } from "react";
 import Modal from "../../../components/Modal";
 import Button from "../../../components/Button";
 import styles from "./page.module.scss";
+import Loading from "./loading";
 
 export default function Logout() {
 	return (
 		<Modal title="Logout" buttonContent="Next">
-			<div className={styles.logout}>
-				<div>
-					<h4>You are about to log out of your account!</h4>
+			<Suspense fallback={<Loading />}>
+				<div className={styles.logout}>
+					<div>
+						<h4>You are about to log out of your account!</h4>
+					</div>
+					<div onClick={() => signOut()}>
+						<Button label="Log Out" bgColor="" radius={16} />
+					</div>
 				</div>
-				<div onClick={() => signOut()}>
-					<Button label="Log Out" bgColor="" radius={16} />
-				</div>
-			</div>
+			</Suspense>
 		</Modal>
 	);
 }

@@ -1,0 +1,26 @@
+@use "../../styles/sass/abstracts/mixins" as *;
+
+.main {
+	margin: 0 auto;
+	max-width: 1200px;
+	height: 100%;
+
+	.main_container {
+		display: flex;
+		justify-content: center;
+
+		.leftnav {
+			justify-content: flex-end;
+			margin: 0 0.875rem;
+
+			@include screen-sm {
+				margin: 0px 5px;
+			}
+
+			.menu {
+				position: sticky;
+				top: 64px;
+			}
+		}
+	}
+}

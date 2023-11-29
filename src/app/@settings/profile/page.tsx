@@ -9,9 +9,10 @@ import Link from "next/link";
 import Avatar from "@/components/Avatar";
 import Button from "@/components/Button";
 import TextField from "@/components/TextField";
-import Loading from "@/components/Loading";
+import Loading from "@/components/LoadingUI";
 import Error from "@/components/Error";
 import styles from "./page.module.scss";
+import LoadingNext from "./loading";
 
 const UPDATE_MY_PROFILE = gql`
 	mutation updateProfile(
@@ -160,7 +161,7 @@ export default function Profile() {
 			buttonAction={updateProfileHandler}
 			title="Edit Profile Detail"
 		>
-			<Suspense fallback={<Loading />}>
+			<Suspense fallback={<LoadingNext />}>
 				<section className={styles.profile_form}>
 					<form className={styles.profile_form_container}>
 						<div className={styles.profile_form_banner}>

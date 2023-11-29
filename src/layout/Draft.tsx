@@ -22,6 +22,7 @@ export default function Draft({ ...props }) {
 					<div className={styles.draft_visibility}>
 						<select
 							name="visibleTo"
+							defaultValue="Everyone"
 							onChange={draftOnChange}
 							className={styles.select}
 						>

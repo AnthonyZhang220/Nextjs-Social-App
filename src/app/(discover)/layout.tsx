@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Viewport } from "next";
-import SessionProvider from "../lib/SessionProvider";
-import { getServerSession } from "next-auth";
+import SessionProvider from "../../lib/SessionProvider";
 import Script from "next/script";
-import { auth } from "./api/auth/[...nextauth]/options";
+import { auth } from "../api/auth/[...nextauth]/options";
 import OneTapComponent from "@/lib/OneTapComponent";
-import { ApolloWrapper } from "../lib/ApolloWrapper";
+import { ApolloWrapper } from "../../lib/ApolloWrapper";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Header from "@/layout/Header";
 import LeftNav from "@/layout/LeftNav";
 
@@ -13,7 +14,7 @@ import { Inter } from "next/font/google";
 
 import styles from "./page.module.scss";
 
-import "../styles/sass/globals.scss";
+import "../../styles/sass/globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,32 +38,28 @@ export const viewport: Viewport = {
 	colorScheme: "dark",
 };
 
-export default async function RootLayout(props: {
-	children: React.ReactNode;
-	auth: React.ReactNode;
-	settings: React.ReactNode;
-	landing: React.ReactNode;
-}) {
+export default async function RootLayout(props: { children: React.ReactNode }) {
 	const session = await auth();
 
 	return (
-		<html lang="en">
-			<head>
-				<Script
-					src="https://accounts.google.com/gsi/client"
-					strategy="afterInteractive"
-				/>
-			</head>
-			<body className={inter.className}>
-				<ApolloWrapper>
-					<SessionProvider session={session}>
-						<OneTapComponent />
-						{props.auth}
-						{props.settings}
-						{props.children}
-					</SessionProvider>
-				</ApolloWrapper>
-			</body>
-		</html>
+		<>
+			<Header session={session} />
+			<main className={styles.main}>
+				<div className={styles.main_container}>
+					<div className={styles.leftnav}>
+						<LeftNav />
+					</div>
+					<div className={styles.videoslide}>{props.children}</div>
+				</div>
+				<div className={styles.nav_arrow}>
+					<div className={styles.prev}>
+						<KeyboardArrowUpIcon />
+					</div>
+					<div className={styles.next}>
+						<KeyboardArrowDownIcon />
+					</div>
+				</div>
+			</main>
+		</>
 	);
 }

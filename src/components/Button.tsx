@@ -2,7 +2,7 @@
 import styles from "../styles/sass/components/Button.module.scss";
 
 type ButtonProp = {
-	label: string;
+	label?: string;
 	bgColor: string;
 	radius: number;
 	color?: string;
@@ -12,7 +12,7 @@ type ButtonProp = {
 };
 
 function Button(props: ButtonProp) {
-	return (
+	return props.label ? (
 		<div
 			className={styles.button}
 			role="button"
@@ -27,7 +27,7 @@ function Button(props: ButtonProp) {
 		>
 			<span className={styles.label}>{props.label}</span>
 		</div>
-	);
+	) : null;
 }
 
 export default Button;
