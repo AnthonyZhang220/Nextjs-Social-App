@@ -1,6 +1,16 @@
 // graphql/context.ts
-import { getSession } from "next-auth/react";
+
+/*  Server Context
+
+When creating the server instance, GraphQL Yoga accepts an additional object from your base server framework or library that will be merged with the default context. Node.js (standalone, express and Next.js etc.)
+
+If you are using GraphQL Yoga as a standalone server with createServer from the http(s) module or exposing it as a middleware as we show in the express or Next.js integration recipes.
+
+So here I commented this userContext I created.
+*/
+
 import type { NextApiRequest, NextApiResponse } from "next";
+import { getServerSession } from "next-auth";
 
 export async function createContext({
 	req,
@@ -9,15 +19,12 @@ export async function createContext({
 	req: NextApiRequest;
 	res: NextApiResponse;
 }) {
-	const session = await getSession(res);
+	const session = await getServerSession(req);
 
 	// if the user is not logged in, return an empty object
 	if (!session || typeof session === "undefined") return {};
 
-	const { user, accessToken } = session;
-
 	return {
-		user,
-		accessToken,
+		session,
 	};
 }

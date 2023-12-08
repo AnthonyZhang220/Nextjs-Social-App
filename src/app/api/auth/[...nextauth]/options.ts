@@ -19,6 +19,7 @@ import { Adapter } from "next-auth/adapters";
 /* Gooogle Auth Client */
 import { OAuth2Client } from "google-auth-library";
 import { authorize } from "./authorization";
+import { userInfo } from "os";
 
 export const adapter: Adapter = PrismaAdapter(prisma);
 export const googleAuthClient = new OAuth2Client(
@@ -36,14 +37,6 @@ export const authOptions: NextAuthOptions = {
 		GithubProvider({
 			clientId: process.env.GITHUB_ID as string,
 			clientSecret: process.env.GITHUB_SECRET as string,
-			async profile(profile, tokens) {
-				return {
-					id: profile.id,
-					username: profile.name,
-					email: profile.email,
-					image: profile.picture,
-				};
-			},
 		}),
 		GoogleProvider({
 			clientId: process.env.GOOGLE_ID as string,
@@ -52,14 +45,6 @@ export const authOptions: NextAuthOptions = {
 		TwitterProvider({
 			clientId: process.env.TWITTER_ID as string,
 			clientSecret: process.env.TWITTER_SECRET as string,
-			async profile(profile, tokens) {
-				return {
-					id: profile.id,
-					username: profile.name,
-					email: profile.email,
-					image: profile.picture,
-				};
-			},
 		}),
 		CredentialsProvider({
 			// this!
@@ -90,15 +75,13 @@ export const authOptions: NextAuthOptions = {
 			// Check if it's the user's first login
 			const isFirstLogin = !user.id;
 
-			if (isFirstLogin) {
+			if (isFirstLogin && user.name) {
 				// Create a user profile or perform other actions for the first login
-				const newUser = await prisma.user.update({
-					where: {
-						id: user.id,
-					},
+				const newUser = await prisma.user.create({
 					data: {
-						email: user?.email,
-						username: user?.name,
+						email: user.email,
+						name: user.name,
+						username: await generateUniqueUsername(user.name),
 						profile: {
 							create: {
 								avatar: user.image,
@@ -132,14 +115,17 @@ export function auth(
 	return getServerSession(...args, authOptions);
 }
 
-// export async function getUserByAccessToken(access_token: string) {
-// 	const user = await prisma.session
-// 		.findUniqueOrThrow({
-// 			where: {
-// 				sessionToken: access_token,
-// 			},
-// 		})
-// 		.user();
+async function generateUniqueUsername(
+	originalUsername: string
+): Promise<string> {
+	let username = originalUsername;
+	let suffix = 1;
 
-// 	return Promise.resolve(user?.id);
-// }
+	while (await prisma.user.findUnique({ where: { username } })) {
+		// If the username already exists, add a random number as a suffix
+		username = `${originalUsername}${suffix}`;
+		suffix += 1;
+	}
+
+	return username;
+}

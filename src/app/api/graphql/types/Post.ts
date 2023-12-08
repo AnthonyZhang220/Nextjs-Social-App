@@ -107,6 +107,28 @@ builder.queryFields((t) => ({
 				where: { id: args.id },
 			}),
 	}),
+	getAllPostWithVideo: t.prismaField({
+		type: ["Post"],
+		resolve: (query, parent, args) => {
+			return prisma.post.findMany({
+				...query,
+				include: {
+					media: true,
+				},
+				where: {
+					published: true,
+					visibleTo: "Everyone" || "Friends",
+					media: {
+						every: {
+							videoSrc: {
+								isEmpty: false,
+							},
+						},
+					},
+				},
+			});
+		},
+	}),
 	getPostsFromFriends: t.prismaField({
 		type: ["Post"],
 		args: {
@@ -213,7 +235,8 @@ builder.mutationFields((t) => ({
 				required: true,
 			}),
 		},
-		resolve: (query, parent, args) => {
+		resolve: (query, parent, args, context, info) => {
+			
 			return prisma.post.create({
 				...query,
 				data: {

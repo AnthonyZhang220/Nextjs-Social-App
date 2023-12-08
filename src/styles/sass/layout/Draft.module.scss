@@ -53,10 +53,10 @@
 					flex-direction: row;
 					gap: 11px;
 					vertical-align: baseline;
-				}
 
-				.draft_attachment * {
-					display: block;
+					svg {
+						display: block;
+					}
 				}
 
 				.draft_post {

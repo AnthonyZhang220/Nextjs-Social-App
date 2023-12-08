@@ -1,6 +1,7 @@
 "use client";
 
 import { Skeleton } from "@mui/material";
+import Avatar from "@/components/Avatar";
 import Link from "next/link";
 import Button from "../components/Button";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
@@ -13,40 +14,46 @@ export default function ProfileSkeleton() {
 		<section className={styles.profile}>
 			<div className={styles.profile_container}>
 				<div className={styles.profile_banner}>
-					<Skeleton variant="rounded" />
+					<Skeleton variant="rectangular" animation="wave">
+						<img src="/default_banner.jpg" alt="/default_banner.jpg" />
+					</Skeleton>
 				</div>
 				<div className={styles.profile_body}>
 					<div className={styles.profile_action}>
 						<Link href="#" className={styles.avatar}>
 							<div className={styles.avatar_aspect_ratio}>
-								<Skeleton variant="circular" />
+								<Skeleton component="img" variant="circular" />
 							</div>
 						</Link>
-						<div className={styles.profile_button}>
-							<Link href="/profile">
+						<Skeleton variant="rounded" animation="wave">
+							<div className={styles.profile_button}>
 								<Button label="Edit profile" bgColor="black" radius={16} />
-							</Link>
-						</div>
+							</div>
+						</Skeleton>
 					</div>
 					<div className={styles.profile_content}>
 						<div className={styles.profile_user}>
-							<Skeleton variant="text" />
+							<Skeleton variant="text" animation="wave" />
 						</div>
 						<div className={styles.profile_bio}>
-							<Skeleton variant="text" />
+							<Skeleton variant="text" animation="wave" />
 						</div>
 						<div className={styles.profile_info}>
-							<span className={styles.joined_at}>
-								<CalendarMonthOutlinedIcon />
-								<Skeleton variant="text" />
-							</span>
-							<span className={styles.city}>
-								<PlaceOutlinedIcon />
-								<Skeleton variant="text" />
-							</span>
+							<Skeleton variant="text" animation="wave">
+								<span className={styles.joined_at}>
+									<CalendarMonthOutlinedIcon />
+								</span>
+							</Skeleton>
+							<Skeleton variant="text" animation="wave">
+								<span className={styles.city}>
+									<PlaceOutlinedIcon />
+								</span>
+							</Skeleton>
 						</div>
 						<div className={styles.profile_follow}>
-							<Skeleton variant="text" />
+							<Skeleton variant="text" animation="wave">
+								<span></span>
+							</Skeleton>
 						</div>
 					</div>
 				</div>

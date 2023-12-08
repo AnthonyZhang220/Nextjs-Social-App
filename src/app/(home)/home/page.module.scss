@@ -5,7 +5,7 @@
 	min-height: calc(100vh - 4rem);
 	border-left: 1px solid rgb(47, 51, 54);
 	border-right: 1px solid rgb(47, 51, 54);
-	
+
 	.draft_section {
 		border-bottom: 1px solid rgb(47, 51, 54);
 	}
@@ -17,9 +17,8 @@
 .sidebar {
 	display: flex;
 	flex-direction: column;
-	max-width: 350px;
-	flex: 0 1 350px;
 	margin: 0 0.875rem;
+	flex: 0 1 350px;
 
 	@include screen-lg {
 		max-width: 290px;

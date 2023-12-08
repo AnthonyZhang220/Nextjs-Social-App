@@ -40,10 +40,10 @@ export default function Draft({ ...props }) {
 					></div>
 					<div className={styles.draft_action}>
 						<div className={styles.draft_attachment}>
-							<Icon component={<ImageOutlinedIcon />} />
-							<Icon component={<EmojiEmotionsOutlinedIcon />} />
-							<Icon component={<LocationOnOutlinedIcon />} />
-							<Icon component={<AlternateEmailOutlinedIcon />} />
+							<ImageOutlinedIcon />
+							<EmojiEmotionsOutlinedIcon />
+							<LocationOnOutlinedIcon />
+							<AlternateEmailOutlinedIcon />
 						</div>
 						<div className={styles.draft_post}>
 							<Link href="/">

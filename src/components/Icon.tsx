@@ -5,22 +5,18 @@ type IconProps = {
 	width?: number;
 	height?: number;
 	component?: JSX.Element;
-}
+};
 
 function Icon(props: IconProps) {
 	return (
-		<>
-			{props.component ?? (
-				<div style={{ width: props.width, height: props.height }}>
-					<img
-						src={props.src}
-						alt={props.src}
-						width={props.width}
-						height={props.height}
-					/>
-				</div>
-			)}
-		</>
+		<div style={{ width: props.width, height: props.height }}>
+			<img
+				src={props.src}
+				alt={props.src}
+				width={props.width}
+				height={props.height}
+			/>
+		</div>
 	);
 }
 

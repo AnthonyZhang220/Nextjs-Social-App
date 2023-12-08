@@ -124,7 +124,7 @@ builder.mutationFields((t) => ({
 			avatar: t.arg.string(),
 			city: t.arg.string(),
 		},
-		resolve: (query, parent, args, info) => {
+		resolve: async (query, parent, args, context, info) => {
 			return prisma.user.update({
 				...query,
 				where: {

@@ -1,4 +1,6 @@
 "use client";
+
+import { Skeleton } from "@mui/material";
 import styles from "../styles/sass/components/Avatar.module.scss";
 
 interface AvatarProps {

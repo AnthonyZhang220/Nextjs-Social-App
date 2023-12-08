@@ -185,7 +185,7 @@ export default function Profile() {
 							</div>
 							<div className={styles.profile_form_content}>
 								<div className={styles.profile_form_displayName}>
-									<label>Display Name</label>
+									<label htmlFor="displayName">Display Name</label>
 									<TextField
 										name="displayName"
 										type="text"
@@ -194,15 +194,16 @@ export default function Profile() {
 									/>
 								</div>
 								<div className={styles.profile_form_username}>
-									<label>Username</label>
+									<label htmlFor="username">Username</label>
 									<TextField
+										name="username"
 										type="text"
 										disabled={true}
 										defaultValue={`@${username}`}
 									/>
 								</div>
 								<div className={styles.profile_form_bio}>
-									<label>Bio</label>
+									<label htmlFor="bio">Bio</label>
 									<TextField
 										name="bio"
 										type="text"
@@ -211,7 +212,7 @@ export default function Profile() {
 									/>
 								</div>
 								<div className={styles.profile_form_info}>
-									<label>Location</label>
+									<label htmlFor="city">Location</label>
 									<TextField
 										name="city"
 										type="text"
