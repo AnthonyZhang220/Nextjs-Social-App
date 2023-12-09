@@ -1,19 +1,14 @@
-"use client";
 import Post from "./Post";
-import { useEffect } from "react";
+import Link from "next/link";
 import styles from "../styles/sass/layout/Timeline.module.scss";
 
 export default function Timeline({ ...props }) {
 	const { posts, randomFacts } = props;
 
-	useEffect(() => {
-		console.log("posts", posts);
-	}, [posts]);
-
 	return posts?.length > 0 ? (
 		<section className={styles.timeline}>
 			{posts.map(({ ...data }) => (
-				<Post {...data} key={data.id} author={data.author} />
+				<Post id={data.id} {...data} key={data.id} author={data.author} />
 			))}
 		</section>
 	) : (

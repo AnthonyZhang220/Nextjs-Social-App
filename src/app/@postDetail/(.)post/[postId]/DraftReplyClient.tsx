@@ -2,11 +2,11 @@
 
 import { useCallback, useState, useEffect } from "react";
 import { gql, useMutation } from "@apollo/client";
-import DraftPost from "@/layout/DraftPost";
+import DraftReply from "@/layout/DraftReply";
 
-const CREATE_POST = gql`
-	mutation createPost($data: PostCreateInput!) {
-		createPost(data: $data) {
+const CREATE_COMMENT = gql`
+	mutation createComment($data: CommentCreateInput!, $postId: string) {
+		createComment(data: $data, postId: $postId) {
 			authorId
 			title
 			published
@@ -19,7 +19,7 @@ const CREATE_POST = gql`
 	}
 `;
 
-export default function DraftLayout({ ...props }) {
+export default function DraftReplyClient({ ...props }) {
 	const [draftData, setDraftData] = useState<object>({
 		author: "044c2ac0-49f7-4cf8-857c-45e9ccfcd0b8",
 		published: true,
@@ -44,14 +44,14 @@ export default function DraftLayout({ ...props }) {
 		}
 	};
 
-	const [createPost, { data, error }] = useMutation(CREATE_POST);
+	const [createComment, { data, error }] = useMutation(CREATE_COMMENT);
 
 	const publishPostHandler = async (
 		event: React.FormEvent<HTMLFormElement>
 	) => {
 		event.preventDefault();
 		console.log(draftData);
-		const res = await createPost({
+		const res = await createComment({
 			variables: {
 				data: draftData,
 			},
@@ -61,7 +61,7 @@ export default function DraftLayout({ ...props }) {
 	};
 
 	return (
-		<DraftPost
+		<DraftReply
 			draftData={draftData}
 			draftOnChange={draftOnChange}
 			publishPostHandler={publishPostHandler}

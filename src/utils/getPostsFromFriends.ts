@@ -4,9 +4,9 @@ import { getClient } from "@/lib/client";
 const GET_POSTS_FROM_FRIENDS = gql`
 	query getPostsFromFriends($id: String!) {
 		getPostsFromFriends(id: $id) {
+			postId: id
 			content
 			createdAt
-			id
 			likeCount
 			replyCount
 			viewCount

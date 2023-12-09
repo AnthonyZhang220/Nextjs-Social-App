@@ -8,7 +8,6 @@ import { ApolloWrapper } from "../lib/ApolloWrapper";
 
 import { Inter } from "next/font/google";
 
-
 import "../styles/sass/globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -38,6 +37,7 @@ export default async function RootLayout(props: {
 	auth: React.ReactNode;
 	settings: React.ReactNode;
 	landing: React.ReactNode;
+	postDetail: React.ReactNode;
 }) {
 	const session = await auth();
 
@@ -50,14 +50,15 @@ export default async function RootLayout(props: {
 				/>
 			</head>
 			<body className={inter.className}>
-					<ApolloWrapper>
-						<SessionProvider session={session}>
-							<OneTapComponent />
-							{props.auth}
-							{props.settings}
-							{props.children}
-						</SessionProvider>
-					</ApolloWrapper>
+				<ApolloWrapper>
+					<SessionProvider session={session}>
+						<OneTapComponent />
+						{props.auth}
+						{props.settings}
+						{props.postDetail}
+						{props.children}
+					</SessionProvider>
+				</ApolloWrapper>
 			</body>
 		</html>
 	);

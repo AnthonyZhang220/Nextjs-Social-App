@@ -13,7 +13,7 @@ export default async function TimelineWithData() {
 	const randomFacts = await getRandomFacts();
 	const { data, loading, error } = await getMyTimeline();
 
-	const posts = data.getMyTimeline;
+	const posts = data;
 
 	if (error) return <Error error={error} />;
 	if (loading) return <Loading />;

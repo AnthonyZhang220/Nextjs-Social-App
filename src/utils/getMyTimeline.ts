@@ -4,13 +4,13 @@ import { gql } from "@apollo/client";
 const GET_MY_TIMELINE = gql`
 	query getMyTimeline($id: String!) {
 		getMyTimeline(id: $id) {
+			postId: id
 			content
 			createdAt
 			likeCount
 			replyCount
 			viewCount
 			visibleTo
-			id
 			author {
 				displayName
 				image
@@ -27,7 +27,9 @@ async function getMyTimeline() {
 		},
 	});
 
-	return { data, error, loading };
+	const timeline = data.getMyTimeline;
+
+	return { data: timeline, error, loading };
 }
 
 export default getMyTimeline;

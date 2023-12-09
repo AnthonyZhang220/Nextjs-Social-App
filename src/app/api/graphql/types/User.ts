@@ -2,7 +2,6 @@
 
 import prisma from "@/prisma/database";
 import { builder } from "../builder";
-import { Truculenta } from "next/font/google";
 // import { PostCreateInput } from "./Post";
 
 builder.prismaObject("User", {
@@ -10,6 +9,7 @@ builder.prismaObject("User", {
 		id: t.exposeString("id"),
 		name: t.exposeString("name", { nullable: true }),
 		displayName: t.exposeString("displayName", { nullable: true }),
+		username: t.exposeString("username", { nullable: true }),
 		image: t.exposeString("image", { nullable: true }),
 		email: t.exposeString("email", { nullable: true }),
 		emailVerified: t.expose("emailVerified", {

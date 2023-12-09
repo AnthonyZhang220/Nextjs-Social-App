@@ -12,6 +12,5 @@ export const { getClient } = registerApolloClient(() => {
 			fetchOptions: { cache: "no-store" },
 		}),
 		connectToDevTools: true,
-        
 	});
 });

@@ -4,11 +4,12 @@ import { getClient } from "@/lib/client";
 const query = gql`
 	query getAllPublishedPost {
 		getAllPublishedPost {
+			postId: id
+			authorId
 			viewCount
 			updatedAt
 			replyCount
 			likeCount
-			id
 			createdAt
 			content
 			author {

@@ -10,8 +10,9 @@ import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlin
 import Link from "next/link";
 import styles from "../styles/sass/layout/Draft.module.scss";
 
-export default function Draft({ ...props }) {
+export default function DraftPost({ ...props }) {
 	const { draftData, publishPostHandler, draftOnChange, avatar } = props;
+	
 	return (
 		<section className={styles.draft}>
 			<div className={styles.draft_container}>

@@ -12,28 +12,37 @@ builder.prismaObject("Like", {
 });
 
 builder.mutationFields((t) => ({
-	addLikeToPost: t.prismaField({
+	toggleLikeToPost: t.prismaField({
 		type: "Like",
 		args: {
 			authorId: t.arg.string({ required: true }),
 			postId: t.arg.string({ required: true }),
 		},
 		resolve: async (query, parent, args) => {
-			return prisma.like.create({
+			const existingLike = await prisma.like.findFirst({
 				...query,
-				data: {
-					author: {
-						connect: {
-							id: args.authorId,
-						},
-					},
-					post: {
-						connect: {
-							id: args.postId,
-						},
-					},
+				where: {
+					authorId: args.authorId,
+					postId: args.postId,
 				},
 			});
+
+			if (existingLike) {
+				return prisma.like.delete({
+					...query,
+					where: {
+						id: existingLike.id,
+					},
+				});
+			} else {
+				return prisma.like.create({
+					...query,
+					data: {
+						authorId: args.authorId,
+						postId: args.postId,
+					},
+				});
+			}
 		},
 	}),
 }));

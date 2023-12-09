@@ -129,6 +129,22 @@ builder.queryFields((t) => ({
 			});
 		},
 	}),
+	getPostDetail: t.prismaField({
+		type: "Post",
+		args: {
+			id: t.arg.string({ required: true }),
+		},
+		resolve: async (query, parent, args, context, info) => {
+			const postDetail = await prisma.post.findUniqueOrThrow({
+				...query,
+				where: {
+					id: args.id ?? undefined,
+				},
+			});
+
+			return postDetail;
+		},
+	}),
 	getPostsFromFriends: t.prismaField({
 		type: ["Post"],
 		args: {
@@ -236,7 +252,6 @@ builder.mutationFields((t) => ({
 			}),
 		},
 		resolve: (query, parent, args, context, info) => {
-			
 			return prisma.post.create({
 				...query,
 				data: {
