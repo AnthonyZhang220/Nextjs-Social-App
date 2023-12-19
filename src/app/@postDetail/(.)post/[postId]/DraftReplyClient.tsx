@@ -20,18 +20,14 @@ const CREATE_COMMENT = gql`
 `;
 
 export default function DraftReplyClient({ ...props }) {
+	const { userData, postDetail } = props;
 	const [draftData, setDraftData] = useState<object>({
-		author: "044c2ac0-49f7-4cf8-857c-45e9ccfcd0b8",
+		author: userData.id,
 		published: true,
 		title: "",
+		content: "",
+		postId: postDetail.postId,
 	});
-	// const draftOnChange = useCallback(
-	// 	() => (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-	// 		const { value, name, innerHTML } = event.target;
-	// 		setDraftData({ ...draftData, [name]: value || innerHTML });
-	// 	},
-	// 	[draftData]
-	// );
 
 	const draftOnChange = (
 		event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -65,7 +61,7 @@ export default function DraftReplyClient({ ...props }) {
 			draftData={draftData}
 			draftOnChange={draftOnChange}
 			publishPostHandler={publishPostHandler}
-			avatar={props.avatar}
+			avatar={userData.profile.avatar}
 		/>
 	);
 }

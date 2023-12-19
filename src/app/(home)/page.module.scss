@@ -22,5 +22,24 @@
 				top: 64px;
 			}
 		}
+		.sidebar {
+			display: flex;
+			flex-direction: column;
+			margin: 0 0.875rem;
+			flex: 0 1 350px;
+
+			@include screen-lg {
+				max-width: 290px;
+			}
+
+			@include screen-md {
+				display: none;
+			}
+
+			.sidebar_container {
+				position: sticky;
+				top: 4rem;
+			}
+		}
 	}
 }

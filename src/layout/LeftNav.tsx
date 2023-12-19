@@ -24,7 +24,7 @@ function LeftNav() {
 		<nav className={styles.left_nav}>
 			<div className={styles.left_nav_container}>
 				<Chip
-					link={"./home"}
+					link={"/home"}
 					label="home"
 					Icon={
 						pathname === "/home" ? <HomeRoundedIcon /> : <HomeOutlinedIcon />
@@ -33,7 +33,7 @@ function LeftNav() {
 					fontSize="1.125rem"
 				/>
 				<Chip
-					link={"./moments"}
+					link={"/moments"}
 					label="moments"
 					Icon={
 						pathname === "/moments" ? (
@@ -46,7 +46,7 @@ function LeftNav() {
 					fontSize="1.125rem"
 				/>
 				<Chip
-					link={"./discover"}
+					link={"/discover"}
 					label="discover"
 					Icon={
 						pathname === "/discover" ? (
@@ -59,7 +59,7 @@ function LeftNav() {
 					fontSize="1.125rem"
 				/>
 				<Chip
-					link={"./chats"}
+					link={"/chats"}
 					label="chats"
 					Icon={
 						pathname === "/chats" ? <ChatRoundedIcon /> : <ChatOutlinedIcon />
@@ -68,7 +68,7 @@ function LeftNav() {
 					fontSize="1.125rem"
 				/>
 				<Chip
-					link={"./me"}
+					link={"/me"}
 					label="me"
 					Icon={
 						pathname === "/me" ? <PersonRoundedIcon /> : <PersonOutlinedIcon />

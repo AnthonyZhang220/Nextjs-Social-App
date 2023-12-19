@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { getClient } from "@/lib/client";
+import { getClient } from "@/lib/ApolloClient";
 
 const query = gql`
 	query getAllPublishedPost {
@@ -14,8 +14,10 @@ const query = gql`
 			content
 			author {
 				displayName
-				image
-				name
+				username
+				profile {
+					avatar
+				}
 			}
 		}
 	}
@@ -25,6 +27,9 @@ export default async function getAllPublishedPost() {
 	const { data, loading, error } = await getClient().query({
 		query,
 	});
-
-	return { data, loading, error };
+	if (error) {
+		return { data: null, loading: false, error: error };
+	}
+	const allPosts = data.getAllPublishedPost;
+	return { data: allPosts, loading, error };
 }

@@ -4,12 +4,24 @@ import DraftReplyClient from "./DraftReplyClient";
 import { Suspense } from "react";
 import PostDetail from "@/layout/PostDetail";
 import LoadingUI from "@/components/LoadingUI";
+import { auth } from "@/app/api/auth/[...nextauth]/options";
+import getMyProfile from "@/utils/getMyProfile";
 
 async function PostPage({ params }: { params: { postId: string } }) {
-	const { data, loading, error } = await getPostDetail(params.postId);
-	const postDetail = data;
-	if (error) return <Modal>{error.message}</Modal>;
-	if (loading)
+	const session = await auth();
+	const {
+		data: userData,
+		loading: userLoading,
+		error: userError,
+	} = await getMyProfile(session?.user?.id);
+	const {
+		data: postDetail,
+		loading: detailLoading,
+		error: detailError,
+	} = await getPostDetail(params.postId);
+	
+	if (detailError) return <Modal>{detailError.message}</Modal>;
+	if (detailLoading)
 		return (
 			<Modal>
 				<LoadingUI />
@@ -19,7 +31,7 @@ async function PostPage({ params }: { params: { postId: string } }) {
 	return (
 		<Modal>
 			<PostDetail postDetail={postDetail} />
-			<DraftReplyClient />
+			<DraftReplyClient userData={userData} postDetail={postDetail} />
 		</Modal>
 	);
 }

@@ -1,17 +1,14 @@
 import type { Metadata } from "next";
 import { Viewport } from "next";
-import SessionProvider from "../../lib/SessionProvider";
-import { getServerSession } from "next-auth";
-import Script from "next/script";
 import { auth } from "../api/auth/[...nextauth]/options";
-import OneTapComponent from "@/lib/OneTapComponent";
-import { ApolloWrapper } from "../../lib/ApolloWrapper";
 import Header from "@/layout/Header";
 import LeftNav from "@/layout/LeftNav";
 
 import { Inter } from "next/font/google";
 
 import styles from "./page.module.scss";
+import Sidebar from "@/layout/Sidebar";
+import Footer from "@/layout/Footer";
 
 import "../../styles/sass/globals.scss";
 
@@ -51,6 +48,12 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 						</div>
 					</div>
 					{props.children}
+					<div className={styles.sidebar}>
+						<div className={styles.sidebar_container}>
+							<Sidebar />
+							<Footer />
+						</div>
+					</div>
 				</div>
 			</main>
 		</>

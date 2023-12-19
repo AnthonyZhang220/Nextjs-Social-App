@@ -1,0 +1,164 @@
+type Category {
+  category: String!
+  id: String!
+  post: Post!
+  postId: String
+}
+
+type Comment {
+  author: User!
+  authorId: String!
+  content: String!
+  id: String!
+  post: Post!
+  postId: String
+}
+
+"""
+A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
+"""
+scalar DateTime
+
+type Friendship {
+  friendOf: User!
+  friendOfId: String!
+  friends: User!
+  friendsId: String!
+}
+
+type Like {
+  author: User!
+  authorId: String!
+  id: String!
+  post: Post!
+  postId: String!
+}
+
+type Location {
+  city: String
+  country: String
+  id: String!
+  latitude: Float
+  longitude: Float
+  name: String
+  profile: [Profile!]!
+}
+
+type Media {
+  id: String!
+  post: Post!
+  postId: String
+  videoSrc: String
+}
+
+type Mutation {
+  createPost(data: PostCreateInput!): Post!
+  deletePost(id: String!): Post!
+  incrementPostViewCount(id: String!): Post!
+  toggleLikeToPost(authorId: String!, postId: String!): Like!
+  togglePublishPost(id: String!): Post!
+  updateProfile(avatar: String, banner: String, bio: String, displayName: String, id: String!): User!
+}
+
+type Post {
+  author: User!
+  authorId: String!
+  category: [Category!]!
+  comments: [Comment!]!
+  content: String
+  createdAt: DateTime!
+  id: String!
+  likeCount: Int!
+  likes: [Like!]!
+  media: [Media!]!
+  published: Boolean!
+  replyCount: Int!
+  title: String
+  updatedAt: DateTime!
+  viewCount: Int!
+  visibleTo: Visible!
+}
+
+input PostCreateInput {
+  author: String!
+  content: String!
+  title: String
+  visibleTo: Visible!
+}
+
+input PostOrderByUpdatedAtInput {
+  updatedAt: SortOrder!
+}
+
+type Profile {
+  avatar: String
+  banner: String
+  bio: String
+  id: String!
+  location: Location
+  locationId: String
+  profession: String
+  user: User!
+  userId: String!
+}
+
+"""The query root type."""
+type Query {
+  draftsByUser(email: String, id: String): [Post!]
+  getAllPostWithVideo: [Post!]!
+  getAllPublishedPost: [Post!]!
+  getAllUsers: [User!]!
+  getMyMoments(id: String!): [Post!]!
+  getMyProfile(id: String!): User!
+  getMyTimeline(id: String!): [Post!]!
+  getPostDetail(id: String!): Post!
+  getPostInfoById(id: String!): Post
+  getUserProfile(username: String!): User!
+  getUserTimeline(username: String!): [Post!]!
+  ok: Boolean!
+  profile(id: String!): Profile!
+  searchPostByString(searchString: String, skip: Int, take: Int): [Post!]!
+  searchUserByString(searchString: String, skip: Int, take: Int): [User!]!
+  timelineByCategory(category: String, orderBy: PostOrderByUpdatedAtInput, skip: Int, take: Int): [Post!]!
+}
+
+enum SortOrder {
+  asc
+  desc
+}
+
+type User {
+  comments: [Comment!]!
+  createdAt: DateTime!
+  displayName: String
+  email: String
+  emailVerified: DateTime
+  friendCount: Int!
+  friendOf: [Friendship!]!
+  friends: [Friendship!]!
+  id: String!
+  image: String
+  likes: [Like!]!
+  name: String
+  postCount: Int!
+  posts(oldestFirst: Boolean): [Post!]!
+  profile: Profile
+  updatedAt: DateTime!
+  username: String
+}
+
+input UserCreateInput {
+  email: String!
+  name: String
+}
+
+input UserUniqueInput {
+  email: String
+  id: String
+}
+
+enum Visible {
+  Everyone
+  Friends
+  Me
+}

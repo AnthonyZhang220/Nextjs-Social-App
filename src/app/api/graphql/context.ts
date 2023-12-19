@@ -9,21 +9,15 @@ If you are using GraphQL Yoga as a standalone server with createServer from the 
 So here I commented this userContext I created.
 */
 
-import type { NextApiRequest, NextApiResponse } from "next";
-import { getServerSession } from "next-auth";
+// import type { NextApiRequest, NextApiResponse } from "next";
+// import { getServerSession } from "next-auth";
+// import { authOptions } from "../auth/[...nextauth]/options";
+import { auth } from "../auth/[...nextauth]/options";
 
-export async function createContext({
-	req,
-	res,
-}: {
-	req: NextApiRequest;
-	res: NextApiResponse;
-}) {
-	const session = await getServerSession(req);
-
+export async function createContext() {
+	const session = await auth();
 	// if the user is not logged in, return an empty object
 	if (!session || typeof session === "undefined") return {};
-
 	return {
 		session,
 	};

@@ -2,6 +2,7 @@
 
 import { useCallback, useState, useEffect } from "react";
 import { gql, useMutation } from "@apollo/client";
+import { useSession } from "next-auth/react";
 import DraftPost from "@/layout/DraftPost";
 
 const CREATE_POST = gql`
@@ -20,18 +21,14 @@ const CREATE_POST = gql`
 `;
 
 export default function DraftLayout({ ...props }) {
-	const [draftData, setDraftData] = useState<object>({
-		author: "044c2ac0-49f7-4cf8-857c-45e9ccfcd0b8",
-		published: true,
+	const { session } = props;
+	const defaultInput = {
+		author: session?.user?.id,
 		title: "",
-	});
-	// const draftOnChange = useCallback(
-	// 	() => (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-	// 		const { value, name, innerHTML } = event.target;
-	// 		setDraftData({ ...draftData, [name]: value || innerHTML });
-	// 	},
-	// 	[draftData]
-	// );
+		visibleTo: "Everyone",
+		content: "",
+	};
+	const [draftData, setDraftData] = useState<object>({ ...defaultInput });
 
 	const draftOnChange = (
 		event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -44,28 +41,40 @@ export default function DraftLayout({ ...props }) {
 		}
 	};
 
-	const [createPost, { data, error }] = useMutation(CREATE_POST);
+	const [createPostMutation, { data, error }] = useMutation(CREATE_POST);
 
 	const publishPostHandler = async (
 		event: React.FormEvent<HTMLFormElement>
 	) => {
 		event.preventDefault();
 		console.log(draftData);
-		const res = await createPost({
+		const { data } = await createPostMutation({
 			variables: {
 				data: draftData,
 			},
 		});
 
-		return res;
+		if (data) {
+			setDraftData(defaultInput);
+		}
 	};
 
+	useEffect(() => {
+		setDraftData({ ...defaultInput });
+	}, []);
+
 	return (
-		<DraftPost
-			draftData={draftData}
-			draftOnChange={draftOnChange}
-			publishPostHandler={publishPostHandler}
-			avatar={props.avatar}
-		/>
+		<>
+			{session ? (
+				<DraftPost
+					draftData={draftData}
+					draftOnChange={draftOnChange}
+					publishPostHandler={publishPostHandler}
+					avatar={props.session.user.image}
+				/>
+			) : (
+				<DraftPost draftData={draftData} />
+			)}
+		</>
 	);
 }

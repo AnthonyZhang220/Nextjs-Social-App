@@ -1,4 +1,4 @@
-
+"use client"
 import LoadingUI from "@/components/LoadingUI";
 
 function Loading() {

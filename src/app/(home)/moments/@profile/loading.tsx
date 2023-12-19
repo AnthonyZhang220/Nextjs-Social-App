@@ -1,3 +1,4 @@
+"use client";
 import ProfileSkeleton from "@/layout/ProfileSkeleton";
 
 function Loading() {

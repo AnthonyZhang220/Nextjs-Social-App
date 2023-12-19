@@ -29,25 +29,5 @@
 			border-left: 1px solid rgb(47, 51, 54);
 			border-right: 1px solid rgb(47, 51, 54);
 		}
-
-		.sidebar {
-			display: flex;
-			flex-direction: column;
-			flex: 0 1 500px;
-			margin: 0 0.875rem;
-
-			@include screen-lg {
-				max-width: 290px;
-			}
-
-			@include screen-md {
-				display: none;
-			}
-
-			.sidebar_container {
-				position: sticky;
-				top: 64px;
-			}
-		}
 	}
 }

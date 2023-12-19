@@ -28,6 +28,7 @@ export const builder = new SchemaBuilder<{
 	},
 });
 
+
 /* MUST DEFINE A ROOT QUERY TYPE AND root MUTATION TYPE WHEN USING POTHOS GRAPHQL */
 builder.queryType({
 	description: "The query root type.",

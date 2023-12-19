@@ -19,9 +19,9 @@ import { Adapter } from "next-auth/adapters";
 /* Gooogle Auth Client */
 import { OAuth2Client } from "google-auth-library";
 import { authorize } from "./authorization";
-import { userInfo } from "os";
 
 export const adapter: Adapter = PrismaAdapter(prisma);
+
 export const googleAuthClient = new OAuth2Client(
 	process.env.OAUTH_GOOGLE_CLIENT_ID as string
 );
@@ -71,36 +71,54 @@ export const authOptions: NextAuthOptions = {
 			// The user object contains information about the authenticated user
 			// The account object contains information about the authentication account
 			// The profile object contains the user profile information from the provider
-
-			// Check if it's the user's first login
-			const isFirstLogin = !user.id;
-
-			if (isFirstLogin && user.name) {
-				// Create a user profile or perform other actions for the first login
-				const newUser = await prisma.user.create({
-					data: {
-						email: user.email,
-						name: user.name,
-						username: await generateUniqueUsername(user.name),
-						profile: {
-							create: {
-								avatar: user.image,
-							},
-						},
-						// Add other user properties as needed
-					},
-				});
-
-				user.id = newUser.id;
-			}
-
-			return Promise.resolve(true);
+			console.log(account);
+			console.log(profile);
+			return true;
 		},
 		async session({ session, token, user }) {
-			session.user = user;
-			console.log("server" + { ...session.user });
+			if (session.user && user && user.id) {
+				session.user.id = user.id;
+			}
 			return session;
 		},
+		async redirect({ url, baseUrl }) {
+			if (url.startsWith("/")) return `${baseUrl}${url}`;
+			else if (new URL(url).origin === baseUrl) return url;
+			return baseUrl;
+		},
+	},
+	events: {
+		async signIn({ isNewUser, user, profile }) {
+			console.log("event", isNewUser, user, profile);
+			if (isNewUser) {
+				await prisma.user.update({
+					where: {
+						id: user.id,
+					},
+					data: {
+						username: await generateUniqueUsername(profile?.name),
+						displayName: profile?.name,
+						name: profile?.name,
+						profile: {
+							create: {
+								avatar: profile?.image,
+							},
+						},
+					},
+				});
+			}
+		},
+		// async createUser(message) {
+		// 	const userId = message.user.id;
+		// 	const existUser = await prisma.user.findUnique({
+		// 		where: {
+		// 			id: userId,
+		// 		},
+		// 	});
+
+		// 	if (!existUser) {
+		// 	}
+		// },
 	},
 	secret: process.env.NEXT_AUTH_SECRET,
 	debug: true,
@@ -116,9 +134,12 @@ export function auth(
 }
 
 async function generateUniqueUsername(
-	originalUsername: string
+	originalUsername: string | undefined
 ): Promise<string> {
-	let username = originalUsername;
+	if (!originalUsername) {
+		return Promise.reject("No matching records!");
+	}
+	let username = originalUsername.split(" ").join("");
 	let suffix = 1;
 
 	while (await prisma.user.findUnique({ where: { username } })) {
@@ -127,5 +148,5 @@ async function generateUniqueUsername(
 		suffix += 1;
 	}
 
-	return username;
+	return Promise.resolve(username);
 }

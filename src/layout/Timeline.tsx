@@ -8,7 +8,7 @@ export default function Timeline({ ...props }) {
 	return posts?.length > 0 ? (
 		<section className={styles.timeline}>
 			{posts.map(({ ...data }) => (
-				<Post id={data.id} {...data} key={data.id} author={data.author} />
+				<Post postId={data.id} {...data} key={data.id} author={data.author} />
 			))}
 		</section>
 	) : (

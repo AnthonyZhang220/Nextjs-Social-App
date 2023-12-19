@@ -1,38 +1,23 @@
-import getProfileById from "@/utils/getProfileById";
-
 import { auth } from "../../../api/auth/[...nextauth]/options";
 import Profile from "../../../../layout/Profile";
 
-import Error from "@/components/Error";
+import Error from "@/components/ErrorUI";
 import ProfileSkeleton from "@/layout/ProfileSkeleton";
 import { Suspense } from "react";
-import Loading from "./loading";
+import getMyProfile from "@/utils/getMyProfile";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default async function ProfileWithData() {
 	const session = await auth();
-	const { data, error, loading } = await getProfileById();
-	const profile = data;
-	console.log(typeof profile.createdAt);
-
-	if (error) {
-		return <Error error={error} />;
-	}
-
-	if (loading || profile.length === 0) {
-		return <ProfileSkeleton />;
-	}
+	const {
+		data: user,
+		error: profileError,
+		loading,
+	} = await getMyProfile(session?.user?.id);
 
 	return (
-		<Suspense fallback={<Loading />}>
-			<Profile
-				displayName={profile.displayName}
-				username={profile.username}
-				content={profile.content}
-				banner={profile.banner}
-				avatar={profile.image}
-				createdAt={profile.createdAt}
-				friendCount={profile.friendCount}
-			/>
-		</Suspense>
-	)
+		<ErrorBoundary fallback={<Error error={profileError} />}>
+			{session ? <Profile user={user} /> : <ProfileSkeleton />}
+		</ErrorBoundary>
+	);
 }

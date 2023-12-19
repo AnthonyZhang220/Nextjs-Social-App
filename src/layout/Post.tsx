@@ -15,10 +15,10 @@ export type PostType = {
 	imageSrc?: string;
 	videoSrc?: string;
 	content?: string;
-	author: PostAuthorType;
 	viewCount?: number;
 	replyCount?: number;
 	likeCount?: number;
+	author: PostAuthorType;
 };
 
 export type PostAuthorType = {
@@ -26,7 +26,11 @@ export type PostAuthorType = {
 	author: string;
 	username: string;
 	displayName: string;
-	avatar: string;
+	profile: PostAuthorProfileType;
+};
+
+export type PostAuthorProfileType = {
+	avatar?: string;
 };
 
 function Post(props: PostType) {
@@ -43,7 +47,9 @@ function Post(props: PostType) {
 		author,
 	} = props;
 
-	const { displayName, username, authorId, avatar } = author;
+	const { displayName, username, authorId, profile } = author;
+
+	const { avatar } = profile;
 
 	const openReplyHandler = () => {
 		router.push(`/post/${postId}`);

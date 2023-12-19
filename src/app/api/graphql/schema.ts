@@ -1,21 +1,13 @@
 //./api/graphql/schema.ts
 
 import { builder } from "./builder";
-
-import "./types/Category";
-import "./types/Comment";
-import "./types/Like";
-import "./types/Location";
-import "./types/Media";
-import "./types/Post";
-import "./types/Profile";
-import "./types/User";
-import "./types/Friendship";
-
 import { writeFileSync } from "fs";
-import { resolve } from "path";
-import { printSchema } from "graphql";
+import { lexicographicSortSchema, printSchema } from "graphql";
+import path from "path";
+import "./models/index";
 
-export const schema = builder.toSchema({});
+export const schema = builder.toSchema();
 
-writeFileSync(resolve(__dirname, "./schema.graphql"), printSchema(schema));
+const schemaAsString = printSchema(lexicographicSortSchema(schema));
+
+writeFileSync(path.join(process.cwd(), "./schema.graphql"), schemaAsString);

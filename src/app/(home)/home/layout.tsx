@@ -13,17 +13,9 @@ export default function HomeLayout(props: {
 	timeline: React.ReactNode;
 }) {
 	return (
-		<>
-			<div className={styles.main_content}>
-				<div className={styles.draft_section}>{props.draft}</div>
-				<div className={styles.timeline_section}>{props.timeline}</div>
-			</div>
-			<div className={styles.sidebar}>
-				<div className={styles.sidebar_container}>
-					<Sidebar />
-					<Footer />
-				</div>
-			</div>
-		</>
+		<div className={styles.main_content}>
+			<div className={styles.draft_section}>{props.draft}</div>
+			<div className={styles.timeline_section}>{props.timeline}</div>
+		</div>
 	);
 }

@@ -1,4 +1,4 @@
-import { getClient } from "@/lib/client";
+import { getClient } from "@/lib/ApolloClient";
 import { gql } from "@apollo/client";
 
 const GET_POST_DETAIL = gql`
@@ -17,8 +17,10 @@ const GET_POST_DETAIL = gql`
 			}
 			author {
 				displayName
-				image
 				username
+				profile {
+					avatar
+				}
 			}
 		}
 	}

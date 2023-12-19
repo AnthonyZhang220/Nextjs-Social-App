@@ -1,29 +1,27 @@
+import { Suspense } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 import { auth } from "../../../api/auth/[...nextauth]/options";
+import getRandomFacts from "@/utils/getRandomFacts";
+import getMyTimeline from "@/utils/getMyTimeline";
 
 import Timeline from "../../../../layout/Timeline";
+import ErrorUI from "@/components/ErrorUI";
 
 import Loading from "./loading";
-import Error from "@/components/Error";
-import getRandomFacts from "@/utils/getRandomFacts";
-import getPostsFromFriends from "@/utils/getPostsFromFriends";
-import { Suspense } from "react";
+import Error from "./error";
 
 export default async function TimelineWithData() {
 	const session = await auth();
 	const randomFacts = await getRandomFacts();
 	const {
-		data: postsData,
+		data: posts,
 		loading: postsLoading,
 		error: postsError,
-	} = await getPostsFromFriends();
+	} = await getMyTimeline(session?.user?.id);
 
-	const posts = postsData;
-
-	if (postsError) return <Error error={postsError} />;
-	if (postsLoading) return <Loading />;
 	return (
-		<Suspense fallback={<Loading />}>
+		<ErrorBoundary fallback={<ErrorUI error={postsError} />}>
 			<Timeline posts={posts} randomFacts={randomFacts} />
-		</Suspense>
+		</ErrorBoundary>
 	);
 }

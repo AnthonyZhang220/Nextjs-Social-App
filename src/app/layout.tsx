@@ -5,9 +5,7 @@ import Script from "next/script";
 import { auth } from "./api/auth/[...nextauth]/options";
 import OneTapComponent from "@/lib/OneTapComponent";
 import { ApolloWrapper } from "../lib/ApolloWrapper";
-
 import { Inter } from "next/font/google";
-
 import "../styles/sass/globals.scss";
 
 const inter = Inter({ subsets: ["latin"] });

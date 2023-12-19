@@ -8,32 +8,29 @@ import getFormattedJoinedDate from "@/utils/getFormattedJoinedDate";
 
 import styles from "../styles/sass/layout/Profile.module.scss";
 
-type ProfileData = {
-	avatar: string;
-	profile_url?: string;
+type UserDataType = {
 	displayName?: string;
 	username?: string;
 	image?: string;
-	content: string;
-	banner: string;
 	createdAt: string;
-	city?: string;
 	friendCount?: number;
+	profile: UserProfileType;
 };
 
-export default function Profile(props: ProfileData) {
-	const {
-		avatar,
-		profile_url,
-		displayName,
-		username,
-		image,
-		content,
-		banner,
-		createdAt,
-		friendCount,
-		city,
-	} = props;
+type UserProfileType = {
+	avatar: string;
+	bio: string;
+	banner: string;
+	location: UserLocationType;
+};
+
+type UserLocationType = {
+	city: string;
+};
+
+export default function Profile({ user }: { user: UserDataType }) {
+	const { displayName, username, createdAt, friendCount, profile } = user;
+	const { avatar, bio, banner, location } = profile;
 
 	return (
 		<section className={styles.profile}>
@@ -65,27 +62,29 @@ export default function Profile(props: ProfileData) {
 					</div>
 					<div className={styles.profile_content}>
 						<div className={styles.profile_user}>
-							<Link href={profile_url || ""}>
+							<Link href={`/user/${username}` || ""}>
 								<h4 className={styles.profile_displayname}>{displayName}</h4>
 							</Link>
-							<Link href={profile_url || ""}>
-								<h5 className={styles.profile_username}>
-									{username ? `@${username}` : null}
-								</h5>
-							</Link>
+							{username ? (
+								<Link href={`/user/${username}` || ""}>
+									<h5 className={styles.profile_username}>@{username}</h5>
+								</Link>
+							) : null}
 						</div>
 						<div className={styles.profile_bio}>
-							<span>{content}</span>
+							<span>{bio}</span>
 						</div>
 						<div className={styles.profile_info}>
 							<span className={styles.joined_at}>
 								<CalendarMonthOutlinedIcon />
 								<span>Joined {getFormattedJoinedDate(createdAt)}</span>
 							</span>
-							<span className={styles.city}>
-								<PlaceOutlinedIcon />
-								<span>{city}</span>
-							</span>
+							{location?.city ? (
+								<span className={styles.city}>
+									<PlaceOutlinedIcon />
+									<span>{location?.city}</span>
+								</span>
+							) : null}
 						</div>
 						<div className={styles.profile_follow}>
 							<Link href="" className={styles.profile_following}>

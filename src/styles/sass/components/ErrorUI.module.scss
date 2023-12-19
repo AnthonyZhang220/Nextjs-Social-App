@@ -1,0 +1,10 @@
+.error {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.error_container {
+		text-align: center;
+		padding: 1rem;
+	}
+}

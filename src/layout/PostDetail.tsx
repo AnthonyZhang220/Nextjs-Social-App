@@ -11,25 +11,28 @@ import useToggleLikeToPost from "@/hooks/useToggleLikeToPost";
 
 import styles from "../styles/sass/layout/PostDetail.module.scss";
 
-interface PostDetailObjectType {
-	postDetail: PostDetailType;
+interface PostObjectType {
+	postDetail: PostType;
 }
 
-interface PostDetailAuthorType {
+interface PostAuthorType {
 	displayName: string;
-	avatar: string;
 	username: string;
+	profile: PostAuthorProfileType;
+}
+interface PostAuthorProfileType {
+	avatar: string;
 }
 
-interface PostDetailMediaType {
+interface PostMediaType {
 	videoSrc: string;
 }
 
-interface PostDetailType {
+interface PostType {
 	postId: string;
 	authorId: string;
-	author: PostDetailAuthorType;
-	media: PostDetailMediaType;
+	author: PostAuthorType;
+	media: PostMediaType;
 	content: string;
 	image?: string;
 	video?: string;
@@ -38,7 +41,7 @@ interface PostDetailType {
 	likeCount: number;
 }
 
-function PostDetail({ postDetail }: PostDetailObjectType) {
+function PostDetail({ postDetail }: PostObjectType) {
 	const router = useRouter();
 	const { toggleLike, data, loading, error } = useToggleLikeToPost();
 
@@ -57,7 +60,7 @@ function PostDetail({ postDetail }: PostDetailObjectType) {
 			<div className={styles.postdetail_container}>
 				<div className={styles.postdetail_avatar}>
 					<Avatar
-						avatar_src={postDetail.author.avatar}
+						avatar_src={postDetail.author.profile.avatar}
 						size={45}
 						alt={postDetail.author.displayName}
 					/>
@@ -69,7 +72,7 @@ function PostDetail({ postDetail }: PostDetailObjectType) {
 								{postDetail.author.displayName}
 							</span>
 						</Link>
-						<Link href={postDetail.author.username || ""}>
+						<Link href={`/user/${postDetail.author.username}` || ""}>
 							<span className={styles.postdetail_username}>
 								@{postDetail.author.username}
 							</span>
@@ -79,7 +82,7 @@ function PostDetail({ postDetail }: PostDetailObjectType) {
 						<span>{postDetail.content}</span>
 					</div>
 					<div className={styles.postdetail_media}>
-						{postDetail.image ? (
+						{postDetail.image? (
 							<div className={styles.postdetail_image}>
 								<Image
 									src={postDetail.image}

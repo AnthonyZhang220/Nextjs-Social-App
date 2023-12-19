@@ -12,7 +12,7 @@ import styles from "../styles/sass/layout/Draft.module.scss";
 
 export default function DraftPost({ ...props }) {
 	const { draftData, publishPostHandler, draftOnChange, avatar } = props;
-	
+
 	return (
 		<section className={styles.draft}>
 			<div className={styles.draft_container}>
@@ -23,7 +23,7 @@ export default function DraftPost({ ...props }) {
 					<div className={styles.draft_visibility}>
 						<select
 							name="visibleTo"
-							defaultValue="Everyone"
+							defaultValue={"Everyone"}
 							onChange={draftOnChange}
 							className={styles.select}
 						>

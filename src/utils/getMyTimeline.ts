@@ -1,4 +1,4 @@
-import { getClient } from "@/lib/client";
+import { getClient } from "@/lib/ApolloClient";
 import { gql } from "@apollo/client";
 
 const GET_MY_TIMELINE = gql`
@@ -13,17 +13,23 @@ const GET_MY_TIMELINE = gql`
 			visibleTo
 			author {
 				displayName
-				image
+				username
+				profile {
+					avatar
+				}
 			}
 		}
 	}
 `;
 
-async function getMyTimeline() {
+async function getMyTimeline(id: string | null | undefined) {
+	if (!id) {
+		return { data: null, error: "You are not logged in.", loading: false };
+	}
 	const { data, error, loading } = await getClient().query({
 		query: GET_MY_TIMELINE,
 		variables: {
-			id: "044c2ac0-49f7-4cf8-857c-45e9ccfcd0b8",
+			id: id,
 		},
 	});
 

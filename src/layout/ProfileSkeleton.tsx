@@ -20,7 +20,7 @@ export default function ProfileSkeleton() {
 				</div>
 				<div className={styles.profile_body}>
 					<div className={styles.profile_action}>
-						<Link href="#" className={styles.avatar}>
+						<Link href="" className={styles.avatar}>
 							<div className={styles.avatar_aspect_ratio}>
 								<Skeleton component="img" variant="circular" />
 							</div>
