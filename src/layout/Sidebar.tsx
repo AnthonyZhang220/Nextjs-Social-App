@@ -6,21 +6,7 @@ function Sidebar() {
 	return (
 		<div className={styles.sidebar}>
 			<aside className={styles.sidebar_container}>
-				<Card title="Following">
-					<div>content</div>
-				</Card>
-				<Card title="Following">
-					<div>content</div>
-				</Card>
-				<Card title="Following">
-					<div>content</div>
-				</Card>
-				<Card title="Following">
-					<div>content</div>
-				</Card>
-				<Card title="Following">
-					<div>content</div>
-				</Card>
+
 			</aside>
 		</div>
 	);
