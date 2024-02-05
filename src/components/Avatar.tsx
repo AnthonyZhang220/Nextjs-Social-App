@@ -5,7 +5,7 @@ import styles from "../styles/sass/components/Avatar.module.scss";
 
 interface AvatarProps {
 	avatar_src: string | undefined;
-	alt: string | undefined;
+	alt?: string | undefined;
 	size?: number | 50;
 	displayName?: string;
 	draggable?: boolean;
@@ -32,7 +32,7 @@ export default function Avatar(props: AvatarProps) {
 				<img
 					className={styles.avatar}
 					src={avatar_src}
-					alt={avatar_src}
+					alt={displayName}
 					width={size}
 					height={size}
 					style={{ borderRadius: "50%", display: "block" }}

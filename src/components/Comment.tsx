@@ -18,7 +18,7 @@ export const Comment = (props: CommentType) => {
 		<div className={styles.comment}>
 			<div className={styles.container}>
 				<div className={styles.avatar}>
-					<Avatar avatar_src={avatar} size={35} />
+					<Avatar avatar_src={avatar} size={35} alt={displayName}/>
 				</div>
 				<div className={styles.body}>
 					<div className={styles.user}>
