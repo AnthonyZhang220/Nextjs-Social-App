@@ -15,7 +15,11 @@ export default function ChatTab(props: ChatTabProps) {
 		<div className={styles.chat_tab}>
 			<div className={styles.chat_tab_container}>
 				<div className={styles.chat_tab_avatar}>
-					<Avatar avatar_src="" size={20} />
+					<Avatar
+						avatar_src={props.avatar_src}
+						size={20}
+						alt={props.displayName}
+					/>
 				</div>
 				<div className={styles.chat_tab_detail}>
 					<div>
