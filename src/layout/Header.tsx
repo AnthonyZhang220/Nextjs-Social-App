@@ -27,7 +27,7 @@ export default function Header({ ...props }) {
 					<div className={styles.navbar_link}>
 						<Link href="/">
 							<img
-								src="/static/logo/S-logos_white.png"
+								src="/static/logo/Moment-logos_white.png"
 								width="50px"
 								height="auto"
 							/>

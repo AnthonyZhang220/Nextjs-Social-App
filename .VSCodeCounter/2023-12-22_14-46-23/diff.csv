@@ -1,0 +1,200 @@
+"filename", "language", "TypeScript", "JSON with Comments", "Prisma", "SCSS", "TypeScript JSX", "GraphQL", "JSON", "Markdown", "comment", "blank", "total"
+"c:\Users\antho\Desktop\nextjs-social-app\README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 1, 0, 4, 5
+"c:\Users\antho\Desktop\nextjs-social-app\next-auth.d.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 0, 3, 2, 13
+"c:\Users\antho\Desktop\nextjs-social-app\package-lock.json", "JSON", 0, 0, 0, 0, 0, 0, 60, 0, 0, 0, 60
+"c:\Users\antho\Desktop\nextjs-social-app\package.json", "JSON", 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"c:\Users\antho\Desktop\nextjs-social-app\schema.graphql", "GraphQL", 0, 0, 0, 0, 0, 147, 0, 0, 0, 17, 164
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\chats\@chatdetail\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 2, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\chats\@chatlist\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 2, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\chats\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 22, 0, 0, 0, 0, 4, 26
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\chats\page.module.scss", "SCSS", 0, 0, 0, 12, 0, 0, 0, 0, 0, 3, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 27, 0, 0, 0, 0, 6, 33
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\page.module.scss", "SCSS", 0, 0, 0, 21, 0, 0, 0, 0, 0, 7, 28
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(discover)\discover\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(discover)\discover\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 3, 9
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(discover)\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 57, 0, 0, 0, 0, 9, 66
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(discover)\page.module.scss", "SCSS", 0, 0, 0, 44, 0, 0, 0, 0, 0, 9, 53
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@draft\DraftLayout.tsx", "TypeScript JSX", 0, 0, 0, 0, 71, 0, 0, 0, 0, 10, 81
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@draft\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 5, 0, 0, 0, 0, 4, 9
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@draft\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 4, 10
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@timeline\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@timeline\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 5, 0, 0, 0, 0, 4, 9
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@timeline\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 16, 0, 0, 0, 0, 3, 19
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 19, 0, 0, 0, 0, 3, 22
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\page.module.scss", "SCSS", 0, 0, 0, 28, 0, 0, 0, 0, 0, 8, 36
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 56, 0, 0, 0, 0, 9, 65
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@profile\error.tsx", "TypeScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 1, 4, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@profile\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@profile\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 4, 24
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@timeline\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 3, 9
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@timeline\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 22, 0, 0, 0, 0, 5, 27
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 3, 23
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\page.module.scss", "SCSS", 0, 0, 0, 12, 0, 0, 0, 0, 0, 6, 18
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@profile\error.tsx", "TypeScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 1, 4, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@profile\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 3, 9
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@profile\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 21, 0, 0, 0, 0, 5, 26
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@timeline\error.tsx", "TypeScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 1, 4, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@timeline\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@timeline\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 23, 0, 0, 0, 0, 5, 28
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 4, 24
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\page.module.scss", "SCSS", 0, 0, 0, 12, 0, 0, 0, 0, 0, 4, 16
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\notifications\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 17, 0, 0, 0, 0, 3, 20
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\notifications\page.module.scss", "SCSS", 0, 0, 0, 27, 0, 0, 0, 0, 0, 7, 34
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\notifications\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 3, 23
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\page.module.scss", "SCSS", 0, 0, 0, 37, 0, 0, 0, 0, 0, 9, 46
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\@profile\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\@profile\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 16, 0, 0, 0, 0, 3, 19
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\@timeline\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\@timeline\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 5, 25
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 4, 24
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\page.module.scss", "SCSS", 0, 0, 0, 12, 0, 0, 0, 0, 0, 6, 18
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(landing)\@landing\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 7, 0, 0, 0, 0, 1, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(landing)\@landing\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 5, 0, 0, 0, 0, 3, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(landing)\@landing\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 15, 0, 0, 0, 0, 5, 20
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\(landing)\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 2, 6
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\error\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 0, 3, 13
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\login\page.module.scss", "SCSS", 0, 0, 0, -25, 0, 0, 0, 0, 0, -6, -31
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\login\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -44, 0, 0, 0, 0, -1, -45
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\logout\loading.tsx", "TypeScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 0, 3, 13
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\logout\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 7
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@postDetail\(.)post\[postId]\DraftReplyClient.tsx", "TypeScript JSX", 0, 0, 0, 0, 59, 0, 0, 0, 0, 9, 68
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@postDetail\(.)post\[postId]\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 35, 0, 0, 0, 0, 5, 40
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@postDetail\default.tsx", "TypeScript JSX", 0, 0, 0, 0, 4, 0, 0, 0, 0, 2, 6
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@settings\profile\ProfileFormWithData.tsx", "TypeScript JSX", 0, 0, 0, 0, 75, 0, 0, 0, 0, 3, 78
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@settings\profile\error.tsx", "TypeScript JSX", 0, 0, 0, 0, 7, 0, 0, 0, 0, 3, 10
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@settings\profile\page.module.scss", "SCSS", 0, 0, 0, -8, 0, 0, 0, 0, 0, -2, -10
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\@settings\profile\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 50, 0, 0, 0, 0, 7, 57
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\[username]\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, -18, 0, 0, 0, 0, -4, -22
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\[username]\page.module.scss", "SCSS", 0, 0, 0, -40, 0, 0, 0, 0, 0, -11, -51
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\[username]\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -36, 0, 0, 0, 0, -3, -39
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\auth\[...nextauth]\options.ts", "TypeScript", 55, 0, 0, 0, 0, 0, 0, 0, -10, 6, 51
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\builder.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\context.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 0, 13, 4, 25
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\enums\notifyType.ts", "TypeScript", 6, 0, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\enums\status.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\enums\visible.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Category\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Category\queries.ts", "TypeScript", 9, 0, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Comment\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Comment\mutations.ts", "TypeScript", 21, 0, 0, 0, 0, 0, 0, 0, 0, 2, 23
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Comment\queries.ts", "TypeScript", 11, 0, 0, 0, 0, 0, 0, 0, 0, 3, 14
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Friendship\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Friendship\queries.ts", "TypeScript", 9, 0, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Like\index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Like\mutations.ts", "TypeScript", 36, 0, 0, 0, 0, 0, 0, 0, 0, 3, 39
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Like\queries.ts", "TypeScript", 11, 0, 0, 0, 0, 0, 0, 0, 0, 1, 12
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Location\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Location\queries.ts", "TypeScript", 12, 0, 0, 0, 0, 0, 0, 0, 0, 3, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Media\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Media\queries.ts", "TypeScript", 9, 0, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Notification\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Notification\queries.ts", "TypeScript", 12, 0, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Notification_Type\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Notification_Type\queries.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Post\index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Post\mutations.ts", "TypeScript", 85, 0, 0, 0, 0, 0, 0, 0, 2, 3, 90
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Post\queries.ts", "TypeScript", 216, 0, 0, 0, 0, 0, 0, 0, 5, 10, 231
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Profile\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 3
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Profile\queries.ts", "TypeScript", 30, 0, 0, 0, 0, 0, 0, 0, 0, 2, 32
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User\index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 3
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User\mutations.ts", "TypeScript", 39, 0, 0, 0, 0, 0, 0, 0, 0, 2, 41
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User\queries.ts", "TypeScript", 153, 0, 0, 0, 0, 0, 0, 0, 3, 13, 169
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User_Notification\index.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User_Notification\queries.ts", "TypeScript", 12, 0, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\index.ts", "TypeScript", 12, 0, 0, 0, 0, 0, 0, 0, 0, 1, 13
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\route.ts", "TypeScript", 6, 0, 0, 0, 0, 0, 0, 0, 0, -1, 5
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\schema.ts", "TypeScript", -4, 0, 0, 0, 0, 0, 0, 0, 0, -2, -6
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types.ts", "TypeScript", -3, 0, 0, 0, 0, 0, 0, 0, 0, -3, -6
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Category.ts", "TypeScript", -8, 0, 0, 0, 0, 0, 0, 0, 0, -2, -10
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Comment.ts", "TypeScript", -6, 0, 0, 0, 0, 0, 0, 0, 0, -2, -8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Friend.ts", "TypeScript", -6, 0, 0, 0, 0, 0, 0, 0, 0, -2, -8
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Like.ts", "TypeScript", -7, 0, 0, 0, 0, 0, 0, 0, 0, -2, -9
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Media.ts", "TypeScript", -9, 0, 0, 0, 0, 0, 0, 0, 0, -2, -11
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Post.ts", "TypeScript", -188, 0, 0, 0, 0, 0, 0, 0, -3, -10, -201
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Profile.ts", "TypeScript", -28, 0, 0, 0, 0, 0, 0, 0, -1, -4, -33
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\User.ts", "TypeScript", -47, 0, 0, 0, 0, 0, 0, 0, -5, -6, -58
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\enums.ts", "TypeScript", -5, 0, 0, 0, 0, 0, 0, 0, 0, -1, -6
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\chats\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, -18, 0, 0, 0, 0, -4, -22
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\chats\page.module.scss", "SCSS", 0, 0, 0, -33, 0, 0, 0, 0, 0, -9, -42
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\chats\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -25, 0, 0, 0, 0, -3, -28
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\discover\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, -18, 0, 0, 0, 0, -3, -21
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\discover\page.module.scss", "SCSS", 0, 0, 0, -44, 0, 0, 0, 0, 0, -9, -53
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\discover\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -28, 0, 0, 0, 0, -3, -31
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\error.tsx", "TypeScript JSX", 0, 0, 0, 0, 17, 0, 0, 0, 0, 4, 21
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\home\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, -16, 0, 0, 0, 0, -3, -19
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\home\page.module.scss", "SCSS", 0, 0, 0, -41, 0, 0, 0, 0, 0, -11, -52
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\home\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -37, 0, 0, 0, 0, -3, -40
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, 2, 0, 0, 0, 0, -2, 0
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\me\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, -18, 0, 0, 0, 0, -4, -22
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\me\page.module.scss", "SCSS", 0, 0, 0, -40, 0, 0, 0, 0, 0, -11, -51
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\me\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -68, 0, 0, 0, 0, -7, -75
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\moments\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, -18, 0, 0, 0, 0, -3, -21
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\moments\page.module.scss", "SCSS", 0, 0, 0, -41, 0, 0, 0, 0, 0, -11, -52
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\moments\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -38, 0, 0, 0, 0, -3, -41
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\notifications\layout.tsx", "TypeScript JSX", 0, 0, 0, 0, -18, 0, 0, 0, 0, -3, -21
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\notifications\page.module.scss", "SCSS", 0, 0, 0, -43, 0, 0, 0, 0, 0, -11, -54
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\notifications\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -28, 0, 0, 0, 0, -3, -31
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\page.module.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, -1, -1
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\page.tsx", "TypeScript JSX", 0, 0, 0, 0, -13, 0, 0, 0, 0, -3, -16
+"c:\Users\antho\Desktop\nextjs-social-app\src\app\post\[postId]\page.tsx", "TypeScript JSX", 0, 0, 0, 0, 14, 0, 0, 0, 0, 4, 18
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\Avatar.tsx", "TypeScript JSX", 0, 0, 0, 0, 20, 0, 0, 0, 0, 3, 23
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\Button.tsx", "TypeScript JSX", 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\ErrorUI.tsx", "TypeScript JSX", 0, 0, 0, 0, 10, 0, 0, 0, 0, 3, 13
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\Icon.tsx", "TypeScript JSX", 0, 0, 0, 0, -4, 0, 0, 0, 0, 0, -4
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\Loading.tsx", "TypeScript JSX", 0, 0, 0, 0, -11, 0, 0, 0, 0, -2, -13
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\LoadingUI.tsx", "TypeScript JSX", 0, 0, 0, 0, 13, 0, 0, 0, 0, 2, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\Modal.tsx", "TypeScript JSX", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\PostAction.tsx", "TypeScript JSX", 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, -2
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\PostActionButton.tsx", "TypeScript JSX", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\antho\Desktop\nextjs-social-app\src\components\TextField.tsx", "TypeScript JSX", 0, 0, 0, 0, 5, 0, 0, 0, 0, 1, 6
+"c:\Users\antho\Desktop\nextjs-social-app\src\hooks\useToggleLikeToPost.ts", "TypeScript", 27, 0, 0, 0, 0, 0, 0, 0, 0, 6, 33
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Draft.tsx", "TypeScript JSX", 0, 0, 0, 0, -56, 0, 0, 0, 0, -5, -61
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\DraftPost.tsx", "TypeScript JSX", 0, 0, 0, 0, 63, 0, 0, 0, 0, 4, 67
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\DraftReply.tsx", "TypeScript JSX", 0, 0, 0, 0, 53, 0, 0, 0, 0, 6, 59
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Footer.tsx", "TypeScript JSX", 0, 0, 0, 0, -3, 0, 0, 0, 0, -1, -4
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Header.tsx", "TypeScript JSX", 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Landing.tsx", "TypeScript JSX", 0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 21
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Login.tsx", "TypeScript JSX", 0, 0, 0, 0, 49, 0, 0, 0, 0, 4, 53
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Post.tsx", "TypeScript JSX", 0, 0, 0, 0, 41, 0, 0, 0, 0, 6, 47
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\PostDetail.tsx", "TypeScript JSX", 0, 0, 0, 0, 102, 0, 0, 0, 0, 13, 115
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\PostLoading.tsx", "TypeScript JSX", 0, 0, 0, 0, -16, 0, 0, 0, 0, -3, -19
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Profile.tsx", "TypeScript JSX", 0, 0, 0, 0, 17, 0, 0, 0, 0, 2, 19
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\ProfileSkeleton.tsx", "TypeScript JSX", 0, 0, 0, 0, 60, 0, 0, 0, 0, 4, 64
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Sidebar.tsx", "TypeScript JSX", 0, 0, 0, 0, -15, 0, 0, 0, 0, 1, -14
+"c:\Users\antho\Desktop\nextjs-social-app\src\layout\Timeline.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 1, 7
+"c:\Users\antho\Desktop\nextjs-social-app\src\lib\ApolloClient.ts", "TypeScript", 23, 0, 0, 0, 0, 0, 0, 0, 3, 4, 30
+"c:\Users\antho\Desktop\nextjs-social-app\src\lib\Notification.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\antho\Desktop\nextjs-social-app\src\prisma\database.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, -2, -2
+"c:\Users\antho\Desktop\nextjs-social-app\src\prisma\pothos-types.ts", "TypeScript", 85, 0, 0, 0, 0, 0, 0, 0, 0, 0, 85
+"c:\Users\antho\Desktop\nextjs-social-app\src\prisma\schema.prisma", "Prisma", 0, 0, 43, 0, 0, 0, 0, 0, 0, 9, 52
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\base\_reset.scss", "SCSS", 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\Avatar.module.scss", "SCSS", 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\ErrorUI.module.scss", "SCSS", 0, 0, 0, 9, 0, 0, 0, 0, 0, 2, 11
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\Loading.module.scss", "SCSS", 0, 0, 0, -35, 0, 0, 0, 0, 0, -5, -40
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\LoadingUI.module.scss", "SCSS", 0, 0, 0, 60, 0, 0, 0, 0, 0, 3, 63
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\Modal.module.scss", "SCSS", 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 3
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\globals.scss", "SCSS", 0, 0, 0, 11, 0, 0, 0, 0, 1, 3, 15
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Draft.module.scss", "SCSS", 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, -3
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Footer.module.scss", "SCSS", 0, 0, 0, -3, 0, 0, 0, 0, 0, 0, -3
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Header.module.scss", "SCSS", 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Landing.module.scss", "SCSS", 0, 0, 0, 29, 0, 0, 0, 0, 0, 6, 35
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Login.module.scss", "SCSS", 0, 0, 0, 26, 0, 0, 0, 0, 0, 6, 32
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Post.module.scss", "SCSS", 0, 0, 0, -34, 0, 0, 0, 0, 0, -4, -38
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\PostDetail.module.scss", "SCSS", 0, 0, 0, 54, 0, 0, 0, 0, 0, 11, 65
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Profile.module.scss", "SCSS", 0, 0, 0, -2, 0, 0, 0, 0, 0, -1, -3
+"c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Timeline.module.scss", "SCSS", 0, 0, 0, 6, 0, 0, 0, 0, 0, 2, 8
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getAllPosts.ts", "TypeScript", -5, 0, 0, 0, 0, 0, 0, 0, 0, -3, -8
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getAllPublishedPosts.ts", "TypeScript", 33, 0, 0, 0, 0, 0, 0, 0, 0, 3, 36
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getCurrentUser.ts", "TypeScript", -5, 0, 0, 0, 0, 0, 0, 0, 0, -8, -13
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getFormattedJoinedDate.ts", "TypeScript", 9, 0, 0, 0, 0, 0, 0, 0, 0, 2, 11
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getMyMoments.ts", "TypeScript", 34, 0, 0, 0, 0, 0, 0, 0, 0, 5, 39
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getMyNotifications.ts", "TypeScript", 22, 0, 0, 0, 0, 0, 0, 0, 0, 6, 28
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getMyProfile.ts", "TypeScript", 45, 0, 0, 0, 0, 0, 0, 0, 0, 6, 51
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getMyTimeline.ts", "TypeScript", 36, 0, 0, 0, 0, 0, 0, 0, 0, 6, 42
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getPostDetail.ts", "TypeScript", 37, 0, 0, 0, 0, 0, 0, 0, 0, 6, 43
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getPostsByUser.ts", "TypeScript", -5, 0, 0, 0, 0, 0, 0, 0, 0, -3, -8
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getRandomFacts.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getUserProfile.ts", "TypeScript", 42, 0, 0, 0, 0, 0, 0, 0, 0, 6, 48
+"c:\Users\antho\Desktop\nextjs-social-app\src\utils\getUserTimeline.ts", "TypeScript", 36, 0, 0, 0, 0, 0, 0, 0, 0, 7, 43
+"c:\Users\antho\Desktop\nextjs-social-app\tsconfig.json", "JSON with Comments", 0, 2, 0, 0, 0, 0, 0, 0, -2, 0, 0
+"Total", "-", 910, 2, 43, 17, 846, 147, 61, 1, 14, 298, 2339

@@ -7,3 +7,6 @@ export * from "./Media";
 export * from "./Post";
 export * from "./Profile";
 export * from "./User";
+export * from "./Notification_Type";
+export * from "./Notification";
+export * from "./User_Notification";

@@ -34,7 +34,10 @@ export const viewport: Viewport = {
 	colorScheme: "dark",
 };
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
+export default async function RootLayout(props: {
+	children: React.ReactNode;
+	sidebar: React.ReactNode;
+}) {
 	const session = await auth();
 
 	return (

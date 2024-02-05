@@ -60,6 +60,23 @@ type Mutation {
   updateProfile(avatar: String, banner: String, bio: String, displayName: String, id: String!): User!
 }
 
+type Notification {
+  createdAt: DateTime!
+  id: String!
+  notificationType: Notification_Type!
+  notificationTypeId: String!
+  sender: User!
+  senderId: String!
+  userNotification: [UserNotification!]!
+  userNotificationCount: Int!
+}
+
+type Notification_Type {
+  id: String!
+  notification: [Notification!]!
+  type: String!
+}
+
 type Post {
   author: User!
   authorId: String!
@@ -109,6 +126,7 @@ type Query {
   getAllPublishedPost: [Post!]!
   getAllUsers: [User!]!
   getMyMoments(id: String!): [Post!]!
+  getMyNotifications(id: String!): [UserNotification!]!
   getMyProfile(id: String!): User!
   getMyTimeline(id: String!): [Post!]!
   getPostDetail(id: String!): Post!
@@ -150,6 +168,16 @@ type User {
 input UserCreateInput {
   email: String!
   name: String
+}
+
+type UserNotification {
+  id: String!
+  isRead: Boolean!
+  notification: Notification!
+  notificationId: String!
+  recipient: User!
+  recipientId: String!
+  status: String!
 }
 
 input UserUniqueInput {

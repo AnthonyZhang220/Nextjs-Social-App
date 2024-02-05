@@ -15,7 +15,7 @@ export default function Logout() {
 					<div>
 						<h4>You are about to log out of your account!</h4>
 					</div>
-					<div onClick={() => signOut()}>
+					<div onClick={() => signOut({ callbackUrl: "/home" })}>
 						<Button label="Log Out" bgColor="" radius={16} />
 					</div>
 				</div>

@@ -1,24 +1,24 @@
 .landing {
-	max-width: 1323px;
-	margin: 0 auto;
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	height: 100vh;
 
-	.landing_center {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		
+	.landing_container {
+		max-width: 1323px;
+		margin: 0 auto;
+
 		.landing_grid {
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
-			
+
 			.landing_icon {
 				display: flex;
 				min-width: 0;
+
 				img {
-					height: 100%;
-					width: auto;
+					height: auto;
+					width: 100%;
 				}
 			}
 
@@ -28,5 +28,11 @@
 				align-items: center;
 			}
 		}
+	}
+
+	.footer {
+		position: fixed;
+		bottom: 0;
+		padding: 1rem;
 	}
 }

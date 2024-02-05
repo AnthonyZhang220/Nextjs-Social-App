@@ -7,13 +7,13 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 import styles from "../styles/sass/components/PostAction.module.scss";
 
-type PostActionProps = {
+interface PostActionProps {
 	replyCount: number | undefined;
 	likeCount: number | undefined;
 	viewCount: number | undefined;
 	toggleLike: React.MouseEventHandler<HTMLDivElement>;
 	openReply: React.MouseEventHandler<HTMLDivElement>;
-};
+}
 
 export default function PostAction(props: PostActionProps) {
 	const { replyCount, likeCount, viewCount, toggleLike, openReply } = props;

@@ -1,0 +1,30 @@
+.notifications_tab {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.notification_avatar {
+	}
+
+	.notification_body {
+		margin-right: auto;
+	}
+	.notifications_action {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.comment_post {
+	display: flex;
+	justify-content: space-between;
+}
+.friend_request {
+	display: flex;
+	justify-content: space-between;
+}
+
+.like_post {
+	display: flex;
+	justify-content: space-between;
+}

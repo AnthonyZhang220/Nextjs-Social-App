@@ -34,7 +34,6 @@ export default async function RootLayout(props: {
 	children: React.ReactNode;
 	auth: React.ReactNode;
 	settings: React.ReactNode;
-	landing: React.ReactNode;
 	postDetail: React.ReactNode;
 }) {
 	const session = await auth();

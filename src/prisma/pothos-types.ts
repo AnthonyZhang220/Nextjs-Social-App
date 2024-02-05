@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type { Prisma, Account, User, Friendship, Profile, VerificationToken, Session, Location, Tag, Image, Media, Comment, Like, Post, Category } from "@prisma/client";
+import type { Prisma, Account, User, Friendship, Profile, VerificationToken, Session, Location, Tag, Image, Media, Comment, Like, Post, Category, Notification_Type, Notification, UserNotification } from "@prisma/client";
 export default interface PrismaTypes {
     Account: {
         Name: "Account";
@@ -30,8 +30,8 @@ export default interface PrismaTypes {
         Where: Prisma.UserWhereInput;
         Create: {};
         Update: {};
-        RelationName: "posts" | "profile" | "friends" | "friendOf" | "comments" | "likes" | "mentions" | "accounts" | "sessions";
-        ListRelations: "posts" | "friends" | "friendOf" | "comments" | "likes" | "mentions" | "accounts" | "sessions";
+        RelationName: "posts" | "profile" | "friends" | "friendOf" | "comments" | "likes" | "mentions" | "accounts" | "sessions" | "userNotification" | "notification";
+        ListRelations: "posts" | "friends" | "friendOf" | "comments" | "likes" | "mentions" | "accounts" | "sessions" | "userNotification" | "notification";
         Relations: {
             posts: {
                 Shape: Post[];
@@ -68,6 +68,14 @@ export default interface PrismaTypes {
             sessions: {
                 Shape: Session[];
                 Name: "Session";
+            };
+            userNotification: {
+                Shape: UserNotification[];
+                Name: "UserNotification";
+            };
+            notification: {
+                Shape: Notification[];
+                Name: "Notification";
             };
         };
     };
@@ -335,6 +343,75 @@ export default interface PrismaTypes {
             post: {
                 Shape: Post | null;
                 Name: "Post";
+            };
+        };
+    };
+    Notification_Type: {
+        Name: "Notification_Type";
+        Shape: Notification_Type;
+        Include: Prisma.Notification_TypeInclude;
+        Select: Prisma.Notification_TypeSelect;
+        OrderBy: Prisma.Notification_TypeOrderByWithRelationInput;
+        WhereUnique: Prisma.Notification_TypeWhereUniqueInput;
+        Where: Prisma.Notification_TypeWhereInput;
+        Create: {};
+        Update: {};
+        RelationName: "notification";
+        ListRelations: "notification";
+        Relations: {
+            notification: {
+                Shape: Notification[];
+                Name: "Notification";
+            };
+        };
+    };
+    Notification: {
+        Name: "Notification";
+        Shape: Notification;
+        Include: Prisma.NotificationInclude;
+        Select: Prisma.NotificationSelect;
+        OrderBy: Prisma.NotificationOrderByWithRelationInput;
+        WhereUnique: Prisma.NotificationWhereUniqueInput;
+        Where: Prisma.NotificationWhereInput;
+        Create: {};
+        Update: {};
+        RelationName: "notificationType" | "sender" | "userNotification";
+        ListRelations: "userNotification";
+        Relations: {
+            notificationType: {
+                Shape: Notification_Type;
+                Name: "Notification_Type";
+            };
+            sender: {
+                Shape: User;
+                Name: "User";
+            };
+            userNotification: {
+                Shape: UserNotification[];
+                Name: "UserNotification";
+            };
+        };
+    };
+    UserNotification: {
+        Name: "UserNotification";
+        Shape: UserNotification;
+        Include: Prisma.UserNotificationInclude;
+        Select: Prisma.UserNotificationSelect;
+        OrderBy: Prisma.UserNotificationOrderByWithRelationInput;
+        WhereUnique: Prisma.UserNotificationWhereUniqueInput;
+        Where: Prisma.UserNotificationWhereInput;
+        Create: {};
+        Update: {};
+        RelationName: "recipient" | "notification";
+        ListRelations: never;
+        Relations: {
+            recipient: {
+                Shape: User;
+                Name: "User";
+            };
+            notification: {
+                Shape: Notification;
+                Name: "Notification";
             };
         };
     };

@@ -1,0 +1,317 @@
+Date : 2023-12-22 14:46:23
+Directory : c:\Users\antho\Desktop\nextjs-social-app
+Total : 198 files,  2027 codes, 14 comments, 298 blanks, all 2339 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| TypeScript         |         66 |        910 |         12 |         87 |      1,009 |
+| TypeScript JSX     |         91 |        846 |          3 |        180 |      1,029 |
+| GraphQL            |          1 |        147 |          0 |         17 |        164 |
+| JSON               |          2 |         61 |          0 |          0 |         61 |
+| Prisma             |          1 |         43 |          0 |          9 |         52 |
+| SCSS               |         35 |         17 |          1 |          1 |         19 |
+| JSON with Comments |          1 |          2 |         -2 |          0 |          0 |
+| Markdown           |          1 |          1 |          0 |          4 |          5 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                               | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                  |        198 |      2,027 |         14 |        298 |      2,339 |
+| . (Files)                                                                                          |          6 |        219 |          1 |         23 |        243 |
+| src                                                                                                |        192 |      1,808 |         13 |        275 |      2,096 |
+| src\app                                                                                            |        133 |        852 |          9 |        159 |      1,020 |
+| src\app (Files)                                                                                    |          4 |          6 |          0 |         -2 |          4 |
+| src\app\(chat)                                                                                     |          6 |         94 |          0 |         24 |        118 |
+| src\app\(chat) (Files)                                                                             |          2 |         48 |          0 |         13 |         61 |
+| src\app\(chat)\chats                                                                               |          4 |         46 |          0 |         11 |         57 |
+| src\app\(chat)\chats (Files)                                                                       |          2 |         34 |          0 |          7 |         41 |
+| src\app\(chat)\chats\@chatdetail                                                                   |          1 |          6 |          0 |          2 |          8 |
+| src\app\(chat)\chats\@chatlist                                                                     |          1 |          6 |          0 |          2 |          8 |
+| src\app\(discover)                                                                                 |          4 |        119 |          0 |         24 |        143 |
+| src\app\(discover) (Files)                                                                         |          2 |        101 |          0 |         18 |        119 |
+| src\app\(discover)\discover                                                                        |          2 |         18 |          0 |          6 |         24 |
+| src\app\(home)                                                                                     |         34 |        599 |          3 |        154 |        756 |
+| src\app\(home) (Files)                                                                             |          2 |         93 |          0 |         18 |        111 |
+| src\app\(home)\home                                                                                |          8 |        162 |          0 |         39 |        201 |
+| src\app\(home)\home (Files)                                                                        |          2 |         47 |          0 |         11 |         58 |
+| src\app\(home)\home\@draft                                                                         |          3 |         82 |          0 |         18 |        100 |
+| src\app\(home)\home\@timeline                                                                      |          3 |         33 |          0 |         10 |         43 |
+| src\app\(home)\me                                                                                  |          7 |         95 |          1 |         28 |        124 |
+| src\app\(home)\me (Files)                                                                          |          2 |         32 |          0 |          9 |         41 |
+| src\app\(home)\me\@profile                                                                         |          3 |         35 |          1 |         11 |         47 |
+| src\app\(home)\me\@timeline                                                                        |          2 |         28 |          0 |          8 |         36 |
+| src\app\(home)\moments                                                                             |          8 |        107 |          2 |         32 |        141 |
+| src\app\(home)\moments (Files)                                                                     |          2 |         32 |          0 |          8 |         40 |
+| src\app\(home)\moments\@profile                                                                    |          3 |         37 |          1 |         12 |         50 |
+| src\app\(home)\moments\@timeline                                                                   |          3 |         38 |          1 |         12 |         51 |
+| src\app\(home)\notifications                                                                       |          3 |         64 |          0 |         13 |         77 |
+| src\app\(home)\user                                                                                |          6 |         78 |          0 |         24 |        102 |
+| src\app\(home)\user\[username]                                                                     |          6 |         78 |          0 |         24 |        102 |
+| src\app\(home)\user\[username] (Files)                                                             |          2 |         32 |          0 |         10 |         42 |
+| src\app\(home)\user\[username]\@profile                                                            |          2 |         21 |          0 |          6 |         27 |
+| src\app\(home)\user\[username]\@timeline                                                           |          2 |         25 |          0 |          8 |         33 |
+| src\app\(landing)                                                                                  |          4 |         31 |          0 |         11 |         42 |
+| src\app\(landing) (Files)                                                                          |          1 |          4 |          0 |          2 |          6 |
+| src\app\(landing)\@landing                                                                         |          3 |         27 |          0 |          9 |         36 |
+| src\app\@auth                                                                                      |          5 |        -42 |          0 |         -1 |        -43 |
+| src\app\@auth\error                                                                                |          1 |         10 |          0 |          3 |         13 |
+| src\app\@auth\login                                                                                |          2 |        -69 |          0 |         -7 |        -76 |
+| src\app\@auth\logout                                                                               |          2 |         17 |          0 |          3 |         20 |
+| src\app\@postDetail                                                                                |          3 |         98 |          0 |         16 |        114 |
+| src\app\@postDetail (Files)                                                                        |          1 |          4 |          0 |          2 |          6 |
+| src\app\@postDetail\(.)post                                                                        |          2 |         94 |          0 |         14 |        108 |
+| src\app\@postDetail\(.)post\[postId]                                                               |          2 |         94 |          0 |         14 |        108 |
+| src\app\@settings                                                                                  |          4 |        124 |          0 |         11 |        135 |
+| src\app\@settings\profile                                                                          |          4 |        124 |          0 |         11 |        135 |
+| src\app\[username]                                                                                 |          3 |        -94 |          0 |        -18 |       -112 |
+| src\app\api                                                                                        |         47 |        475 |          6 |         40 |        521 |
+| src\app\api\auth                                                                                   |          1 |         55 |        -10 |          6 |         51 |
+| src\app\api\auth\[...nextauth]                                                                     |          1 |         55 |        -10 |          6 |         51 |
+| src\app\api\graphql                                                                                |         46 |        420 |         16 |         34 |        470 |
+| src\app\api\graphql (Files)                                                                        |          5 |          8 |         14 |         -2 |         20 |
+| src\app\api\graphql\enums                                                                          |          3 |         16 |          0 |          2 |         18 |
+| src\app\api\graphql\models                                                                         |         29 |        700 |         11 |         65 |        776 |
+| src\app\api\graphql\models (Files)                                                                 |          1 |         12 |          0 |          1 |         13 |
+| src\app\api\graphql\models\Category                                                                |          2 |         10 |          0 |          3 |         13 |
+| src\app\api\graphql\models\Comment                                                                 |          3 |         33 |          0 |          6 |         39 |
+| src\app\api\graphql\models\Friendship                                                              |          2 |         10 |          0 |          3 |         13 |
+| src\app\api\graphql\models\Like                                                                    |          3 |         49 |          0 |          5 |         54 |
+| src\app\api\graphql\models\Location                                                                |          2 |         13 |          0 |          3 |         16 |
+| src\app\api\graphql\models\Media                                                                   |          2 |         10 |          0 |          2 |         12 |
+| src\app\api\graphql\models\Notification                                                            |          2 |         13 |          0 |          3 |         16 |
+| src\app\api\graphql\models\Notification_Type                                                       |          2 |          9 |          0 |          3 |         12 |
+| src\app\api\graphql\models\Post                                                                    |          3 |        303 |          7 |         14 |        324 |
+| src\app\api\graphql\models\Profile                                                                 |          2 |         31 |          1 |          3 |         35 |
+| src\app\api\graphql\models\User                                                                    |          3 |        194 |          3 |         16 |        213 |
+| src\app\api\graphql\models\User_Notification                                                       |          2 |         13 |          0 |          3 |         16 |
+| src\app\api\graphql\types                                                                          |          9 |       -304 |         -9 |        -31 |       -344 |
+| src\app\chats                                                                                      |          3 |        -76 |          0 |        -16 |        -92 |
+| src\app\discover                                                                                   |          3 |        -90 |          0 |        -15 |       -105 |
+| src\app\home                                                                                       |          3 |        -94 |          0 |        -17 |       -111 |
+| src\app\me                                                                                         |          3 |       -126 |          0 |        -22 |       -148 |
+| src\app\moments                                                                                    |          3 |        -97 |          0 |        -17 |       -114 |
+| src\app\notifications                                                                              |          3 |        -89 |          0 |        -17 |       -106 |
+| src\app\post                                                                                       |          1 |         14 |          0 |          4 |         18 |
+| src\app\post\[postId]                                                                              |          1 |         14 |          0 |          4 |         18 |
+| src\components                                                                                     |         10 |         36 |          0 |          6 |         42 |
+| src\hooks                                                                                          |          1 |         27 |          0 |          6 |         33 |
+| src\layout                                                                                         |         14 |        323 |          0 |         32 |        355 |
+| src\lib                                                                                            |          2 |         23 |          3 |          5 |         31 |
+| src\prisma                                                                                         |          3 |        128 |          0 |          7 |        135 |
+| src\styles                                                                                         |         16 |        127 |          1 |         24 |        152 |
+| src\styles\sass                                                                                    |         16 |        127 |          1 |         24 |        152 |
+| src\styles\sass (Files)                                                                            |          1 |         11 |          1 |          3 |         15 |
+| src\styles\sass\base                                                                               |          1 |          2 |          0 |          0 |          2 |
+| src\styles\sass\components                                                                         |          5 |         40 |          0 |          1 |         41 |
+| src\styles\sass\layout                                                                             |          9 |         74 |          0 |         20 |         94 |
+| src\utils                                                                                          |         13 |        292 |          0 |         36 |        328 |
++----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                           | language           | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\antho\Desktop\nextjs-social-app\README.md                                                 | Markdown           |          1 |          0 |          4 |          5 |
+| c:\Users\antho\Desktop\nextjs-social-app\next-auth.d.ts                                            | TypeScript         |          8 |          3 |          2 |         13 |
+| c:\Users\antho\Desktop\nextjs-social-app\package-lock.json                                         | JSON               |         60 |          0 |          0 |         60 |
+| c:\Users\antho\Desktop\nextjs-social-app\package.json                                              | JSON               |          1 |          0 |          0 |          1 |
+| c:\Users\antho\Desktop\nextjs-social-app\schema.graphql                                            | GraphQL            |        147 |          0 |         17 |        164 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\chats\@chatdetail\page.tsx                 | TypeScript JSX     |          6 |          0 |          2 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\chats\@chatlist\page.tsx                   | TypeScript JSX     |          6 |          0 |          2 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\chats\layout.tsx                           | TypeScript JSX     |         22 |          0 |          4 |         26 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\chats\page.module.scss                     | SCSS               |         12 |          0 |          3 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\layout.tsx                                 | TypeScript JSX     |         27 |          0 |          6 |         33 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(chat)\page.module.scss                           | SCSS               |         21 |          0 |          7 |         28 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(discover)\discover\layout.tsx                    | TypeScript JSX     |         12 |          0 |          3 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(discover)\discover\page.tsx                      | TypeScript JSX     |          6 |          0 |          3 |          9 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(discover)\layout.tsx                             | TypeScript JSX     |         57 |          0 |          9 |         66 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(discover)\page.module.scss                       | SCSS               |         44 |          0 |          9 |         53 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@draft\DraftLayout.tsx                | TypeScript JSX     |         71 |          0 |         10 |         81 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@draft\loading.tsx                    | TypeScript JSX     |          5 |          0 |          4 |          9 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@draft\page.tsx                       | TypeScript JSX     |          6 |          0 |          4 |         10 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@timeline\layout.tsx                  | TypeScript JSX     |         12 |          0 |          3 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@timeline\loading.tsx                 | TypeScript JSX     |          5 |          0 |          4 |          9 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\@timeline\page.tsx                    | TypeScript JSX     |         16 |          0 |          3 |         19 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\layout.tsx                            | TypeScript JSX     |         19 |          0 |          3 |         22 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\home\page.module.scss                      | SCSS               |         28 |          0 |          8 |         36 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\layout.tsx                                 | TypeScript JSX     |         56 |          0 |          9 |         65 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@profile\error.tsx                      | TypeScript JSX     |         10 |          1 |          4 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@profile\loading.tsx                    | TypeScript JSX     |          5 |          0 |          3 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@profile\page.tsx                       | TypeScript JSX     |         20 |          0 |          4 |         24 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@timeline\loading.tsx                   | TypeScript JSX     |          6 |          0 |          3 |          9 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\@timeline\page.tsx                      | TypeScript JSX     |         22 |          0 |          5 |         27 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\layout.tsx                              | TypeScript JSX     |         20 |          0 |          3 |         23 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\me\page.module.scss                        | SCSS               |         12 |          0 |          6 |         18 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@profile\error.tsx                 | TypeScript JSX     |         10 |          1 |          4 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@profile\loading.tsx               | TypeScript JSX     |          6 |          0 |          3 |          9 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@profile\page.tsx                  | TypeScript JSX     |         21 |          0 |          5 |         26 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@timeline\error.tsx                | TypeScript JSX     |         10 |          1 |          4 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@timeline\loading.tsx              | TypeScript JSX     |          5 |          0 |          3 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\@timeline\page.tsx                 | TypeScript JSX     |         23 |          0 |          5 |         28 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\layout.tsx                         | TypeScript JSX     |         20 |          0 |          4 |         24 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\moments\page.module.scss                   | SCSS               |         12 |          0 |          4 |         16 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\notifications\layout.tsx                   | TypeScript JSX     |         17 |          0 |          3 |         20 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\notifications\page.module.scss             | SCSS               |         27 |          0 |          7 |         34 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\notifications\page.tsx                     | TypeScript JSX     |         20 |          0 |          3 |         23 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\page.module.scss                           | SCSS               |         37 |          0 |          9 |         46 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\@profile\loading.tsx       | TypeScript JSX     |          5 |          0 |          3 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\@profile\page.tsx          | TypeScript JSX     |         16 |          0 |          3 |         19 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\@timeline\loading.tsx      | TypeScript JSX     |          5 |          0 |          3 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\@timeline\page.tsx         | TypeScript JSX     |         20 |          0 |          5 |         25 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\layout.tsx                 | TypeScript JSX     |         20 |          0 |          4 |         24 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(home)\user\[username]\page.module.scss           | SCSS               |         12 |          0 |          6 |         18 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(landing)\@landing\layout.tsx                     | TypeScript JSX     |          7 |          0 |          1 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(landing)\@landing\loading.tsx                    | TypeScript JSX     |          5 |          0 |          3 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(landing)\@landing\page.tsx                       | TypeScript JSX     |         15 |          0 |          5 |         20 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\(landing)\layout.tsx                              | TypeScript JSX     |          4 |          0 |          2 |          6 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\error\page.tsx                              | TypeScript JSX     |         10 |          0 |          3 |         13 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\login\page.module.scss                      | SCSS               |        -25 |          0 |         -6 |        -31 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\login\page.tsx                              | TypeScript JSX     |        -44 |          0 |         -1 |        -45 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\logout\loading.tsx                          | TypeScript JSX     |         10 |          0 |          3 |         13 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@auth\logout\page.tsx                             | TypeScript JSX     |          7 |          0 |          0 |          7 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@postDetail\(.)post\[postId]\DraftReplyClient.tsx | TypeScript JSX     |         59 |          0 |          9 |         68 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@postDetail\(.)post\[postId]\page.tsx             | TypeScript JSX     |         35 |          0 |          5 |         40 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@postDetail\default.tsx                           | TypeScript JSX     |          4 |          0 |          2 |          6 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@settings\profile\ProfileFormWithData.tsx         | TypeScript JSX     |         75 |          0 |          3 |         78 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@settings\profile\error.tsx                       | TypeScript JSX     |          7 |          0 |          3 |         10 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@settings\profile\page.module.scss                | SCSS               |         -8 |          0 |         -2 |        -10 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\@settings\profile\page.tsx                        | TypeScript JSX     |         50 |          0 |          7 |         57 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\[username]\layout.tsx                             | TypeScript JSX     |        -18 |          0 |         -4 |        -22 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\[username]\page.module.scss                       | SCSS               |        -40 |          0 |        -11 |        -51 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\[username]\page.tsx                               | TypeScript JSX     |        -36 |          0 |         -3 |        -39 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\auth\[...nextauth]\options.ts                 | TypeScript         |         55 |        -10 |          6 |         51 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\builder.ts                            | TypeScript         |          1 |          1 |          0 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\context.ts                            | TypeScript         |          8 |         13 |          4 |         25 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\enums\notifyType.ts                   | TypeScript         |          6 |          0 |          1 |          7 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\enums\status.ts                       | TypeScript         |          5 |          0 |          1 |          6 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\enums\visible.ts                      | TypeScript         |          5 |          0 |          0 |          5 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Category\index.ts              | TypeScript         |          1 |          0 |          1 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Category\queries.ts            | TypeScript         |          9 |          0 |          2 |         11 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Comment\index.ts               | TypeScript         |          1 |          0 |          1 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Comment\mutations.ts           | TypeScript         |         21 |          0 |          2 |         23 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Comment\queries.ts             | TypeScript         |         11 |          0 |          3 |         14 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Friendship\index.ts            | TypeScript         |          1 |          0 |          1 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Friendship\queries.ts          | TypeScript         |          9 |          0 |          2 |         11 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Like\index.ts                  | TypeScript         |          2 |          0 |          1 |          3 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Like\mutations.ts              | TypeScript         |         36 |          0 |          3 |         39 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Like\queries.ts                | TypeScript         |         11 |          0 |          1 |         12 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Location\index.ts              | TypeScript         |          1 |          0 |          0 |          1 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Location\queries.ts            | TypeScript         |         12 |          0 |          3 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Media\index.ts                 | TypeScript         |          1 |          0 |          0 |          1 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Media\queries.ts               | TypeScript         |          9 |          0 |          2 |         11 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Notification\index.ts          | TypeScript         |          1 |          0 |          1 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Notification\queries.ts        | TypeScript         |         12 |          0 |          2 |         14 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Notification_Type\index.ts     | TypeScript         |          1 |          0 |          1 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Notification_Type\queries.ts   | TypeScript         |          8 |          0 |          2 |         10 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Post\index.ts                  | TypeScript         |          2 |          0 |          1 |          3 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Post\mutations.ts              | TypeScript         |         85 |          2 |          3 |         90 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Post\queries.ts                | TypeScript         |        216 |          5 |         10 |        231 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Profile\index.ts               | TypeScript         |          1 |          1 |          1 |          3 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\Profile\queries.ts             | TypeScript         |         30 |          0 |          2 |         32 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User\index.ts                  | TypeScript         |          2 |          0 |          1 |          3 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User\mutations.ts              | TypeScript         |         39 |          0 |          2 |         41 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User\queries.ts                | TypeScript         |        153 |          3 |         13 |        169 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User_Notification\index.ts     | TypeScript         |          1 |          0 |          1 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\User_Notification\queries.ts   | TypeScript         |         12 |          0 |          2 |         14 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\models\index.ts                       | TypeScript         |         12 |          0 |          1 |         13 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\route.ts                              | TypeScript         |          6 |          0 |         -1 |          5 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\schema.ts                             | TypeScript         |         -4 |          0 |         -2 |         -6 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types.ts                              | TypeScript         |         -3 |          0 |         -3 |         -6 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Category.ts                     | TypeScript         |         -8 |          0 |         -2 |        -10 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Comment.ts                      | TypeScript         |         -6 |          0 |         -2 |         -8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Friend.ts                       | TypeScript         |         -6 |          0 |         -2 |         -8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Like.ts                         | TypeScript         |         -7 |          0 |         -2 |         -9 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Media.ts                        | TypeScript         |         -9 |          0 |         -2 |        -11 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Post.ts                         | TypeScript         |       -188 |         -3 |        -10 |       -201 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\Profile.ts                      | TypeScript         |        -28 |         -1 |         -4 |        -33 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\User.ts                         | TypeScript         |        -47 |         -5 |         -6 |        -58 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\api\graphql\types\enums.ts                        | TypeScript         |         -5 |          0 |         -1 |         -6 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\chats\layout.tsx                                  | TypeScript JSX     |        -18 |          0 |         -4 |        -22 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\chats\page.module.scss                            | SCSS               |        -33 |          0 |         -9 |        -42 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\chats\page.tsx                                    | TypeScript JSX     |        -25 |          0 |         -3 |        -28 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\discover\layout.tsx                               | TypeScript JSX     |        -18 |          0 |         -3 |        -21 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\discover\page.module.scss                         | SCSS               |        -44 |          0 |         -9 |        -53 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\discover\page.tsx                                 | TypeScript JSX     |        -28 |          0 |         -3 |        -31 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\error.tsx                                         | TypeScript JSX     |         17 |          0 |          4 |         21 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\home\layout.tsx                                   | TypeScript JSX     |        -16 |          0 |         -3 |        -19 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\home\page.module.scss                             | SCSS               |        -41 |          0 |        -11 |        -52 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\home\page.tsx                                     | TypeScript JSX     |        -37 |          0 |         -3 |        -40 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\layout.tsx                                        | TypeScript JSX     |          2 |          0 |         -2 |          0 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\me\layout.tsx                                     | TypeScript JSX     |        -18 |          0 |         -4 |        -22 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\me\page.module.scss                               | SCSS               |        -40 |          0 |        -11 |        -51 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\me\page.tsx                                       | TypeScript JSX     |        -68 |          0 |         -7 |        -75 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\moments\layout.tsx                                | TypeScript JSX     |        -18 |          0 |         -3 |        -21 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\moments\page.module.scss                          | SCSS               |        -41 |          0 |        -11 |        -52 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\moments\page.tsx                                  | TypeScript JSX     |        -38 |          0 |         -3 |        -41 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\notifications\layout.tsx                          | TypeScript JSX     |        -18 |          0 |         -3 |        -21 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\notifications\page.module.scss                    | SCSS               |        -43 |          0 |        -11 |        -54 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\notifications\page.tsx                            | TypeScript JSX     |        -28 |          0 |         -3 |        -31 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\page.module.scss                                  | SCSS               |          0 |          0 |         -1 |         -1 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\page.tsx                                          | TypeScript JSX     |        -13 |          0 |         -3 |        -16 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\app\post\[postId]\page.tsx                            | TypeScript JSX     |         14 |          0 |          4 |         18 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\Avatar.tsx                                 | TypeScript JSX     |         20 |          0 |          3 |         23 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\Button.tsx                                 | TypeScript JSX     |          2 |          0 |          0 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\ErrorUI.tsx                                | TypeScript JSX     |         10 |          0 |          3 |         13 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\Icon.tsx                                   | TypeScript JSX     |         -4 |          0 |          0 |         -4 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\Loading.tsx                                | TypeScript JSX     |        -11 |          0 |         -2 |        -13 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\LoadingUI.tsx                              | TypeScript JSX     |         13 |          0 |          2 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\Modal.tsx                                  | TypeScript JSX     |          1 |          0 |          0 |          1 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\PostAction.tsx                             | TypeScript JSX     |         -1 |          0 |         -1 |         -2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\PostActionButton.tsx                       | TypeScript JSX     |          1 |          0 |          0 |          1 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\components\TextField.tsx                              | TypeScript JSX     |          5 |          0 |          1 |          6 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\hooks\useToggleLikeToPost.ts                          | TypeScript         |         27 |          0 |          6 |         33 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Draft.tsx                                      | TypeScript JSX     |        -56 |          0 |         -5 |        -61 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\DraftPost.tsx                                  | TypeScript JSX     |         63 |          0 |          4 |         67 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\DraftReply.tsx                                 | TypeScript JSX     |         53 |          0 |          6 |         59 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Footer.tsx                                     | TypeScript JSX     |         -3 |          0 |         -1 |         -4 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Header.tsx                                     | TypeScript JSX     |          1 |          0 |          0 |          1 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Landing.tsx                                    | TypeScript JSX     |         21 |          0 |          0 |         21 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Login.tsx                                      | TypeScript JSX     |         49 |          0 |          4 |         53 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Post.tsx                                       | TypeScript JSX     |         41 |          0 |          6 |         47 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\PostDetail.tsx                                 | TypeScript JSX     |        102 |          0 |         13 |        115 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\PostLoading.tsx                                | TypeScript JSX     |        -16 |          0 |         -3 |        -19 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Profile.tsx                                    | TypeScript JSX     |         17 |          0 |          2 |         19 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\ProfileSkeleton.tsx                            | TypeScript JSX     |         60 |          0 |          4 |         64 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Sidebar.tsx                                    | TypeScript JSX     |        -15 |          0 |          1 |        -14 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\layout\Timeline.tsx                                   | TypeScript JSX     |          6 |          0 |          1 |          7 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\lib\ApolloClient.ts                                   | TypeScript         |         23 |          3 |          4 |         30 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\lib\Notification.ts                                   | TypeScript         |          0 |          0 |          1 |          1 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\prisma\database.ts                                    | TypeScript         |          0 |          0 |         -2 |         -2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\prisma\pothos-types.ts                                | TypeScript         |         85 |          0 |          0 |         85 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\prisma\schema.prisma                                  | Prisma             |         43 |          0 |          9 |         52 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\base\_reset.scss                          | SCSS               |          2 |          0 |          0 |          2 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\Avatar.module.scss             | SCSS               |          3 |          0 |          1 |          4 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\ErrorUI.module.scss            | SCSS               |          9 |          0 |          2 |         11 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\Loading.module.scss            | SCSS               |        -35 |          0 |         -5 |        -40 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\LoadingUI.module.scss          | SCSS               |         60 |          0 |          3 |         63 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\components\Modal.module.scss              | SCSS               |          3 |          0 |          0 |          3 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\globals.scss                              | SCSS               |         11 |          1 |          3 |         15 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Draft.module.scss                  | SCSS               |         -3 |          0 |          0 |         -3 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Footer.module.scss                 | SCSS               |         -3 |          0 |          0 |         -3 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Header.module.scss                 | SCSS               |          1 |          0 |          0 |          1 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Landing.module.scss                | SCSS               |         29 |          0 |          6 |         35 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Login.module.scss                  | SCSS               |         26 |          0 |          6 |         32 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Post.module.scss                   | SCSS               |        -34 |          0 |         -4 |        -38 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\PostDetail.module.scss             | SCSS               |         54 |          0 |         11 |         65 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Profile.module.scss                | SCSS               |         -2 |          0 |         -1 |         -3 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\styles\sass\layout\Timeline.module.scss               | SCSS               |          6 |          0 |          2 |          8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getAllPosts.ts                                  | TypeScript         |         -5 |          0 |         -3 |         -8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getAllPublishedPosts.ts                         | TypeScript         |         33 |          0 |          3 |         36 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getCurrentUser.ts                               | TypeScript         |         -5 |          0 |         -8 |        -13 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getFormattedJoinedDate.ts                       | TypeScript         |          9 |          0 |          2 |         11 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getMyMoments.ts                                 | TypeScript         |         34 |          0 |          5 |         39 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getMyNotifications.ts                           | TypeScript         |         22 |          0 |          6 |         28 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getMyProfile.ts                                 | TypeScript         |         45 |          0 |          6 |         51 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getMyTimeline.ts                                | TypeScript         |         36 |          0 |          6 |         42 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getPostDetail.ts                                | TypeScript         |         37 |          0 |          6 |         43 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getPostsByUser.ts                               | TypeScript         |         -5 |          0 |         -3 |         -8 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getRandomFacts.ts                               | TypeScript         |         13 |          0 |          3 |         16 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getUserProfile.ts                               | TypeScript         |         42 |          0 |          6 |         48 |
+| c:\Users\antho\Desktop\nextjs-social-app\src\utils\getUserTimeline.ts                              | TypeScript         |         36 |          0 |          7 |         43 |
+| c:\Users\antho\Desktop\nextjs-social-app\tsconfig.json                                             | JSON with Comments |          2 |         -2 |          0 |          0 |
+| Total                                                                                              |                    |      2,027 |         14 |        298 |      2,339 |
++----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

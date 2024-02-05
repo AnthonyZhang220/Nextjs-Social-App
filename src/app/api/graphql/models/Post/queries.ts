@@ -106,13 +106,7 @@ builder.queryFields((t) => ({
 				where: {
 					published: true,
 					visibleTo: "Everyone" || "Friends",
-					media: {
-						every: {
-							videoSrc: {
-								isEmpty: false,
-							},
-						},
-					},
+					media: {},
 				},
 			});
 		},

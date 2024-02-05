@@ -102,7 +102,7 @@ function ChatDetail(props: ChatDetailProp) {
 			<div className={styles.chatdetail_body}>
 				<div className={styles.chatdetail_profile}>
 					<div>
-						<Avatar avatar_src={url} size={100} />
+						<Avatar avatar_src={url} size={100} alt={url} />
 					</div>
 					<div>{props.displayName}</div>
 					<div>@{props.username}</div>

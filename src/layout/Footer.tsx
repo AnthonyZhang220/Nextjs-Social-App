@@ -1,39 +1,35 @@
 // import Link from "next/link";
 import styles from "../styles/sass/layout/Footer.module.scss";
 
-interface LinkRef {
+interface footerData {
 	label: string;
 	link: string;
-	type?: string;
-}
-
-interface footerData {
-	category: string;
-	list: Array<LinkRef>;
 }
 
 const footerData = [
-	{ category: "Resource", list: [{ label: "Docs", link: "" }] },
-	{ category: "More", list: [{ label: "Commerce", link: "" }] },
-	{ category: "About Social App", list: [{ label: "Github", link: "" }] },
-	{ category: "Legal", list: [{ label: "Privacy Policy", link: "" }] },
-	{ category: "Legal", list: [{ label: "@Anthony Zhang", link: "" }] },
+	{
+		label: "Docs",
+		link: "https://github.com/AnthonyZhang220/nextjs-social-app",
+	},
+	{ label: "Commerce", link: "" },
+	{ label: "Github", link: "https://github.com/AnthonyZhang220" },
+	{ label: "Cookie Policy", link: "" },
+	{
+		label: `@ ${new Date().getFullYear()} Anthony Zhang`,
+		link: "https://anthonyzhang.netlify.app/",
+	},
 ];
 
 export default function Footer() {
 	return (
-		<footer className={styles.footer}>
-			<div className={styles.footer_container}>
-				{footerData.map(({ category, list }, index) => (
-					<div key={index}>
-						{list.map(({ label, link }) => (
-							<a key={link} href={link} className={styles.footer_site}>
-								{label}
-							</a>
-						))}
-					</div>
-				))}
-			</div>
+		<footer className={styles.footer_container}>
+			{footerData.map(({ label, link }, index) => (
+				<div key={index}>
+					<a key={link} href={link} className={styles.footer_site}>
+						{label}
+					</a>
+				</div>
+			))}
 		</footer>
 	);
 }

@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import Sidebar from "../../../../layout/Sidebar";
-import Footer from "../../../../layout/Footer";
 
 import styles from "./page.module.scss";
 

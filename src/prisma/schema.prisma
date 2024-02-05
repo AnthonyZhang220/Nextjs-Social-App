@@ -39,24 +39,27 @@ model Account {
 }
 
 model User {
-  id            String       @id @default(uuid())
-  name          String?
-  username      String?      @unique
-  displayName   String?
-  image         String?
-  email         String?      @unique
-  emailVerified DateTime?    @map("email_verified")
-  createdAt     DateTime     @default(now()) @map(name: "created_at")
-  updatedAt     DateTime     @updatedAt @map(name: "updated_at")
-  posts         Post[]
-  profile       Profile?
-  friends       Friendship[] @relation("friends")
-  friendOf      Friendship[] @relation("friendOf")
-  comments      Comment[]
-  likes         Like[]
-  mentions      Tag[]
-  accounts      Account[]
-  sessions      Session[]
+  id               String             @id @default(uuid())
+  name             String?
+  username         String?            @unique
+  displayName      String?
+  image            String?
+  email            String?            @unique
+  emailVerified    DateTime?          @map("email_verified")
+  createdAt        DateTime           @default(now()) @map(name: "created_at")
+  updatedAt        DateTime           @updatedAt @map(name: "updated_at")
+  posts            Post[]
+  profile          Profile?
+  friends          Friendship[]       @relation("friends")
+  friendOf         Friendship[]       @relation("friendOf")
+  comments         Comment[]
+  likes            Like[]
+  mentions         Tag[]
+  accounts         Account[]
+  sessions         Session[]
+  userNotification UserNotification[]
+  notification     Notification[]
+  FriendRequest    FriendRequest[]
 
   @@map(name: "users")
 }
@@ -68,6 +71,16 @@ model Friendship {
   friendOfId String
 
   @@id([friendOfId, friendsId])
+}
+
+model FriendRequest {
+  id          String @id @default(uuid())
+  senderId    String
+  recipientId String
+  status      Status @default(Pending)
+
+  User   User?   @relation(fields: [userId], references: [id])
+  userId String?
 }
 
 model Profile {
@@ -172,15 +185,60 @@ model Post {
   @@map("posts")
 }
 
+model Category {
+  id       String  @id @default(uuid())
+  category String  @unique
+  post     Post?   @relation(fields: [postId], references: [id])
+  postId   String?
+}
+
+model Notification_Type {
+  id           String         @id @default(uuid())
+  type         NotifyType
+  notification Notification[]
+
+  @@map("notification_type")
+}
+
+model Notification {
+  id                 String             @id @default(uuid())
+  createdAt          DateTime           @default(now()) @map(name: "created_at")
+  notificationType   Notification_Type  @relation(fields: [notificationTypeId], references: [id])
+  notificationTypeId String
+  sender             User               @relation(fields: [senderId], references: [id])
+  senderId           String
+  userNotification   UserNotification[]
+
+  @@map("notification")
+}
+
+model UserNotification {
+  id             String       @id @default(uuid())
+  recipient      User         @relation(fields: [recipientId], references: [id])
+  recipientId    String
+  notification   Notification @relation(fields: [notificationId], references: [id])
+  notificationId String
+  status         Status
+  isRead         Boolean
+
+  @@map("user_notification")
+}
+
 enum Visible {
   Everyone
   Friends
   Me
 }
 
-model Category {
-  id       String  @id @default(uuid())
-  category String  @unique
-  post     Post?   @relation(fields: [postId], references: [id])
-  postId   String?
+enum Status {
+  Pending
+  Accepted
+  Ignored
+}
+
+enum NotifyType {
+  FriendRequest
+  LikePost
+  CommentPost
+  ReplyUser
 }

@@ -1,5 +1,5 @@
-import Header from "../../../layout/Header";
 import type { Metadata } from "next";
+import styles from "./page.module.scss";
 
 export const metadata: Metadata = {
 	title: "Notifications / NextJS Social App",
@@ -12,9 +12,8 @@ export default function HomeLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<div className="home">
-			<Header />
-			{children}
+		<div className={styles.main_content}>
+			<div className={styles.notification_section}>{children}</div>
 		</div>
 	);
 }
